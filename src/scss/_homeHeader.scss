@@ -1,0 +1,13 @@
+.home_header__container {
+  min-height: 100vh;
+  width: 100%;
+}
+
+.home_header__image {
+  height: 100%;
+  width: 50%;
+  background-image: url(".././assets/HeroImage.png") 0% 0% no-repeat padding-box;
+  background-position: center;
+  background-size: cover;
+  color: red;
+}
