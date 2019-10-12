@@ -1,11 +1,16 @@
 import React from "react";
-
-import Image from "./Image";
+import Content from "./Content";
+import Nav from "./Nav";
 
 const HomeHeader = () => (
-  <div className="home_header__container">
-    <Image />
-  </div>
+  <header>
+    <div className="wrapper">
+      <div className="home_header__container">
+        <Nav />
+        <Content />
+      </div>
+    </div>
+  </header>
 );
 
 export default HomeHeader;

@@ -1,7 +1,9 @@
+@import "../../node_modules/css-reset-and-normalize/scss/reset-and-normalize";
 @import "./homeHeader";
 @import "./fonts";
+@import "./colors";
+@import "./wrapper";
 
 body {
   font-family: $font-base;
-  color: red;
 }
