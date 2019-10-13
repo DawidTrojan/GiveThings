@@ -1,5 +1,5 @@
 header {
-  background: url("../assets/HeroImage.png");
+  background: url("../../assets/HeroImage.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: -50% 30%;
@@ -87,7 +87,7 @@ header {
     height: 1rem;
     width: 10rem;
 
-    background: url("../assets/Decoration.svg");
+    background: url("../../assets/Decoration.svg");
     background-position: center;
     background-size: cover;
   }
@@ -103,7 +103,7 @@ header {
     span {
       margin-bottom: 1rem;
       text-align: center;
-      font-size: 25px;
+      font-size: 1.6rem;
       letter-spacing: -0.76px;
       color: #3c3c3c;
       opacity: 1;

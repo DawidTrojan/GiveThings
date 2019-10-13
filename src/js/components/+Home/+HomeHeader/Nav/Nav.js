@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import NavLinks from "./NavLinks";
 
 const Nav = () => (
   <div className="nav_container">
@@ -11,15 +12,7 @@ const Nav = () => (
         Załóż konto
       </Link>
     </div>
-    <div className="nav_links">
-      <ul>
-        <li>Start</li>
-        <li>O co chodzi</li>
-        <li>O nas</li>
-        <li>Fundacja i organizacje</li>
-        <li>Kontakt</li>
-      </ul>
-    </div>
+    <NavLinks />
   </div>
 );
 

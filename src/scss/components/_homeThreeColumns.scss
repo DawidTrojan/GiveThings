@@ -1,9 +1,9 @@
-@import "./fonts";
+@import "../settings/fonts";
 
 .columns_container {
   min-height: 20rem;
   min-width: 100%;
-  background: url("../assets/ColumnsBackground.png");
+  background: url("../../assets/ColumnsBackground.png");
   background-repeat: no-repeat;
   background-size: cover;
 
