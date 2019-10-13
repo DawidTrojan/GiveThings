@@ -10,6 +10,17 @@
 }
 
 @font-face {
+  font-family: "Merriweather";
+  font-style: normal;
+  font-weight: 300;
+  src: local("Merriweather Light"), local("Merriweather-Light"),
+    url("../assets/Fonts/Merriweather/merriweather-v21-latin-ext_latin-300.woff2")
+      format("woff2"),
+    url("../assets/Fonts/Merriweather/merriweather-v21-latin-ext_latin-300.woff")
+      format("woff");
+}
+
+@font-face {
   font-family: "Open Sans";
   font-style: normal;
   font-weight: 400;
