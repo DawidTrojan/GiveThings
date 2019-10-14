@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-scroll";
-import HomeSteps from "../../+HomeSteps";
 
 const NavLinks = () => (
   <div className="nav_links">

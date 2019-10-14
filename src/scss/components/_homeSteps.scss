@@ -5,7 +5,7 @@
   flex-direction: column;
 
   .steps_header {
-    min-height: 10rem;
+    min-height: 8rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -39,7 +39,7 @@
     background: #f0f1f1;
 
     .wrapper {
-      min-height: 25rem;
+      min-height: 20rem;
       display: flex;
       flex-direction: row;
       justify-content: space-around;
