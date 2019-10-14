@@ -5,7 +5,7 @@ const NavLinks = () => (
   <div className="nav_links">
     <ul>
       <li>
-        <Link>Start</Link>
+        <Link to="">Start</Link>
       </li>
       <li>
         <Link to="steps_container" duration={500} smooth={true}>
@@ -13,13 +13,17 @@ const NavLinks = () => (
         </Link>
       </li>
       <li>
-        <Link>O nas</Link>
+        <Link to="home_aboutUs__container" duration={500} smooth={true}>
+          O nas
+        </Link>
       </li>
       <li>
-        <Link>Fundacja i organizacje</Link>
+        <Link to="help_info__container" duration={500} smooth={true}>
+          Fundacja i organizacje
+        </Link>
       </li>
       <li>
-        <Link>Kontakt</Link>
+        <Link to="">Kontakt</Link>
       </li>
     </ul>
   </div>

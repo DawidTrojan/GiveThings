@@ -3,6 +3,7 @@ import HomeHeader from "./+HomeHeader";
 import HomeThreeColumns from "./+HomeThreeColumns";
 import HomeSteps from "./+HomeSteps";
 import HomeAboutUs from "./+HomeAboutUs";
+import HomeHelpInfo from "./+HomeHelpInfo";
 
 const Home = () => (
   <div className="layout_container">
@@ -10,6 +11,7 @@ const Home = () => (
     <HomeThreeColumns />
     <HomeSteps />
     <HomeAboutUs />
+    <HomeHelpInfo />
   </div>
 );
 
