@@ -41,8 +41,13 @@
       align-items: center;
       text-align: center;
 
-      a {
-        width: 10rem;
+      .active {
+        border: 0.75px solid #3c3c3c;
+        padding: 1rem 2rem;
+      }
+
+      span {
+        width: 12rem;
         line-height: 1.5;
         font-size: 1.2rem;
 
@@ -124,6 +129,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    .active {
+      border: 0.75px solid #3c3c3c;
+      padding: 1rem 2rem;
+    }
 
     span {
       color: #3c3c3c;

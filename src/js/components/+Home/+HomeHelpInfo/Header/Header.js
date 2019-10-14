@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Fundations from "../Fundations";
 import Organizations from "../Organizations";
 import LocalCollections from "../LocalCollections";
-import { NavLink } from "react-router-dom";
 
 const Header = () => {
   const [isActiveFundation, setIsActiveFundation] = useState(true);
@@ -33,11 +32,29 @@ const Header = () => {
         <h4>Komu pomagamy?</h4>
         <div className="help_info__decoration"></div>
         <div className="help_info__buttons">
-          <span onClick={handleClickFundations}>Fundacjom</span>
-          <span onClick={handleClickOrganizations}>
-            Organizajom pozarządowym
-          </span>
-          <span onClick={handleClickLocal}>Lokalnym zbiórkom</span>
+          {isActiveFundation ? (
+            <span className="active" onClick={handleClickFundations}>
+              Fundacjom
+            </span>
+          ) : (
+            <span onClick={handleClickFundations}>Fundacjom</span>
+          )}
+          {isActiveOrganization ? (
+            <span className="active" onClick={handleClickOrganizations}>
+              Organizajom pozarządowym
+            </span>
+          ) : (
+            <span onClick={handleClickOrganizations}>
+              Organizajom pozarządowym
+            </span>
+          )}
+          {isActiveLocal ? (
+            <span className="active" onClick={handleClickLocal}>
+              Lokalnym zbiórkom
+            </span>
+          ) : (
+            <span onClick={handleClickLocal}>Lokalnym zbiórkom</span>
+          )}
         </div>
       </div>
       {isActiveFundation ? <Fundations /> : null}

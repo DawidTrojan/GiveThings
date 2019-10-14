@@ -27,21 +27,21 @@ const elements = [
     title: "Organizacja “Lorem Ipsum 4”",
     description:
       "Quis varius quam quisque id diam vel quam elementum pulvinar.",
-    sideText: "Egestas, sed, tempus"
+    sideText: "ffffs, sed, tempus"
   },
   {
     id: 5,
     title: "Organizacja “Lorem Ipsum 5”",
     description:
       "Quis varius quam quisque id diam vel quam elementum pulvinar.",
-    sideText: "Egestas, sed, tempus"
+    sideText: "ggggg, sed, tempus"
   },
   {
     id: 6,
     title: "Organizacja “Lorem Ipsum 6”",
     description:
       "Quis varius quam quisque id diam vel quam elementum pulvinar.",
-    sideText: "Egestas, sed, tempus"
+    sideText: "Evvvv, sed, tempus"
   }
 ];
 

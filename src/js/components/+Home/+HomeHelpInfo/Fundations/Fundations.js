@@ -4,7 +4,7 @@ import elements from "../../../../../assets/fundationsArray";
 
 const Fundations = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const [elementsPerPage, setElementsPerPage] = useState(3);
+  const [elementsPerPage] = useState(3);
 
   //getCurrentElements
 
