@@ -23,7 +23,7 @@ const NavLinks = () => (
         </Link>
       </li>
       <li>
-        <Link to="">Kontakt</Link>
+        <Link to="home_footer__container">Kontakt</Link>
       </li>
     </ul>
   </div>
