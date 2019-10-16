@@ -5,7 +5,7 @@ const StepsButton = () => (
   <div className="steps_button">
     <div className="wrapper">
       <Link to="/logowanie" className="steps_button__link">
-        Oddaj rzeczy
+        <span>Oddaj rzeczy</span>
       </Link>
     </div>
   </div>

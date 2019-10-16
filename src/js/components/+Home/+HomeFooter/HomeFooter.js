@@ -11,8 +11,8 @@ const HomeFooter = () => (
           <Title />
           <Form />
         </div>
+        <Footer />
       </div>
-      <Footer />
     </div>
   </>
 );

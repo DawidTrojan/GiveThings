@@ -1,10 +1,6 @@
 import React from "react";
 import Header from "./Header";
 
-const HomeHelpInfo = () => (
-  <div>
-    <Header />
-  </div>
-);
+const HomeHelpInfo = () => <Header />;
 
 export default HomeHelpInfo;

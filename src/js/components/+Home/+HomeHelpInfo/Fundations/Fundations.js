@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Pagination from "./Pagination";
+import Pagination from "../Pagination";
 import elements from "../../../../../assets/fundationsArray";
 
 const Fundations = () => {
@@ -40,6 +40,7 @@ const Fundations = () => {
           elementsPerPage={elementsPerPage}
           totalElements={elements.length}
           paginate={paginate}
+          currentPage={currentPage}
         ></Pagination>
       </div>
     </div>

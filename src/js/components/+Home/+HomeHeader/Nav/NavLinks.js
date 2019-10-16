@@ -23,7 +23,9 @@ const NavLinks = () => (
         </Link>
       </li>
       <li>
-        <Link to="home_footer__container">Kontakt</Link>
+        <Link to="home_footer__container" duration={500} smooth={true}>
+          Kontakt
+        </Link>
       </li>
     </ul>
   </div>

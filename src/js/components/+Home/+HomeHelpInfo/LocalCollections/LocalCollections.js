@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Pagination from "./Pagination";
+import Pagination from "../Pagination";
 import elements from "../../../../../assets/localCollectionArray";
 
 const Fundations = () => {
@@ -22,9 +22,9 @@ const Fundations = () => {
   return (
     <div className="help_info__content">
       <span className="help_info__title">
-        Lokalne zbiórki, Lorem ipsum dolor sit amet, consectetur adipiscing
-        elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        Ut enim ad minim veniam, quis nostrud exercitation.
+        Lokalne, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+        minim veniam, quis nostrud exercitation.
       </span>
       <div className="help_info__box">
         {currentElements.map(el => (

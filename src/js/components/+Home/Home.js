@@ -7,14 +7,14 @@ import HomeHelpInfo from "./+HomeHelpInfo";
 import HomeFooter from "./+HomeFooter";
 
 const Home = () => (
-  <div className="layout_container">
+  <>
     <HomeHeader />
     <HomeThreeColumns />
     <HomeSteps />
     <HomeAboutUs />
     <HomeHelpInfo />
     <HomeFooter />
-  </div>
+  </>
 );
 
 export default Home;

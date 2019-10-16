@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Pagination from "./Pagination";
+import Pagination from "../Pagination";
 import elements from "../../../../../assets/organizationsArray";
 
 const Fundations = () => {
@@ -17,8 +17,9 @@ const Fundations = () => {
 
   //change page
 
-  const paginate = pageNumber => setCurrentPage(pageNumber);
-
+  const paginate = pageNumber => {
+    setCurrentPage(pageNumber);
+  };
   return (
     <div className="help_info__content">
       <span className="help_info__title">
@@ -40,6 +41,7 @@ const Fundations = () => {
           elementsPerPage={elementsPerPage}
           totalElements={elements.length}
           paginate={paginate}
+          currentPage={currentPage}
         ></Pagination>
       </div>
     </div>
