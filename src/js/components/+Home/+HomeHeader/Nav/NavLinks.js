@@ -1,11 +1,14 @@
 import React from "react";
 import { Link } from "react-scroll";
+import { NavLink } from "react-router-dom";
 
 const NavLinks = () => (
   <div className="nav_links">
     <ul>
       <li>
-        <Link to="">Start</Link>
+        <NavLink className="nav_navLink" to="/">
+          Start
+        </NavLink>
       </li>
       <li>
         <Link to="steps_container" duration={500} smooth={true}>

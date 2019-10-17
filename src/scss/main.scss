@@ -9,6 +9,12 @@
 @import "./components/homeAboutUs";
 @import "./components/homeHelpInfo";
 @import "./components/homeFooter";
+@import "./components/auth";
+@import "./components/logout";
+
+* {
+  box-sizing: border-box;
+}
 
 body {
   font-family: $font-base;
