@@ -1,12 +1,12 @@
 @import "../settings/fonts";
 
 .help_info__container {
-  margin: 5rem 0;
   min-height: 55rem;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  padding: 5rem 0;
 
   .help_info__header {
     display: flex;
@@ -49,9 +49,26 @@
         font-size: 24px;
         padding: 1rem 2rem;
         max-width: 225px;
+        position: relative;
+
+        &:after {
+          bottom: -20%;
+          content: "";
+          display: block;
+          height: 3px;
+          left: 50%;
+          position: absolute;
+          background: #c8e9e4;
+          transition: width 0.5s ease 0s, left 0.5s ease 0s;
+          width: 0;
+        }
+
+        &:hover:after {
+          width: 100%;
+          left: 0;
+        }
         &:hover {
           cursor: pointer;
-          transform: scale(1.1);
         }
       }
     }
@@ -138,7 +155,7 @@
         height: 100%;
         bottom: -50%;
         left: -100%;
-        padding: 1rem;
+        padding: 1rem 0.9rem;
       }
     }
 

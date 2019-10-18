@@ -71,6 +71,7 @@
       font-size: 16px;
       font-weight: 600;
       min-width: 253px;
+      margin-bottom: 0.5rem;
     }
 
     .auth_error {
@@ -88,6 +89,10 @@
       background: transparent;
       outline: none;
       border-bottom: 1px solid #707070;
+
+      &:focus {
+        border-bottom: 1px solid #c8e9e4;
+      }
     }
   }
 }
@@ -129,6 +134,10 @@
     background: transparent;
     outline: none;
     border-bottom: 1px solid #707070;
+
+    &:focus {
+      border-bottom: 1px solid #c8e9e4;
+    }
   }
 }
 
@@ -146,9 +155,12 @@
     font-size: 18px;
     color: #000000;
     outline: none;
+    transition: 1s;
 
     &:hover {
       cursor: pointer;
+      box-shadow: inset -4.5em 0 0 0 #c8e9e4, inset 4.5em 0 0 0 #c8e9e4;
+      border: 1px solid #c8e9e4;
     }
   }
 }
@@ -159,6 +171,24 @@
   text-align: center;
   font-size: 18px;
   color: #000000;
+  position: relative;
+
+  &:after {
+    bottom: -50%;
+    content: "";
+    display: block;
+    height: 3px;
+    left: 50%;
+    position: absolute;
+    background: #c8e9e4;
+    transition: width 0.5s ease 0s, left 0.5s ease 0s;
+    width: 0;
+  }
+
+  &:hover:after {
+    width: 100%;
+    left: 0;
+  }
 
   &.logout {
     border: 1px solid #3c3c3c;

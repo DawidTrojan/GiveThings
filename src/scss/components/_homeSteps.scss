@@ -145,12 +145,12 @@
           color: #3c3c3c;
           font-size: 36px;
           border: 0.75px solid #3c3c3c;
+          transition: 1s;
 
           &:hover {
             cursor: pointer;
-            background: #b6d4cd;
-            border: none;
-            transform: scale(1.1);
+            box-shadow: inset 4.5em 0 0 0 #c8e9e4, inset -4.5em 0 0 0 #c8e9e4;
+            border: 0.75px solid #c8e9e4;
           }
         }
       }

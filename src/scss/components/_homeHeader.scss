@@ -48,6 +48,7 @@ header {
       margin-right: 1.2rem;
       font-size: 14px;
       letter-spacing: 0;
+      position: relative;
 
       &:nth-of-type(2) {
         margin-right: 0;
@@ -55,8 +56,23 @@ header {
 
       &:hover {
         cursor: pointer;
-        transform: scale(1.1);
-        color: #b6d4cd;
+      }
+
+      &:after {
+        bottom: -50%;
+        content: "";
+        display: block;
+        height: 3px;
+        left: 50%;
+        position: absolute;
+        background: #c8e9e4;
+        transition: width 0.5s ease 0s, left 0.5s ease 0s;
+        width: 0;
+      }
+
+      &:hover:after {
+        width: 100%;
+        left: 0;
       }
     }
   }
@@ -67,6 +83,11 @@ header {
       letter-spacing: 0;
       font-size: 18px;
       text-decoration: none;
+
+      &:hover {
+        cursor: pointer;
+        color: lighten(#3c3c3c, 20%);
+      }
     }
     ul {
       width: 100%;
@@ -79,6 +100,7 @@ header {
         margin-right: 0.8rem;
         letter-spacing: 0;
         font-size: 18px;
+        position: relative;
 
         &:nth-of-type(5) {
           margin-right: 0;
@@ -86,8 +108,24 @@ header {
 
         &:hover {
           cursor: pointer;
-          transform: scale(1.1);
-          color: #b6d4cd;
+          color: lighten(#3c3c3c, 20%);
+        }
+
+        &:after {
+          bottom: -50%;
+          content: "";
+          display: block;
+          height: 3px;
+          left: 50%;
+          position: absolute;
+          background: #c8e9e4;
+          transition: width 0.5s ease 0s, left 0.5s ease 0s;
+          width: 0;
+        }
+
+        &:hover:after {
+          width: 100%;
+          left: 0;
         }
       }
     }
@@ -149,20 +187,21 @@ header {
     .content_link__button {
       max-width: 40%;
       border: 0.75px solid #3c3c3c;
+      border-radius: 2px;
       padding: 0.5rem 1.4rem;
       opacity: 0.7;
       letter-spacing: 0;
       font-size: 25px;
       color: #3c3c3c;
+      transition: 1s;
 
       text-transform: uppercase;
       text-decoration: none;
 
       &:hover {
         cursor: pointer;
-        background: #b6d4cd;
-        border: none;
-        transform: scale(1.1);
+        box-shadow: inset -4.5em 0 0 0 #c8e9e4, inset 4.5em 0 0 0 #c8e9e4;
+        border: 0.75px solid #c8e9e4;
       }
     }
   }

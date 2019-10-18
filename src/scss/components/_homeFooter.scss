@@ -116,7 +116,7 @@
 
       &:focus {
         outline: none;
-        border-color: #b6d4cd;
+        border-color: #c8e9e4;
       }
     }
   }
@@ -152,8 +152,8 @@
     overflow: hidden;
 
     &:focus {
+      border-color: #c8e9e4;
       outline: none;
-      border-color: #b6d4cd;
     }
   }
 }
@@ -170,15 +170,17 @@
     text-decoration: none;
     text-align: center;
     border: 1px solid #3c3c3c;
+    border-radius: 2px;
     padding: 0.8rem 1.7rem;
     color: #000000;
     font-size: 18px;
+    outline: none;
+    transition: 1s;
 
     &:hover {
       cursor: pointer;
-      background: #b6d4cd;
-      border: none;
-      transform: scale(1.1);
+      box-shadow: inset -3.5em 0 0 0 #c8e9e4, inset 3.5em 0 0 0 #c8e9e4;
+      border: 1px solid #c8e9e4;
     }
   }
 }
