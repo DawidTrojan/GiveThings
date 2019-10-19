@@ -1,6 +1,6 @@
 import React from "react";
 import LogoutTitle from "./LogoutTitle";
-import Nav from "../+Home/+HomeHeader/Nav";
+import Nav from "../../containers/Nav";
 
 const Logout = () => (
   <div className="auth_container">

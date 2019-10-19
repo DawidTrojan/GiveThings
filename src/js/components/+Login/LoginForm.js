@@ -1,33 +1,34 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 
-const LoginForm = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+const LoginForm = ({ signIn }) => {
+  const [sign, setSign] = useState({
+    email: "",
+    password: ""
+  });
   const [errors, setErrors] = useState({
     email: "",
     password: ""
   });
 
-  const handleEmailOnChange = e => {
-    setEmail(e.target.value);
-  };
-
-  const handlePasswordOnChange = e => {
-    setPassword(e.target.value);
+  const handleOnChange = e => {
+    setSign({
+      ...sign,
+      [e.target.name]: e.target.value
+    });
   };
 
   const validate = () => {
     let isValid = true;
 
-    if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email)) {
+    if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(sign.email)) {
       isValid = false;
       errors.email = "Podany email jest nieprawidłowy!";
     } else {
       errors.email = "";
     }
 
-    if (password.length <= 5) {
+    if (sign.password.length <= 5) {
       isValid = false;
       errors.password = "Podane hasło jest za krótkie!";
     } else {
@@ -43,10 +44,13 @@ const LoginForm = () => {
 
   const handleOnSubmit = e => {
     e.preventDefault();
-
+    signIn(sign.email, sign.password);
     if (validate()) {
-      setEmail("");
-      setPassword("");
+      setSign({
+        ...sign,
+        email: "",
+        password: ""
+      });
     } else {
       return errors;
     }
@@ -56,13 +60,14 @@ const LoginForm = () => {
     <form className="auth_form" onSubmit={handleOnSubmit}>
       <div className="auth_form__loginInputs">
         <span>Email</span>
-        <input value={email} onChange={handleEmailOnChange} />
+        <input value={sign.email} onChange={handleOnChange} name="email" />
         <span className="auth_error">{errors.email}</span>
         <span>Hasło</span>
         <input
           type="password"
-          value={password}
-          onChange={handlePasswordOnChange}
+          name="password"
+          value={sign.password}
+          onChange={handleOnChange}
         />
         <span className="auth_error">{errors.password}</span>
       </div>

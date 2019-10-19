@@ -1,8 +1,8 @@
 import React from "react";
 import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./components/+Home";
-import Login from "./components/+Login";
-import Register from "./components/+Register";
+import Login from "./containers/Login";
+import Register from "./containers/Register";
 import Logout from "./components/+Logout";
 
 const App = () => {

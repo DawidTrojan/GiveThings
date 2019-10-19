@@ -172,22 +172,12 @@
   font-size: 18px;
   color: #000000;
   position: relative;
+  transition: 1s;
 
-  &:after {
-    bottom: -50%;
-    content: "";
-    display: block;
-    height: 3px;
-    left: 50%;
-    position: absolute;
-    background: #c8e9e4;
-    transition: width 0.5s ease 0s, left 0.5s ease 0s;
-    width: 0;
-  }
-
-  &:hover:after {
-    width: 100%;
-    left: 0;
+  &:hover {
+    cursor: pointer;
+    box-shadow: inset -5em 0 0 0 #c8e9e4, inset 5em 0 0 0 #c8e9e4;
+    border: 0.75px solid #c8e9e4;
   }
 
   &.logout {
