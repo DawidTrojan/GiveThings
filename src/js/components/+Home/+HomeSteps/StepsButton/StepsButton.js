@@ -1,10 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const StepsButton = () => (
+const StepsButton = ({ auth }) => (
   <div className="steps_button">
     <div className="wrapper">
-      <Link to="/logowanie" className="steps_button__link">
+      <Link
+        to={auth.isEmpty ? "/logowanie" : "/oddaj-rzeczy"}
+        className="steps_button__link"
+      >
         <span>Oddaj rzeczy</span>
       </Link>
     </div>

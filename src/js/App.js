@@ -4,6 +4,7 @@ import Home from "./components/+Home";
 import Login from "./containers/Login";
 import Register from "./containers/Register";
 import Logout from "./components/+Logout";
+import GiveThings from "./components/+GiveThings";
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
         <Route path="/logowanie" component={Login} />
         <Route path="/rejestracja" component={Register} />
         <Route path="/wylogowano" component={Logout} />
+        <Route path="/oddaj-rzeczy" component={GiveThings} />
       </Switch>
     </Router>
   );

@@ -2,12 +2,12 @@ import React from "react";
 import Content from "./Content";
 import Nav from "../../../containers/Nav";
 
-const HomeHeader = () => (
+const HomeHeader = ({ auth }) => (
   <header>
     <div className="wrapper">
       <div className="home_header__container">
         <Nav />
-        <Content />
+        <Content auth={auth} />
       </div>
     </div>
   </header>

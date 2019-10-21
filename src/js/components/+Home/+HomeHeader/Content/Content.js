@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Content = () => (
+const Content = ({ auth }) => (
   <div className="content_container">
     <div className="content_title">
       <h2>Zacznij pomagać!</h2>
@@ -11,10 +11,16 @@ const Content = () => (
       <div className="content_decoration"></div>
     </div>
     <div className="content_buttons">
-      <Link to="/logowanie" className="content_link__button">
+      <Link
+        to={auth.isEmpty ? "/logowanie" : "/oddaj-rzeczy"}
+        className="content_link__button"
+      >
         Oddaj rzeczy
       </Link>
-      <Link to="/logowanie" className="content_link__button">
+      <Link
+        to={auth.isEmpty ? "/logowanie" : "/oddaj-rzeczy"}
+        className="content_link__button"
+      >
         Zorganizuj zbiórkę
       </Link>
     </div>
