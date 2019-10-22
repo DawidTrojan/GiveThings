@@ -1,8 +1,9 @@
 .giveThings_container {
   background: url("../../assets/Header-Form-Background@2x.png");
-  background-position: left left;
-  background-size: contain;
+  background-position: left;
+  background-size: 50% 100%;
   background-repeat: no-repeat;
+  min-height: 50rem;
 
   .wrapper {
     height: 100%;
@@ -66,25 +67,36 @@
   margin-right: 5rem;
 
   .steps_box {
-    height: 130px;
-    width: 130px;
+    height: 135px;
+    width: 135px;
     transform: rotate(45deg) translateY(10px);
     border: 0.75px solid #3c3c3c;
     position: relative;
 
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
 
     div {
-      transform: rotate(-45deg);
-      width: 50%;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      text-align: center;
+      padding-bottom: 1.5rem;
 
+      transform: rotate(-45deg);
+      min-width: 100%;
       .steps_number {
         font-size: 28px;
       }
 
       .steps_title {
         font-size: 18px;
+        padding: 2rem 1.6rem;
       }
     }
   }
