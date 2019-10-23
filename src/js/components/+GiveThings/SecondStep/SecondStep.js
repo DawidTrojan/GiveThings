@@ -2,11 +2,11 @@ import React from "react";
 import Bar from "./Bar";
 import Form from "./Form";
 
-const SecondStep = () => {
+const SecondStep = ({ prev, next }) => {
   return (
     <div>
       <Bar />
-      <Form />
+      <Form prev={prev} next={next} />
     </div>
   );
 };

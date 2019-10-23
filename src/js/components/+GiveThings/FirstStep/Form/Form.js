@@ -1,6 +1,6 @@
 import React from "react";
 
-const Form = () => {
+const Form = ({ next }) => {
   return (
     <div className="firstStep_form__container">
       <div className="firstStep_form__wrapper">
@@ -27,7 +27,7 @@ const Form = () => {
             <input type="radio" name="radio" />
             <span>Inne</span>
           </div>
-          <button>Dalej</button>
+          <button onClick={next}>Dalej</button>
         </form>
       </div>
     </div>

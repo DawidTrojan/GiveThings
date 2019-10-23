@@ -2,13 +2,13 @@ import React from "react";
 import Bar from "./Bar";
 import Form from "./Form";
 
-const FirstStep = ({ next }) => {
+const FourthStep = ({ prev, next }) => {
   return (
     <div>
       <Bar />
-      <Form next={next} />
+      <Form prev={prev} next={next} />
     </div>
   );
 };
 
-export default FirstStep;
+export default FourthStep;
