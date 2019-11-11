@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Nav from "../../containers/Nav";
 import GiveThingsTitle from "../+GiveThings/GiveThingsHeader/GiveThingsTitle";
 import GiveThingsSteps from "../+GiveThings/GiveThingsHeader/GiveThingsSteps";

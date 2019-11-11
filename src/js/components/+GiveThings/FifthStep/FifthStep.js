@@ -1,6 +1,6 @@
 import React from "react";
 
-const FourthStep = ({ currStep, prevButton, submitButton }) => {
+const FifthStep = ({ currStep, prevButton, submitButton, form }) => {
   if (currStep !== 5) {
     return null;
   }
@@ -15,13 +15,21 @@ const FourthStep = ({ currStep, prevButton, submitButton }) => {
             <div className="fifthStep_info__item">
               <div className="fiftStep_icon" />
               <div className="fifthStep_info__text">
-                <span>4 worki, ubrania w dobrym stanie, dzieciom</span>
+                <span>
+                  {form.bags}, {form.type},{" "}
+                  {form.helpGroups.map(el => el).join(", ")}
+                </span>
               </div>
             </div>
             <div className="fifthStep_info__item">
               <div className="fiftStep_icon__second" />
               <div className="fifthStep_info__text">
-                <span>dla lokalizacji: Warszawa</span>
+                <span>
+                  dla lokalizacji:{" "}
+                  {!form.localization
+                    ? form.specificLocalization
+                    : form.localization}
+                </span>
               </div>
             </div>
             <div></div>
@@ -32,19 +40,19 @@ const FourthStep = ({ currStep, prevButton, submitButton }) => {
                 <h4>Adres odbioru:</h4>
                 <div className="form_item">
                   <span>Ulica</span>
-                  <span>Ulica</span>
+                  <span>{form.address.street}</span>
                 </div>
                 <div className="form_item">
                   <span>Miasto</span>
-                  <span>Dębica</span>
+                  <span>{form.address.city}</span>
                 </div>
                 <div className="form_item">
                   <span>Kod pocztowy</span>
-                  <span>39-200</span>
+                  <span>{form.address.postCode}</span>
                 </div>
                 <div className="form_item">
                   <span>Numer telefonu</span>
-                  <span>777777777</span>
+                  <span>{form.address.phoneNumber}</span>
                 </div>
               </div>
               <div className="fifth_form__box">
@@ -55,11 +63,11 @@ const FourthStep = ({ currStep, prevButton, submitButton }) => {
                 </div>
                 <div className="form_item">
                   <span>Godzina</span>
-                  <span>17:37</span>
+                  <span>{form.address.time}</span>
                 </div>
                 <div className="form_item">
                   <span>Uwagi dla kuriera</span>
-                  <span>cdsad</span>
+                  <span>{form.address.comments}</span>
                 </div>
               </div>
             </div>
@@ -74,4 +82,4 @@ const FourthStep = ({ currStep, prevButton, submitButton }) => {
   );
 };
 
-export default FourthStep;
+export default FifthStep;

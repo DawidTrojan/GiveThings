@@ -5,7 +5,7 @@
   flex-direction: column;
 
   .steps_header {
-    min-height: 200px;
+    height: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -39,7 +39,7 @@
     background: #f0f1f1;
 
     .wrapper {
-      min-height: 325px;
+      height: 325px;
       display: flex;
       flex-direction: row;
       justify-content: space-evenly;
@@ -118,7 +118,7 @@
   }
 
   .steps_button {
-    min-height: 200px;
+    height: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
