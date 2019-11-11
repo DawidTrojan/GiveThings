@@ -20,7 +20,7 @@ const Form = () => {
       city: "",
       postCode: "",
       phoneNumber: "",
-      date: "",
+      date: new Date(),
       time: "",
       comments: ""
     }
@@ -28,9 +28,8 @@ const Form = () => {
   const [errors, setErrors] = useState({
     type: "",
     bags: "",
-    localization: "",
     helpGroups: "",
-    specificLocalization: "",
+    localization: "",
     address: {
       street: "",
       city: "",
@@ -41,6 +40,13 @@ const Form = () => {
       comments: ""
     }
   });
+
+  const handleDateOnChange = val => {
+    setForm({
+      ...form,
+      address: { date: val }
+    });
+  };
 
   const handleOnChange = e => {
     if (e.target.name === "radio") {
@@ -68,6 +74,10 @@ const Form = () => {
         ...form,
         localization: e.target.value
       });
+      setErrors({
+        ...errors,
+        localization: ""
+      });
     } else if (e.target.type === "checkbox") {
       if (!form.helpGroups.includes(e.target.value)) {
         setForm({
@@ -85,6 +95,10 @@ const Form = () => {
       setForm({
         ...form,
         specificLocalization: e.target.value
+      });
+      setErrors({
+        ...errors,
+        localization: ""
       });
     } else if (e.target.name === "address") {
       setForm({
@@ -114,6 +128,52 @@ const Form = () => {
       errors.bags = "";
     }
 
+    if (!form.helpGroups.length) {
+      isValid = false;
+      errors.helpGroups = "Musisz wybrać komu chcesz pomóc!";
+    } else {
+      errors.helpGroups = "";
+    }
+
+    if (!form.localization && !form.specificLocalization) {
+      isValid = false;
+      errors.localization = "Musisz wybrać miasto!";
+    } else {
+      errors.localization = "";
+    }
+
+    if (form.address.street.length < 2) {
+      isValid = false;
+      errors.address.street =
+        "Nazwa ulicy powinna mieć przynajmniej dwa znaki!";
+    } else {
+      errors.address.street = "";
+    }
+
+    if (form.address.city.length < 2) {
+      isValid = false;
+      errors.address.city = "Nazwa miasta powinna mieć przynajmniej dwa znaki!";
+    } else {
+      errors.address.city = "";
+    }
+
+    if (!/^([0-9]{2})(-[0-9]{3})?$/.test(form.address.postCode)) {
+      isValid = false;
+      errors.address.postCode = "Błędny kod pocztowy!";
+    } else {
+      errors.address.postCode = "";
+    }
+
+    if (
+      form.address.phoneNumber.length !== 9 ||
+      !Number(form.address.phoneNumber)
+    ) {
+      isValid = false;
+      errors.address.phoneNumber = "Numer powinien mieć 9 cyfr!";
+    } else {
+      errors.address.phoneNumber = "";
+    }
+
     setErrors({ ...errors });
 
     return isValid;
@@ -131,22 +191,7 @@ const Form = () => {
     let nextStep = currStep;
     console.log(form);
 
-    if (currStep === 3) {
-      if (!form.helpGroups.length) {
-        setErrors({
-          ...errors,
-          helpGroups: "Komu chcesz pomóc?"
-        });
-      } else {
-        nextStep = nextStep >= 2 ? nextStep + 1 : nextStep + 1;
-        setErrors({
-          ...errors,
-          helpGroups: ""
-        });
-      }
-    } else {
-      nextStep = nextStep >= 2 ? nextStep + 1 : nextStep + 1;
-    }
+    nextStep = nextStep >= 2 ? nextStep + 1 : nextStep + 1;
 
     setCurrStep(nextStep);
   };
@@ -209,13 +254,16 @@ const Form = () => {
         localization={form.localization}
         organization={form.specificLocalization}
         error={errors.helpGroups}
+        localizationError={errors.localization}
       />
       <FourthStep
         currStep={currStep}
         prevButton={prevButton}
         nextButton={nextButton}
         handleChange={handleOnChange}
+        handleDate={handleDateOnChange}
         address={form.address}
+        error={errors.address}
       />
       <FifthStep
         currStep={currStep}

@@ -103,6 +103,8 @@
     }
   }
   .thirdStep_form__buttons {
+    display: flex;
+    align-items: center;
     button {
       width: 180px;
       height: 79px;

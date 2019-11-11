@@ -66,7 +66,7 @@ const FirstStep = ({ nextButton, currStep, handleChange, error, type }) => {
               <span>Inne</span>
             </div>
             {nextButton()}
-            <span style={{ color: "red" }}>{error}</span>
+            <p className="form_error">{error}</p>
           </div>
         </div>
       </div>

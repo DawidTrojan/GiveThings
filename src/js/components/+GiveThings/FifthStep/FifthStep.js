@@ -59,7 +59,7 @@ const FifthStep = ({ currStep, prevButton, submitButton, form }) => {
                 <h4>Termin odbioru:</h4>
                 <div className="form_item">
                   <span>Data</span>
-                  <span>14.01.2020</span>
+                  <span>{form.address.date}</span>
                 </div>
                 <div className="form_item">
                   <span>Godzina</span>

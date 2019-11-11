@@ -42,7 +42,7 @@ const SecondStep = ({
             <div className="secondStep_form__buttons">
               {prevButton()}
               {nextButton()}
-              <span style={{ color: "red" }}>{error}</span>
+              <p className="form_error">{error}</p>
             </div>
           </div>
         </div>

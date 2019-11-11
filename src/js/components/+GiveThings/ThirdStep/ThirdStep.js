@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Bar from "./Bar";
 
 const ThirdStep = ({
@@ -9,7 +9,9 @@ const ThirdStep = ({
   groups,
   organization,
   localization,
-  error
+  error,
+  localizationError,
+  secondError
 }) => {
   if (currStep !== 3) {
     return null;
@@ -113,10 +115,15 @@ const ThirdStep = ({
             </div>
             <div className="thirdStep_form__buttons">
               {prevButton()}
-
-              {nextButton()}
+              {!groups.length ? (
+                <p className="form_error">Wybierz komu chcesz pomóc!</p>
+              ) : (
+                nextButton()
+              )}
             </div>
-            <span>{error}</span>
+            <p className="form_error">{error}</p>
+            <p className="form_error">{secondError}</p>
+            <p className="form_error">{localizationError}</p>
           </div>
         </div>
       </div>

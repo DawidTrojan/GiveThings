@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import Bar from "./Bar";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 const FourthStep = ({
   currStep,
   prevButton,
   nextButton,
   handleChange,
-  address
+  handleDate,
+  address,
+  error
 }) => {
   if (currStep !== 4) {
     return null;
@@ -48,7 +52,6 @@ const FourthStep = ({
                     type="text"
                     name="address"
                     id="postCode"
-                    pattern="[0-9]{2}-[0-9]{3}"
                     onChange={handleChange}
                     value={address.postCode}
                   />
@@ -67,7 +70,7 @@ const FourthStep = ({
               <div className="form_box">
                 <div className="form_box__item" name="date">
                   <span>Data</span>
-                  <input type="text" onChange={handleChange} />
+                  <DatePicker selected={address.date} onChange={handleDate} />
                 </div>
                 <div className="form_box__item">
                   <span>Godzina</span>
@@ -94,6 +97,10 @@ const FourthStep = ({
               {prevButton()}
               {nextButton()}
             </div>
+            <p className="form_error">{error.street}</p>
+            <p className="form_error">{error.city}</p>
+            <p className="form_error">{error.postCode}</p>
+            <p className="form_error">{error.phoneNumber}</p>
           </div>
         </div>
       </div>
