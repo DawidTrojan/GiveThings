@@ -4,9 +4,10 @@ import SecondStep from "../SecondStep";
 import ThirdStep from "../ThirdStep";
 import FourthStep from "../FourthStep";
 import FifthStep from "../FifthStep";
+
 // import FormThanks from "../FormThanks";
 
-const Form = () => {
+const Form = ({ giveThings }) => {
   const [currStep, setCurrStep] = useState(1);
 
   const [form, setForm] = useState({
@@ -20,10 +21,10 @@ const Form = () => {
       city: "",
       postCode: "",
       phoneNumber: "",
-      date: new Date(),
-      time: "",
       comments: ""
-    }
+    },
+    date: new Date(),
+    time: ""
   });
   const [errors, setErrors] = useState({
     type: "",
@@ -44,8 +45,16 @@ const Form = () => {
   const handleDateOnChange = val => {
     setForm({
       ...form,
-      address: { date: val }
+      date: val
     });
+  };
+
+  const handleTimeOnChange = val => {
+    setForm({
+      ...form,
+      time: val
+    });
+    console.log(val);
   };
 
   const handleOnChange = e => {
@@ -174,6 +183,24 @@ const Form = () => {
       errors.address.phoneNumber = "";
     }
 
+    if (form.date < new Date()) {
+      isValid = false;
+      errors.address.date = "Wybierz późniejszą datę!";
+    } else {
+      errors.address.date = "";
+    }
+
+    // if (
+    //   !form.time._i ||
+    //   form.time._d.toString().charAt(16) < 1 ||
+    //   form.time._d.toString().charAt(17) > 7
+    // ) {
+    //   isValid = false;
+    //   errors.address.time = "Wybierz godzinę pomiędzy 10 a 17";
+    // } else {
+    //   errors.address.time = "";
+    // }
+
     setErrors({ ...errors });
 
     return isValid;
@@ -185,6 +212,7 @@ const Form = () => {
     if (!validate()) {
       return errors;
     }
+    giveThings(form);
   };
 
   const stepNext = () => {
@@ -262,8 +290,12 @@ const Form = () => {
         nextButton={nextButton}
         handleChange={handleOnChange}
         handleDate={handleDateOnChange}
+        handleTime={handleTimeOnChange}
         address={form.address}
+        currentDate={form.date}
+        currentTime={form.time}
         error={errors.address}
+        form={form}
       />
       <FifthStep
         currStep={currStep}

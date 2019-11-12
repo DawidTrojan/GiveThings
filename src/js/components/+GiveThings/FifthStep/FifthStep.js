@@ -1,4 +1,5 @@
 import React from "react";
+import Moment from "react-moment";
 
 const FifthStep = ({ currStep, prevButton, submitButton, form }) => {
   if (currStep !== 5) {
@@ -59,11 +60,18 @@ const FifthStep = ({ currStep, prevButton, submitButton, form }) => {
                 <h4>Termin odbioru:</h4>
                 <div className="form_item">
                   <span>Data</span>
-                  <span>{form.address.date}</span>
+                  <span>
+                    <Moment format="DD/MM/YYYY">{form.date}</Moment>
+                  </span>
                 </div>
                 <div className="form_item">
                   <span>Godzina</span>
-                  <span>{form.address.time}</span>
+
+                  {!form.time._d ? null : (
+                    <span>
+                      {form.time._d.getHours()}:{form.time._d.getMinutes()}
+                    </span>
+                  )}
                 </div>
                 <div className="form_item">
                   <span>Uwagi dla kuriera</span>

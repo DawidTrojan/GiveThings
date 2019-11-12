@@ -1,7 +1,7 @@
 import React from "react";
 import Title from "./Title";
 import Form from "./Form";
-import Footer from "./Footer";
+import Footer from "../../../containers/Footer";
 
 const HomeFooter = () => (
   <>

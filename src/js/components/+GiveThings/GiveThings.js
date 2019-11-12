@@ -3,7 +3,7 @@ import Nav from "../../containers/Nav";
 import GiveThingsTitle from "../+GiveThings/GiveThingsHeader/GiveThingsTitle";
 import GiveThingsSteps from "../+GiveThings/GiveThingsHeader/GiveThingsSteps";
 import HomeFooter from "../+Home/+HomeFooter";
-import Form from "./FormSteps";
+import Form from "../../containers/Form";
 
 const GiveThings = () => {
   return (

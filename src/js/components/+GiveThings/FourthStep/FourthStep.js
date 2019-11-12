@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import Bar from "./Bar";
-import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import DatePicker from "react-datepicker";
 
 const FourthStep = ({
   currStep,
@@ -9,6 +9,9 @@ const FourthStep = ({
   nextButton,
   handleChange,
   handleDate,
+  handleTime,
+  currentDate,
+  currentTime,
   address,
   error
 }) => {
@@ -70,17 +73,18 @@ const FourthStep = ({
               <div className="form_box">
                 <div className="form_box__item" name="date">
                   <span>Data</span>
-                  <DatePicker selected={address.date} onChange={handleDate} />
-                </div>
-                <div className="form_box__item">
-                  <span>Godzina</span>
-                  <input
-                    type="text"
-                    name="address"
-                    id="time"
-                    onChange={handleChange}
-                    value={address.time}
+                  <DatePicker
+                    selected={currentDate}
+                    onChange={handleDate}
+                    dateFormat="dd/MM/yyyy"
+                    showSecond={false}
                   />
+                </div>
+                <div className="form_box__item" name="time">
+                  <span>Godzina</span>
+                  <div className="time_picker">
+                    <input type="number" />
+                  </div>
                 </div>
                 <div className="form_box__textarea">
                   <span>Uwagi dla kuriera</span>
@@ -101,6 +105,8 @@ const FourthStep = ({
             <p className="form_error">{error.city}</p>
             <p className="form_error">{error.postCode}</p>
             <p className="form_error">{error.phoneNumber}</p>
+            <p className="form_error">{error.date}</p>
+            <p className="form_error">{error.time}</p>
           </div>
         </div>
       </div>
