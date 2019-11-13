@@ -5,7 +5,8 @@ import ThirdStep from "../ThirdStep";
 import FourthStep from "../FourthStep";
 import FifthStep from "../FifthStep";
 
-// import FormThanks from "../FormThanks";
+import FormThanks from "../FormThanks";
+import { isValid } from "date-fns";
 
 const Form = ({ giveThings }) => {
   const [currStep, setCurrStep] = useState(1);
@@ -41,6 +42,7 @@ const Form = ({ giveThings }) => {
       comments: ""
     }
   });
+  const [isReady, setIsReady] = useState(false);
 
   const handleDateOnChange = val => {
     setForm({
@@ -212,12 +214,12 @@ const Form = ({ giveThings }) => {
     if (!validate()) {
       return errors;
     }
+    setIsReady(true);
     giveThings(form);
   };
 
   const stepNext = () => {
     let nextStep = currStep;
-    console.log(form);
 
     nextStep = nextStep >= 2 ? nextStep + 1 : nextStep + 1;
 
@@ -226,7 +228,6 @@ const Form = ({ giveThings }) => {
 
   const stepPrev = () => {
     let prevStep = currStep;
-    console.log(form);
 
     prevStep = prevStep <= 1 ? 1 : prevStep - 1;
 
@@ -257,53 +258,59 @@ const Form = ({ giveThings }) => {
   };
 
   return (
-    <form onSubmit={handleOnSubmit}>
-      <FirstStep
-        currStep={currStep}
-        nextButton={nextButton}
-        handleChange={handleOnChange}
-        type={form.type}
-        error={errors.type}
-      />
-      <SecondStep
-        currStep={currStep}
-        prevButton={prevButton}
-        nextButton={nextButton}
-        handleChange={handleOnChange}
-        bags={form.bags}
-        error={errors.bags}
-      />
-      <ThirdStep
-        currStep={currStep}
-        prevButton={prevButton}
-        nextButton={nextButton}
-        handleChange={handleOnChange}
-        groups={form.helpGroups}
-        localization={form.localization}
-        organization={form.specificLocalization}
-        error={errors.helpGroups}
-        localizationError={errors.localization}
-      />
-      <FourthStep
-        currStep={currStep}
-        prevButton={prevButton}
-        nextButton={nextButton}
-        handleChange={handleOnChange}
-        handleDate={handleDateOnChange}
-        handleTime={handleTimeOnChange}
-        address={form.address}
-        currentDate={form.date}
-        currentTime={form.time}
-        error={errors.address}
-        form={form}
-      />
-      <FifthStep
-        currStep={currStep}
-        prevButton={prevButton}
-        submitButton={submitButton}
-        form={form}
-      />
-    </form>
+    <>
+      {!isReady ? (
+        <form onSubmit={handleOnSubmit}>
+          <FirstStep
+            currStep={currStep}
+            nextButton={nextButton}
+            handleChange={handleOnChange}
+            type={form.type}
+            error={errors.type}
+          />
+          <SecondStep
+            currStep={currStep}
+            prevButton={prevButton}
+            nextButton={nextButton}
+            handleChange={handleOnChange}
+            bags={form.bags}
+            error={errors.bags}
+          />
+          <ThirdStep
+            currStep={currStep}
+            prevButton={prevButton}
+            nextButton={nextButton}
+            handleChange={handleOnChange}
+            groups={form.helpGroups}
+            localization={form.localization}
+            organization={form.specificLocalization}
+            error={errors.helpGroups}
+            localizationError={errors.localization}
+          />
+          <FourthStep
+            currStep={currStep}
+            prevButton={prevButton}
+            nextButton={nextButton}
+            handleChange={handleOnChange}
+            handleDate={handleDateOnChange}
+            handleTime={handleTimeOnChange}
+            address={form.address}
+            currentDate={form.date}
+            currentTime={form.time}
+            error={errors.address}
+            form={form}
+          />
+          <FifthStep
+            currStep={currStep}
+            prevButton={prevButton}
+            submitButton={submitButton}
+            form={form}
+          />
+        </form>
+      ) : (
+        <FormThanks></FormThanks>
+      )}
+    </>
   );
 };
 

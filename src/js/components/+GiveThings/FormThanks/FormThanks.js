@@ -1,6 +1,6 @@
 import React from "react";
 
-const FirstStep = () => {
+const FormThanks = () => {
   return (
     <div className="formThanks_container">
       <div className="formThanks_wrapper">
@@ -16,4 +16,4 @@ const FirstStep = () => {
   );
 };
 
-export default FirstStep;
+export default FormThanks;

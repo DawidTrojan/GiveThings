@@ -4,13 +4,10 @@ import { compose } from "redux";
 import { firestoreConnect } from "react-redux-firebase";
 
 const mapState = state => {
-  console.log(state);
   return {
-    things: state.firebaseReducer.ordered.things
+    things: state.firestoreReducer.ordered.things,
+    auth: state.firebaseReducer.auth
   };
 };
 
-export default compose(
-  connect(mapState),
-  firestoreConnect([{ collection: "things" }])
-)(Footer);
+export default compose(firestoreConnect(["things"]), connect(mapState))(Footer);

@@ -4,9 +4,11 @@ import { authReducer } from "./auth/reducers";
 import { thingsReducer } from "./collection/reducers";
 import { firestoreReducer } from "redux-firestore";
 
-export default combineReducers({
+const rootReducer = combineReducers({
   firebaseReducer,
   authReducer,
   thingsReducer,
   firestoreReducer
 });
+
+export default rootReducer;

@@ -1,3 +1,5 @@
+import "@firebase/firestore";
+
 export const SIGNED_IN = "[signin-success] Signin success";
 export const SIGN_IN_ERROR = "[sign-error] Signin rrror";
 
@@ -9,7 +11,6 @@ export const SIGN_OUT = "[signout] Signout success";
 export const signIn = (email, password) => {
   return (dispatch, getState, { getFirebase }) => {
     const firebase = getFirebase();
-
     firebase
       .auth()
       .signInWithEmailAndPassword(email, password)
@@ -38,7 +39,7 @@ export const signOut = () => {
 export const signUp = newUser => {
   return (dispatch, getState, { getFirebase, getFirestore }) => {
     const firebase = getFirebase();
-    const firestore = getFirestore();
+    const firestore = firebase.firestore();
 
     firebase
       .auth()

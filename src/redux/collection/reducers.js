@@ -1,23 +1,14 @@
 import { SEND_THINGS, SEND_THINGS_ERROR } from "./actions";
 
-const initState = {
-  success: null,
-  error: null
-};
+const initState = {};
 
 export const thingsReducer = (state = initState, action) => {
   switch (action.type) {
     case SEND_THINGS:
-      return {
-        ...state,
-        success: true
-      };
+      return state;
 
     case SEND_THINGS_ERROR:
-      return {
-        ...state,
-        error: true
-      };
+      return state;
 
     default:
       return state;
