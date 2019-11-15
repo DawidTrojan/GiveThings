@@ -66,6 +66,18 @@
         border: 0.75px solid #3c3c3c;
       }
 
+      .fourthStep_input {
+        border: 0.75px solid #3c3c3c;
+      }
+      .react-datepicker__input-container {
+        input {
+          border: none;
+        }
+      }
+      .react-datepicker-ignore-onclickoutside {
+        border: 0.75px solid #3c3c3c;
+      }
+
       .time-picker {
         width: 256px;
         height: 40px;

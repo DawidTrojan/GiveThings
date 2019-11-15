@@ -10,8 +10,7 @@ const ThirdStep = ({
   organization,
   localization,
   error,
-  localizationError,
-  secondError
+  localizationError
 }) => {
   if (currStep !== 3) {
     return null;
@@ -31,6 +30,7 @@ const ThirdStep = ({
                 name="localization"
                 id=""
                 onChange={handleChange}
+                style={localizationError ? { borderColor: "red" } : null}
               >
                 <option value="1" disabled>
                   -- wybierz --
@@ -107,6 +107,7 @@ const ThirdStep = ({
                 Wpisz nazwę konkretnej organizacji (opcjonalnie)
               </span>
               <input
+                style={localizationError ? { borderColor: "red" } : null}
                 type="text"
                 name="organization"
                 onChange={handleChange}
@@ -121,8 +122,6 @@ const ThirdStep = ({
                 nextButton()
               )}
             </div>
-            <p className="form_error">{error}</p>
-            <p className="form_error">{secondError}</p>
             <p className="form_error">{localizationError}</p>
           </div>
         </div>

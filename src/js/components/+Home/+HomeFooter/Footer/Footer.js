@@ -1,7 +1,6 @@
 import React from "react";
 
 const Footer = ({ things, auth }) => {
-  console.log(things);
   return (
     <div className="footer_container">
       <div className="footer_box">

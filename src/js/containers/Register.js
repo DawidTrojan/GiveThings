@@ -4,9 +4,7 @@ import { signUp } from "../../redux/auth/actions";
 
 const mapState = state => {
   return {
-    auth: state.firebaseReducer.auth,
-    authError: state.authReducer.authError,
-    authSuccess: state.authReducer.authSuccess
+    auth: state.firebaseReducer.auth
   };
 };
 
@@ -16,7 +14,4 @@ const mapDispatch = dispatch => {
   };
 };
 
-export default connect(
-  mapState,
-  mapDispatch
-)(Register);
+export default connect(mapState, mapDispatch)(Register);

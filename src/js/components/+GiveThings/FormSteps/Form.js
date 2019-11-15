@@ -4,12 +4,11 @@ import SecondStep from "../SecondStep";
 import ThirdStep from "../ThirdStep";
 import FourthStep from "../FourthStep";
 import FifthStep from "../FifthStep";
-
 import FormThanks from "../FormThanks";
-import { isValid } from "date-fns";
 
 const Form = ({ giveThings }) => {
   const [currStep, setCurrStep] = useState(1);
+  const [isReady, setIsReady] = useState(false);
 
   const [form, setForm] = useState({
     type: "",
@@ -42,7 +41,6 @@ const Form = ({ giveThings }) => {
       comments: ""
     }
   });
-  const [isReady, setIsReady] = useState(false);
 
   const handleDateOnChange = val => {
     setForm({
@@ -56,7 +54,6 @@ const Form = ({ giveThings }) => {
       ...form,
       time: val
     });
-    console.log(val);
   };
 
   const handleOnChange = e => {
@@ -64,7 +61,7 @@ const Form = ({ giveThings }) => {
       if (e.target.checked) {
         setForm({
           ...form,
-          type: e.target.value
+          type: [e.target.value]
         });
         setErrors({
           ...errors,
@@ -74,7 +71,7 @@ const Form = ({ giveThings }) => {
     } else if (e.target.name === "bag") {
       setForm({
         ...form,
-        bags: e.target.value
+        bags: [e.target.value]
       });
       setErrors({
         ...errors,
@@ -214,8 +211,8 @@ const Form = ({ giveThings }) => {
     if (!validate()) {
       return errors;
     }
-    setIsReady(true);
     giveThings(form);
+    setIsReady(true);
   };
 
   const stepNext = () => {

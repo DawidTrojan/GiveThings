@@ -22,6 +22,7 @@ const FirstStep = ({ nextButton, currStep, handleChange, error, type }) => {
                 checked={
                   type === "ubrania, które nadają się do ponownego użycia"
                 }
+                style={error ? { background: "red" } : null}
               />
               <span>ubrania, które nadają się do ponownego użycia</span>
             </div>
@@ -32,6 +33,7 @@ const FirstStep = ({ nextButton, currStep, handleChange, error, type }) => {
                 value="ubrania, do wyrzucenia"
                 onChange={handleChange}
                 checked={type === "ubrania, do wyrzucenia"}
+                style={error ? { background: "red" } : null}
               />
               <span>ubrania, do wyrzucenia</span>
             </div>
@@ -42,6 +44,7 @@ const FirstStep = ({ nextButton, currStep, handleChange, error, type }) => {
                 value="zabawki"
                 onChange={handleChange}
                 checked={type === "zabawki"}
+                style={error ? { background: "red" } : null}
               />
               <span>zabawki</span>
             </div>
@@ -52,6 +55,7 @@ const FirstStep = ({ nextButton, currStep, handleChange, error, type }) => {
                 value="książki"
                 onChange={handleChange}
                 checked={type === "książki"}
+                style={error ? { background: "red" } : null}
               />
               <span>książki</span>
             </div>
@@ -62,6 +66,7 @@ const FirstStep = ({ nextButton, currStep, handleChange, error, type }) => {
                 value="Inne"
                 onChange={handleChange}
                 checked={type === "Inne"}
+                style={error ? { background: "red" } : null}
               />
               <span>Inne</span>
             </div>

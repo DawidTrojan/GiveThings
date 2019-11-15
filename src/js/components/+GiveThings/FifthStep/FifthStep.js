@@ -17,8 +17,7 @@ const FifthStep = ({ currStep, prevButton, submitButton, form }) => {
               <div className="fiftStep_icon" />
               <div className="fifthStep_info__text">
                 <span>
-                  {form.bags}, {form.type},{" "}
-                  {form.helpGroups.map(el => el).join(", ")}
+                  {form.bags}, {form.type}, {form.helpGroups.join(", ")}
                 </span>
               </div>
             </div>

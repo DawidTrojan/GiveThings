@@ -28,6 +28,7 @@ const SecondStep = ({
                 id="secondStep_select"
                 name="bag"
                 onChange={handleChange}
+                style={error ? { borderColor: "red" } : null}
               >
                 <option value="-1" disabled>
                   -- wybierz --

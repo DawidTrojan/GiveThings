@@ -32,6 +32,7 @@ const FourthStep = ({
                 <div className="form_box__item">
                   <span>Ulica</span>
                   <input
+                    style={error.street ? { borderColor: "red" } : null}
                     type="text"
                     name="address"
                     id="street"
@@ -42,6 +43,7 @@ const FourthStep = ({
                 <div className="form_box__item">
                   <span>Miasto</span>
                   <input
+                    style={error.city ? { borderColor: "red" } : null}
                     type="text"
                     name="address"
                     id="city"
@@ -52,6 +54,7 @@ const FourthStep = ({
                 <div className="form_box__item">
                   <span>Kod pocztowy</span>
                   <input
+                    style={error.postCode ? { borderColor: "red" } : null}
                     type="text"
                     name="address"
                     id="postCode"
@@ -62,6 +65,7 @@ const FourthStep = ({
                 <div className="form_box__item">
                   <span>Numer telefonu</span>
                   <input
+                    style={error.phoneNumber ? { borderColor: "red" } : null}
                     type="text"
                     name="address"
                     id="phoneNumber"
@@ -73,12 +77,17 @@ const FourthStep = ({
               <div className="form_box">
                 <div className="form_box__item" name="date">
                   <span>Data</span>
-                  <DatePicker
-                    selected={currentDate}
-                    onChange={handleDate}
-                    dateFormat="dd/MM/yyyy"
-                    showSecond={false}
-                  />
+                  <div
+                    className="fourthStep_input"
+                    style={error.date ? { borderColor: "red" } : null}
+                  >
+                    <DatePicker
+                      selected={currentDate}
+                      onChange={handleDate}
+                      dateFormat="dd/MM/yyyy"
+                      showSecond={false}
+                    />
+                  </div>
                 </div>
                 <div className="form_box__item" name="time">
                   <span>Godzina</span>
