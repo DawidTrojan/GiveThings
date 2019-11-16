@@ -13,7 +13,8 @@ const FourthStep = ({
   currentDate,
   currentTime,
   address,
-  error
+  error,
+  dateError
 }) => {
   if (currStep !== 4) {
     return null;
@@ -79,7 +80,7 @@ const FourthStep = ({
                   <span>Data</span>
                   <div
                     className="fourthStep_input"
-                    style={error.date ? { borderColor: "red" } : null}
+                    style={dateError ? { borderColor: "red" } : null}
                   >
                     <DatePicker
                       selected={currentDate}
@@ -114,7 +115,7 @@ const FourthStep = ({
             <p className="form_error">{error.city}</p>
             <p className="form_error">{error.postCode}</p>
             <p className="form_error">{error.phoneNumber}</p>
-            <p className="form_error">{error.date}</p>
+            <p className="form_error">{dateError}</p>
             <p className="form_error">{error.time}</p>
           </div>
         </div>

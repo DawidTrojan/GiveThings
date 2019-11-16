@@ -9,6 +9,7 @@ import FormThanks from "../FormThanks";
 const Form = ({ giveThings }) => {
   const [currStep, setCurrStep] = useState(1);
   const [isReady, setIsReady] = useState(false);
+  const [isValid, setIsValid] = useState(true);
 
   const [form, setForm] = useState({
     type: "",
@@ -36,16 +37,20 @@ const Form = ({ giveThings }) => {
       city: "",
       postCode: "",
       phoneNumber: "",
-      date: "",
-      time: "",
       comments: ""
-    }
+    },
+    date: "",
+    time: ""
   });
 
   const handleDateOnChange = val => {
     setForm({
       ...form,
       date: val
+    });
+    setErrors({
+      ...errors,
+      date: ""
     });
   };
 
@@ -61,7 +66,7 @@ const Form = ({ giveThings }) => {
       if (e.target.checked) {
         setForm({
           ...form,
-          type: [e.target.value]
+          type: e.target.value
         });
         setErrors({
           ...errors,
@@ -71,7 +76,7 @@ const Form = ({ giveThings }) => {
     } else if (e.target.name === "bag") {
       setForm({
         ...form,
-        bags: [e.target.value]
+        bags: e.target.value
       });
       setErrors({
         ...errors,
@@ -114,6 +119,13 @@ const Form = ({ giveThings }) => {
         address: {
           ...form.address,
           [e.target.id]: e.target.value
+        }
+      });
+      setErrors({
+        ...errors,
+        address: {
+          ...errors.address,
+          [e.target.id]: ""
         }
       });
     }
@@ -184,9 +196,9 @@ const Form = ({ giveThings }) => {
 
     if (form.date < new Date()) {
       isValid = false;
-      errors.address.date = "Wybierz późniejszą datę!";
+      errors.date = "Wybierz późniejszą datę!";
     } else {
-      errors.address.date = "";
+      errors.date = "";
     }
 
     // if (
@@ -209,6 +221,7 @@ const Form = ({ giveThings }) => {
     e.preventDefault();
 
     if (!validate()) {
+      setIsValid(false);
       return errors;
     }
     giveThings(form);
@@ -295,6 +308,7 @@ const Form = ({ giveThings }) => {
             currentDate={form.date}
             currentTime={form.time}
             error={errors.address}
+            dateError={errors.date}
             form={form}
           />
           <FifthStep
@@ -302,6 +316,8 @@ const Form = ({ giveThings }) => {
             prevButton={prevButton}
             submitButton={submitButton}
             form={form}
+            isValid={isValid}
+            errors={errors}
           />
         </form>
       ) : (

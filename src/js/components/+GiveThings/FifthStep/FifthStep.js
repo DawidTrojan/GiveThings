@@ -1,7 +1,14 @@
 import React from "react";
 import Moment from "react-moment";
 
-const FifthStep = ({ currStep, prevButton, submitButton, form }) => {
+const FifthStep = ({
+  currStep,
+  prevButton,
+  submitButton,
+  form,
+  isValid,
+  errors
+}) => {
   if (currStep !== 5) {
     return null;
   }
@@ -16,9 +23,19 @@ const FifthStep = ({ currStep, prevButton, submitButton, form }) => {
             <div className="fifthStep_info__item">
               <div className="fiftStep_icon" />
               <div className="fifthStep_info__text">
-                <span>
-                  {form.bags}, {form.type}, {form.helpGroups.join(", ")}
-                </span>
+                {!form.type ? null : (
+                  <span>
+                    {form.type}
+                    {", "}
+                  </span>
+                )}
+                {!form.bags ? null : (
+                  <span>
+                    {form.bags}
+                    {", "}
+                  </span>
+                )}
+                <span>{form.helpGroups.map(el => el).join(", ")}</span>
               </div>
             </div>
             <div className="fifthStep_info__item">
@@ -82,6 +99,9 @@ const FifthStep = ({ currStep, prevButton, submitButton, form }) => {
               {prevButton()}
               {submitButton()}
             </div>
+            {!isValid ? (
+              <p className="form_error">Formularz zawiera błędy!</p>
+            ) : null}
           </div>
         </div>
       </div>
