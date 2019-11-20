@@ -2,6 +2,7 @@ import React from "react";
 import Bar from "./Bar";
 import "react-datepicker/dist/react-datepicker.css";
 import DatePicker from "react-datepicker";
+import TimeField from "react-simple-timefield";
 
 const FourthStep = ({
   currStep,
@@ -92,9 +93,12 @@ const FourthStep = ({
                 </div>
                 <div className="form_box__item" name="time">
                   <span>Godzina</span>
-                  <div className="time_picker">
-                    <input type="number" />
-                  </div>
+                  <TimeField
+                    value={currentTime.toString()}
+                    onChange={handleTime}
+                    colon=":"
+                    input={<input type="text" className="time_input" />}
+                  />
                 </div>
                 <div className="form_box__textarea">
                   <span>Uwagi dla kuriera</span>

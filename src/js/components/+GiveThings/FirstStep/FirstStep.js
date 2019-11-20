@@ -5,6 +5,7 @@ const FirstStep = ({ nextButton, currStep, handleChange, error, type }) => {
   if (currStep !== 1) {
     return null;
   }
+
   return (
     <div>
       <Bar />
@@ -23,7 +24,9 @@ const FirstStep = ({ nextButton, currStep, handleChange, error, type }) => {
                   type === "ubrania które nadają się do ponownego użycia"
                 }
               />
-              <span>ubrania, które nadają się do ponownego użycia</span>
+              <span style={error ? { color: "red" } : null}>
+                ubrania, które nadają się do ponownego użycia
+              </span>
             </div>
             <div className="firstStep_form__inputBox">
               <input
@@ -33,7 +36,9 @@ const FirstStep = ({ nextButton, currStep, handleChange, error, type }) => {
                 onChange={handleChange}
                 checked={type === "ubrania do wyrzucenia"}
               />
-              <span>ubrania, do wyrzucenia</span>
+              <span style={error ? { color: "red" } : null}>
+                ubrania, do wyrzucenia
+              </span>
             </div>
             <div className="firstStep_form__inputBox">
               <input
@@ -43,7 +48,7 @@ const FirstStep = ({ nextButton, currStep, handleChange, error, type }) => {
                 onChange={handleChange}
                 checked={type === "zabawki"}
               />
-              <span>zabawki</span>
+              <span style={error ? { color: "red" } : null}>zabawki</span>
             </div>
             <div className="firstStep_form__inputBox">
               <input
@@ -53,7 +58,7 @@ const FirstStep = ({ nextButton, currStep, handleChange, error, type }) => {
                 onChange={handleChange}
                 checked={type === "książki"}
               />
-              <span>książki</span>
+              <span style={error ? { color: "red" } : null}>książki</span>
             </div>
             <div className="firstStep_form__inputBox">
               <input
@@ -63,12 +68,12 @@ const FirstStep = ({ nextButton, currStep, handleChange, error, type }) => {
                 onChange={handleChange}
                 checked={type === "Inne"}
               />
-              <span>Inne</span>
+              <span style={error ? { color: "red" } : null}>Inne</span>
             </div>
             {nextButton()}
-            <p className="form_error">{error}</p>
           </div>
         </div>
+        <p className="form_error">{error}</p>
       </div>
     </div>
   );

@@ -2,15 +2,17 @@ import React from "react";
 import Content from "./Content";
 import Nav from "../../../containers/Nav";
 
-const HomeHeader = ({ auth }) => (
-  <header>
-    <div className="wrapper">
-      <div className="home_header__container">
-        <Nav />
-        <Content auth={auth} />
+const HomeHeader = ({ auth }) => {
+  return (
+    <header>
+      <div className="wrapper">
+        <div className="home_header__container">
+          <Nav />
+          <Content auth={auth} />
+        </div>
       </div>
-    </div>
-  </header>
-);
+    </header>
+  );
+};
 
 export default HomeHeader;

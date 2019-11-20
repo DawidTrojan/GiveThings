@@ -12,18 +12,6 @@ const Footer = ({ things, auth }) => {
           <div className="instagram" />
         </div>
       </div>
-      <div>
-        {!things
-          ? null
-          : things.map(el =>
-              el.authorId !== auth.uid ? null : (
-                <div key={el.id}>
-                  <span>{el.id}</span>
-                  <span>{el.bags}</span>
-                </div>
-              )
-            )}
-      </div>
     </div>
   );
 };

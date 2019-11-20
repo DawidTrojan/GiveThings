@@ -14,7 +14,7 @@ const Nav = ({ auth, profile }) => {
   return (
     <div className="nav_container">
       <div className="nav_buttons">{links}</div>
-      <NavLinks />
+      <NavLinks profile={profile} links={links} />
     </div>
   );
 };

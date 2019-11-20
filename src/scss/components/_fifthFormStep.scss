@@ -59,36 +59,10 @@
         width: 25%;
       }
 
-      input {
-        padding: 0 1px;
-        width: 256px;
-        height: 40px;
-        background: transparent;
-        outline: none;
-        border: 0.75px solid #3c3c3c;
-      }
-
-      textarea {
-        width: 256px;
-        min-height: 100px;
-        background: transparent;
-        outline: none;
-        border: 0.75px solid #3c3c3c;
-      }
-
       .form_item {
         min-height: 40px;
         width: 100%;
         display: flex;
-
-        margin-bottom: 1rem;
-      }
-
-      .form_textarea {
-        height: 120px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
 
         margin-bottom: 1rem;
       }

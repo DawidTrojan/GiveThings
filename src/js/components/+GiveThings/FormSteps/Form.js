@@ -25,7 +25,7 @@ const Form = ({ giveThings }) => {
       comments: ""
     },
     date: new Date(),
-    time: ""
+    time: "12:00"
   });
   const [errors, setErrors] = useState({
     type: "",
@@ -54,7 +54,7 @@ const Form = ({ giveThings }) => {
     });
   };
 
-  const handleTimeOnChange = val => {
+  const handleTimeOnChange = (e, val) => {
     setForm({
       ...form,
       time: val
@@ -201,16 +201,12 @@ const Form = ({ giveThings }) => {
       errors.date = "";
     }
 
-    // if (
-    //   !form.time._i ||
-    //   form.time._d.toString().charAt(16) < 1 ||
-    //   form.time._d.toString().charAt(17) > 7
-    // ) {
-    //   isValid = false;
-    //   errors.address.time = "Wybierz godzinę pomiędzy 10 a 17";
-    // } else {
-    //   errors.address.time = "";
-    // }
+    if (!form.time || form.time.charAt(0) < 1 || form.time.charAt(1) > 7) {
+      isValid = false;
+      errors.address.time = "Wybierz godzinę pomiędzy 10 a 17";
+    } else {
+      errors.address.time = "";
+    }
 
     setErrors({ ...errors });
 

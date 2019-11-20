@@ -1,14 +1,9 @@
 .home_aboutUs__container {
-  height: 50rem;
+  height: 100vh;
   min-width: 100%;
-  margin-top: 1rem;
-
-  .wrapper {
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .aboutUs_image_container {

@@ -1,6 +1,6 @@
 import React from "react";
 import Title from "./Title";
-import Form from "./Form";
+import MessageForm from "../../../containers/MessageForm";
 import Footer from "../../../containers/Footer";
 
 const HomeFooter = () => (
@@ -9,7 +9,7 @@ const HomeFooter = () => (
       <div className="wrapper">
         <div className="home_footer__box">
           <Title />
-          <Form />
+          <MessageForm />
         </div>
         <Footer />
       </div>

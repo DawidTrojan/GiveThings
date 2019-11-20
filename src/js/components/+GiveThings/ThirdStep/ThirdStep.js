@@ -32,9 +32,7 @@ const ThirdStep = ({
                 onChange={handleChange}
                 style={localizationError ? { borderColor: "red" } : null}
               >
-                <option value="1" disabled>
-                  -- wybierz --
-                </option>
+                <option value="">-- wybierz --</option>
                 <option value="Poznań">Poznań</option>
                 <option value="Warszawa">Warszawa</option>
                 <option value="Kraków">Kraków</option>

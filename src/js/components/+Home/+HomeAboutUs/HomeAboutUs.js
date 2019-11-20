@@ -4,10 +4,8 @@ import Image from "./Image";
 
 const HomeAboutUs = () => (
   <div className="home_aboutUs__container">
-    <div className="wrapper">
-      <Info />
-      <Image />
-    </div>
+    <Info />
+    <Image />
   </div>
 );
 

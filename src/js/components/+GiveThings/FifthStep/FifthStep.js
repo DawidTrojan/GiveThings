@@ -82,16 +82,19 @@ const FifthStep = ({
                 </div>
                 <div className="form_item">
                   <span>Godzina</span>
-
-                  {!form.time._d ? null : (
-                    <span>
-                      {form.time._d.getHours()}:{form.time._d.getMinutes()}
-                    </span>
-                  )}
+                  <span>{form.time}</span>
                 </div>
                 <div className="form_item">
                   <span>Uwagi dla kuriera</span>
-                  <span>{form.address.comments}</span>
+                  <span
+                    style={
+                      form.address.comments.length > 15
+                        ? { textOverflow: "ellipsis", overflow: "hidden" }
+                        : null
+                    }
+                  >
+                    {form.address.comments}
+                  </span>
                 </div>
               </div>
             </div>

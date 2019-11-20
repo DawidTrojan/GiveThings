@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import axios from "axios";
 
-const Form = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
+const Form = ({ contact }) => {
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    message: ""
+  });
   const [success, setSuccess] = useState("");
   const [errors, setErrors] = useState({
     name: "",
@@ -12,36 +13,31 @@ const Form = () => {
     message: ""
   });
 
-  const handleNameOnChange = e => {
-    setName(e.target.value);
-  };
-
-  const handleEmailOnChange = e => {
-    setEmail(e.target.value);
-  };
-
-  const handleMessageOnChange = e => {
-    setMessage(e.target.value);
+  const handleOnChange = e => {
+    setForm({
+      ...form,
+      [e.target.name]: e.target.value
+    });
   };
 
   const validate = () => {
     let isValid = true;
 
-    if (!name || name.indexOf(" ") > 0) {
+    if (!form.name || form.name.indexOf(" ") > 0) {
       isValid = false;
       errors.name = "Podane imię jest nieprawidłowe!";
     } else {
       errors.name = "";
     }
 
-    if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email)) {
+    if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(form.email)) {
       isValid = false;
       errors.email = "Podany email jest nieprawidłowy!";
     } else {
       errors.email = "";
     }
 
-    if (message.length < 120) {
+    if (form.message.length < 120) {
       isValid = false;
       errors.message = "Wiadomość musi mieć conajmniej 120 znaków!";
     } else {
@@ -57,19 +53,15 @@ const Form = () => {
 
   const handleOnSubmit = e => {
     e.preventDefault();
-    axios
-      .post("https://fer-api.coderslab.pl/v1/portfolio/contact", {
-        name,
-        email,
-        message
-      })
-      .then(result => console.log(result.data))
-      .catch(err => console.log(err.response.data.errors));
 
     if (validate()) {
-      setName("");
-      setEmail("");
-      setMessage("");
+      setForm({
+        ...form,
+        name: "",
+        email: "",
+        message: ""
+      });
+      contact(form);
       setSuccess("Wiadomość została wysłana! Wkrótce się skontaktujemy.");
     } else {
       setSuccess("");
@@ -86,9 +78,9 @@ const Form = () => {
           <input
             type="text"
             placeholder="Krzysztof"
-            value={name}
+            value={form.name}
             name="name"
-            onChange={handleNameOnChange}
+            onChange={handleOnChange}
           />
           <span>{errors.name}</span>
         </div>
@@ -96,9 +88,9 @@ const Form = () => {
           <h5>Wpisz swój email</h5>
           <input
             placeholder="abc@xyz.pl"
-            value={email}
+            value={form.email}
             name="email"
-            onChange={handleEmailOnChange}
+            onChange={handleOnChange}
           />
           <span>{errors.email}</span>
         </div>
@@ -106,8 +98,8 @@ const Form = () => {
       <div className="form_textarea__box">
         <h5>Wpisz swoją wiadomość</h5>
         <textarea
-          value={message}
-          onChange={handleMessageOnChange}
+          value={form.message}
+          onChange={handleOnChange}
           name="message"
           placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
         />
