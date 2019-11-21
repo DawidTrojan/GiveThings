@@ -2,6 +2,7 @@
 @import "./components/homeHeader";
 @import "./settings/fonts";
 @import "./settings/colors";
+@import "./settings/mixins";
 @import "./components/wrapper";
 @import "./components/homeThreeColumns";
 @import "./components/home";
@@ -24,4 +25,5 @@
 
 body {
   font-family: $font-base;
+  font-size: 16px;
 }

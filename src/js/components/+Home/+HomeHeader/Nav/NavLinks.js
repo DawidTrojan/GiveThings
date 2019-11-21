@@ -2,12 +2,12 @@ import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-scroll";
 import { NavLink } from "react-router-dom";
 
-const NavLinks = ({ profile, links }) => {
+const NavLinks = ({ links }) => {
   const [isOpenNav, setIsOpenNav] = useState(false);
 
   const toggleNav = () => setIsOpenNav(!isOpenNav);
 
-  const hideMenu = e => {
+  const toggleAfterClick = e => {
     if (e && e.relatedTarget) {
       e.relatedTarget.click();
     }
@@ -41,7 +41,7 @@ const NavLinks = ({ profile, links }) => {
         <ul className={!isOpenNav ? "nav_list" : "toggle_nav__list"}>
           <div className="toggle_auth__links">{links}</div>
           <li>
-            <NavLink onClick={hideMenu} className="nav_navLink" to="/">
+            <NavLink onClick={toggleAfterClick} className="nav_navLink" to="/">
               Start
             </NavLink>
           </li>
@@ -50,7 +50,7 @@ const NavLinks = ({ profile, links }) => {
           </div>
           <li>
             <Link
-              onClick={hideMenu}
+              onClick={toggleAfterClick}
               to="steps_container"
               duration={500}
               smooth={true}
@@ -63,7 +63,7 @@ const NavLinks = ({ profile, links }) => {
           </div>
           <li>
             <Link
-              onClick={hideMenu}
+              onClick={toggleAfterClick}
               to="home_aboutUs__container"
               className="ten"
               duration={500}
@@ -77,7 +77,7 @@ const NavLinks = ({ profile, links }) => {
           </div>
           <li>
             <Link
-              onClick={hideMenu}
+              onClick={toggleAfterClick}
               to="help_info__container"
               duration={500}
               smooth={true}
@@ -90,7 +90,7 @@ const NavLinks = ({ profile, links }) => {
           </div>
           <li>
             <Link
-              onClick={hideMenu}
+              onClick={toggleAfterClick}
               to="home_footer__container"
               duration={500}
               smooth={true}
@@ -102,9 +102,8 @@ const NavLinks = ({ profile, links }) => {
             <div className="toggleNav_decoration"></div>
           </div>
           <i
-            onClick={toggleNav}
-            className="material-icons burger_menu"
-            id="close"
+            onClick={toggleAfterClick}
+            className="material-icons burger_menu close"
           >
             close
           </i>

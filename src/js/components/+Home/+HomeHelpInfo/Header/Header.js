@@ -8,22 +8,20 @@ const Header = () => {
   const [isActiveOrganization, setIsActiveOrganization] = useState(false);
   const [isActiveLocal, setIsActiveLocal] = useState(false);
 
-  const handleClickFundations = () => {
-    setIsActiveOrganization(false);
-    setIsActiveLocal(false);
-    setIsActiveFundation(true);
-  };
-
-  const handleClickOrganizations = () => {
-    setIsActiveFundation(false);
-    setIsActiveLocal(false);
-    setIsActiveOrganization(true);
-  };
-
-  const handleClickLocal = () => {
-    setIsActiveOrganization(false);
-    setIsActiveFundation(false);
-    setIsActiveLocal(true);
+  const handleOnClick = e => {
+    if (e.target.id === "fundations") {
+      setIsActiveOrganization(false);
+      setIsActiveLocal(false);
+      setIsActiveFundation(true);
+    } else if (e.target.id === "organizations") {
+      setIsActiveFundation(false);
+      setIsActiveLocal(false);
+      setIsActiveOrganization(true);
+    } else if (e.target.id === "local") {
+      setIsActiveFundation(false);
+      setIsActiveLocal(true);
+      setIsActiveOrganization(false);
+    }
   };
 
   return (
@@ -33,27 +31,31 @@ const Header = () => {
         <div className="help_info__decoration"></div>
         <div className="help_info__buttons">
           {isActiveFundation ? (
-            <span className="active" onClick={handleClickFundations}>
+            <span id="fundations" className="active" onClick={handleOnClick}>
               Fundacjom
             </span>
           ) : (
-            <span onClick={handleClickFundations}>Fundacjom</span>
+            <span id="fundations" onClick={handleOnClick}>
+              Fundacjom
+            </span>
           )}
           {isActiveOrganization ? (
-            <span className="active" onClick={handleClickOrganizations}>
+            <span id="organizations" className="active" onClick={handleOnClick}>
               Organizajom pozarządowym
             </span>
           ) : (
-            <span onClick={handleClickOrganizations}>
+            <span id="organizations" onClick={handleOnClick}>
               Organizajom pozarządowym
             </span>
           )}
           {isActiveLocal ? (
-            <span className="active" onClick={handleClickLocal}>
+            <span id="local" className="active" onClick={handleOnClick}>
               Lokalnym zbiórkom
             </span>
           ) : (
-            <span onClick={handleClickLocal}>Lokalnym zbiórkom</span>
+            <span id="local" onClick={handleOnClick}>
+              Lokalnym zbiórkom
+            </span>
           )}
         </div>
       </div>

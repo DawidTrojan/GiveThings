@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 const Content = ({ auth }) => (
   <div className="content_container">
     <div className="content_title">
-      <h2>Zacznij pomagać!</h2>
-      <h2>Oddaj niechciane rzeczy w zaufane ręce</h2>
+      <h1>Zacznij pomagać!</h1>
+      <h1>Oddaj niechciane rzeczy w zaufane ręce</h1>
     </div>
     <div className="content_decoration__box">
       <div className="content_decoration"></div>

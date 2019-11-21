@@ -1,23 +1,29 @@
+@import "../settings/colors";
+@import "../settings/mixins";
+
 .steps_container {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  @include flex-center-column;
 
   .steps_header {
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    width: 50%;
+    padding: 5rem 0;
+
+    .wrapper {
+      height: 100%;
+      text-align: center;
+      @include flex-center-column;
+    }
   }
 
   h4 {
     margin-bottom: 1.5rem;
     letter-spacing: -0.76px;
-    color: #3c3c3c;
-    font-size: 38px;
+    color: $base-font-color;
+    font-size: 2.375rem;
+
+    @media (max-width: 991px) {
+      font-size: 2.125rem;
+    }
   }
 
   .steps_decoration {
@@ -31,36 +37,57 @@
 
   .steps_icons__container {
     min-width: 100%;
-    background: #f0f1f1;
+    background: $background-second-color;
 
     .wrapper {
-      height: 325px;
+      padding: 5rem 0;
       display: flex;
       flex-direction: row;
       justify-content: space-evenly;
       align-items: center;
       text-align: center;
 
-      .steps_icons__box {
-        display: flex;
+      @media (max-width: 991px) {
         flex-direction: column;
-        justify-content: space-evenly;
-        align-items: center;
-        max-width: 12rem;
-        max-height: 13rem;
+      }
+
+      .steps_icons__box {
+        @include flex-center-column;
+        margin-right: 1.5rem;
+
+        &:nth-of-type(1) {
+          margin-left: 1.5rem;
+        }
+
+        @media (max-width: 991px) {
+          margin-bottom: 4rem;
+          margin-right: 0;
+
+          &:nth-of-type(1) {
+            margin-left: 0;
+          }
+        }
+
+        &:nth-of-type(4) {
+          margin-bottom: 0;
+        }
 
         h5 {
           position: relative;
-          margin: 1rem;
+          margin-bottom: 1rem;
           letter-spacing: 0;
-          color: #3c3c3c;
+          color: $base-font-color;
           line-height: 1.5;
-          font-size: 18px;
+          font-size: 1.125rem;
+
+          @media (max-width: 1102px) {
+            font-size: 1rem;
+          }
 
           &:after {
             position: absolute;
             content: "";
-            border-bottom: 0.75px solid #3c3c3c;
+            border-bottom: 0.75px solid $base-font-color;
             width: 4rem;
             transform: translateX(-50%);
             bottom: -10px;
@@ -70,17 +97,22 @@
         }
 
         span {
-          font-size: 16px;
+          font-size: 1rem;
           letter-spacing: 0;
-          color: #3c3c3c;
+          color: $base-font-color;
 
           line-height: 1.5;
+
+          @media (max-width: 1070px) {
+            font-size: 0.875rem;
+          }
         }
       }
 
       .step_icons__icon {
         min-height: 83px;
         min-width: 83px;
+        margin-bottom: 1rem;
 
         background-size: cover;
         background-repeat: no-repeat;
@@ -113,34 +145,38 @@
   }
 
   .steps_button {
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    padding: 5rem 0;
+
+    @include flex-center;
 
     .steps_button__link {
       text-decoration: none;
       text-align: center;
-      width: 310px;
-      height: 200px;
+      padding: 2.5rem 2.5rem;
+      border: 0.75px solid $base-font-color;
+      border-radius: 2px;
+      transition: 0.8s;
 
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      @include flex-center;
+
+      @media (max-width: 600px) {
+        padding: 2rem 2rem;
+      }
+
+      &:hover {
+        cursor: pointer;
+        border: 0.75px solid #c8e9e4;
+        background: darken($background-second-color, 2%);
+      }
 
       span {
         text-transform: uppercase;
         line-height: 1.2;
-        padding: 1rem 3rem;
-        color: #3c3c3c;
-        font-size: 36px;
-        border: 0.75px solid #3c3c3c;
-        transition: 1s;
+        color: $base-font-color;
+        font-size: 2.25rem;
 
-        &:hover {
-          cursor: pointer;
-          box-shadow: inset 4.5em 0 0 0 #c8e9e4, inset -4.5em 0 0 0 #c8e9e4;
-          border: 0.75px solid #c8e9e4;
+        @media (max-width: 1070px) {
+          font-size: 1.875rem;
         }
       }
     }
