@@ -1,24 +1,33 @@
 @import "../settings/fonts";
+@import '../settings/colors';
+@import '../settings/mixins';
 
 .help_info__container {
   min-height: 55rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
   padding: 5rem 0;
 
+  .wrapper {
+    @include flex-center-column;
+  }
+
   .help_info__header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    width: 100%;
+    @include flex-center-column;
     margin-bottom: 3rem;
+    text-align: center;
+
+    @media (max-width: 991px) {
+      margin-bottom: 2rem;
+    }
 
     h4 {
-      font-size: 38px;
-      color: #3c3c3c;
+      font-size: 2.375rem;
+      color: $base-font-color;
       margin-bottom: 2rem;
+
+      @media (max-width: 991px) {
+        font-size: 2.125rem;
+      }
     }
 
     .help_info__decoration {
@@ -32,24 +41,37 @@
     }
 
     .help_info__buttons {
-      min-width: 750px;
-
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
+      min-width: 60%;
       text-align: center;
 
+      @include flex-space-around;
+
       .active {
-        border: 0.75px solid #3c3c3c;
+        border: 0.75px solid $base-font-color;
+      }
+
+      @media (max-width: 991px) {
+        flex-direction: column;
       }
 
       span {
         line-height: 1.2;
-        color: #3c3c3c;
-        font-size: 24px;
+        color: $base-font-color;
+        font-size: 1.5rem;
         padding: 1rem 2rem;
         max-width: 225px;
         position: relative;
+        margin-bottom: 2rem;
+
+        @media (max-width: 991px) {
+          font-size: 1.25rem;
+          padding: 0.8rem 1.5rem;
+          margin-bottom: 1rem;
+
+          &:nth-of-type(3) {
+            margin-bottom: 0;
+          }
+        }
 
         &:after {
           bottom: -20%;
@@ -67,6 +89,7 @@
           width: 100%;
           left: 0;
         }
+
         &:hover {
           cursor: pointer;
         }
@@ -75,34 +98,47 @@
   }
 
   .help_info__content {
-    max-width: 80%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+
+    @include flex-center-column;
 
     .help_info__title {
       text-align: center;
       max-width: 60%;
-      font-size: 22px;
+      font-size: 1.375rem;
       margin-bottom: 4rem;
-      color: #3c3c3c;
+      color: $base-font-color;
       line-height: 1.3;
+
+      @media (max-width: 991px) {
+        margin-bottom: 3rem;
+        font-size: 1.25rem;
+      }
     }
   }
 
   .help_info__box {
-    min-width: 100%;
-    height: 100%;
-    margin-bottom: 1.5rem;
+    @media (max-width: 991px) {
+      @include flex-center-column;
+    }
+
   }
 
   .help_info__element {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include flex-space-between;
     padding: 1.5rem 0;
     text-align: left;
+
+
+    @media (max-width: 991px) {
+      justify-content: center;
+      flex-direction: column;
+      width: 100%;
+      text-align: center;
+
+      &:nth-of-type(3) {
+        padding-bottom: 2rem;
+      }
+    }
 
     &:nth-of-type(1) {
       border-bottom: 1px solid #3c3c3c;
@@ -118,51 +154,85 @@
       flex-direction: column;
       align-items: flex-start;
       justify-content: center;
+      margin-right: 3rem;
+
+
+      @media (max-width: 991px) {
+        margin-right: 0;
+        align-items: center;
+      }
 
       .element_title {
-        font-size: 26px;
+        font-size: 1.625rem;
         font-family: $font-alt;
         margin-bottom: 0.5rem;
+
+        @media (max-width: 991px) {
+          margin-bottom: 1rem;
+          font-size: 1.5rem;
+        }
       }
 
       .element_description {
-        font-size: 18px;
+        font-size: 1.125rem;
         font-family: $font-alt;
         font-weight: 300;
+
+        @media (max-width: 991px) {
+          margin-bottom: 1rem;
+          font-size: 1rem;
+        }
       }
 
       .element_side__text {
-        font-size: 18px;
+        font-size: 1.125rem;
         font-family: $font-alt;
         font-weight: 300;
+
+        @media (max-width: 991px) {
+
+          font-size: 0.875rem;
+        }
       }
     }
   }
 
   .pagination_buttons__box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 1.5rem;
+    min-height: 50px;
+    min-width: 100%;
+    @include flex-center;
+
 
     .active {
       position: relative;
+
       &:after {
         position: absolute;
         content: "";
-        border: 0.75px solid #3c3c3c;
+        border: 0.75px solid $base-font-color;
         width: 100%;
         height: 100%;
         bottom: -50%;
         left: -100%;
         padding: 1rem 0.9rem;
+
+        @media (max-width: 991px) {
+          bottom: -50%;
+          right: 100%;
+
+        }
       }
     }
 
     span {
-      color: #3c3c3c;
-      font-size: 18px;
+      color: $base-font-color;
+      font-size: 1.125rem;
       margin-right: 2rem;
+
+      @media (max-width: 991px) {
+
+        font-size: 1rem;
+      }
 
       &:hover {
         cursor: pointer;
