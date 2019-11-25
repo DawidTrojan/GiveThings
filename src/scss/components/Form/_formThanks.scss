@@ -1,0 +1,42 @@
+.formThanks_container {
+  height: 55rem;
+  background: url("../../../assets/images/Background-Form.png");
+  background-position: center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  padding: 3rem 0 3rem 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  .formThanks_wrapper {
+    margin-left: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .formThanks_box {
+    width: 45%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    span {
+      font-size: 40px;
+      color: #3c3c3c;
+      margin-bottom: 2rem;
+    }
+
+    .decoration {
+      height: 33px;
+      width: 253px;
+
+      background: url("../../../assets/images/Decoration.svg");
+      background-position: center;
+      background-size: cover;
+    }
+  }
+}

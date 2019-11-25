@@ -1,14 +1,7 @@
 import React from "react";
 import Moment from "react-moment";
 
-const FifthStep = ({
-  currStep,
-  prevButton,
-  submitButton,
-  form,
-  isValid,
-  errors
-}) => {
+const FifthStep = ({ currStep, prevButton, submitButton, form, isValid }) => {
   if (currStep !== 5) {
     return null;
   }

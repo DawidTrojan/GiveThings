@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import Register from "../components/+Register";
+import Register from "../components/+Authorization/Register";
 import { signUp } from "../../redux/auth/actions";
 
 const mapState = state => {

@@ -1,0 +1,242 @@
+@import "../../settings/fonts";
+@import '../../settings/colors';
+@import '../../settings/mixins';
+
+.help_info__container {
+  min-height: 55rem;
+  padding: 5rem 0;
+
+  .wrapper {
+    @include flex-center-column;
+  }
+
+  .help_info__header {
+    width: 100%;
+    @include flex-center-column;
+    margin-bottom: 3rem;
+    text-align: center;
+
+    @media (max-width: 991px) {
+      margin-bottom: 2rem;
+    }
+
+    h4 {
+      font-size: 2.375rem;
+      color: $base-font-color;
+      margin-bottom: 2rem;
+
+      @media (max-width: 991px) {
+        font-size: 2.125rem;
+      }
+    }
+
+    .help_info__decoration {
+      min-height: 33px;
+      min-width: 253px;
+
+      background: url("../../../assets/images/Decoration.svg");
+      background-position: center;
+      background-size: cover;
+      margin-bottom: 3rem;
+    }
+
+    .help_info__buttons {
+      min-width: 60%;
+      text-align: center;
+
+      @include flex-space-around;
+
+      .active {
+        border: 0.75px solid $base-font-color;
+      }
+
+      @media (max-width: 991px) {
+        flex-direction: column;
+      }
+
+      span {
+        line-height: 1.2;
+        color: $base-font-color;
+        font-size: 1.5rem;
+        padding: 1rem 2rem;
+        max-width: 225px;
+        position: relative;
+        margin-bottom: 2rem;
+
+        @media (max-width: 991px) {
+          font-size: 1.25rem;
+          padding: 0.8rem 1.5rem;
+          margin-bottom: 1rem;
+
+          &:nth-of-type(3) {
+            margin-bottom: 0;
+          }
+        }
+
+        &:after {
+          bottom: -20%;
+          content: "";
+          display: block;
+          height: 3px;
+          left: 50%;
+          position: absolute;
+          background: #c8e9e4;
+          transition: width 0.5s ease 0s, left 0.5s ease 0s;
+          width: 0;
+        }
+
+        &:hover:after {
+          width: 100%;
+          left: 0;
+        }
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .help_info__content {
+
+    @include flex-center-column;
+
+    .help_info__title {
+      text-align: center;
+      max-width: 60%;
+      font-size: 1.375rem;
+      margin-bottom: 4rem;
+      color: $base-font-color;
+      line-height: 1.3;
+
+      @media (max-width: 991px) {
+        margin-bottom: 3rem;
+        font-size: 1.25rem;
+      }
+    }
+  }
+
+  .help_info__box {
+    @media (max-width: 991px) {
+      @include flex-center-column;
+    }
+
+  }
+
+  .help_info__element {
+    @include flex-space-between;
+    padding: 1.5rem 0;
+    text-align: left;
+
+
+    @media (max-width: 991px) {
+      justify-content: center;
+      flex-direction: column;
+      width: 100%;
+      text-align: center;
+
+      &:nth-of-type(3) {
+        padding-bottom: 2rem;
+      }
+    }
+
+    &:nth-of-type(1) {
+      border-bottom: 1px solid #3c3c3c;
+      margin-bottom: 0;
+    }
+
+    &:nth-of-type(2) {
+      border-bottom: 1px solid #3c3c3c;
+    }
+
+    .help_info__elementBox {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      margin-right: 3rem;
+
+
+      @media (max-width: 991px) {
+        margin-right: 0;
+        align-items: center;
+      }
+
+      .element_title {
+        font-size: 1.625rem;
+        font-family: $font-alt;
+        margin-bottom: 0.5rem;
+
+        @media (max-width: 991px) {
+          margin-bottom: 1rem;
+          font-size: 1.5rem;
+        }
+      }
+
+      .element_description {
+        font-size: 1.125rem;
+        font-family: $font-alt;
+        font-weight: 300;
+
+        @media (max-width: 991px) {
+          margin-bottom: 1rem;
+          font-size: 1rem;
+        }
+      }
+
+      .element_side__text {
+        font-size: 1.125rem;
+        font-family: $font-alt;
+        font-weight: 300;
+
+        @media (max-width: 991px) {
+
+          font-size: 0.875rem;
+        }
+      }
+    }
+  }
+
+  .pagination_buttons__box {
+    min-height: 50px;
+    min-width: 100%;
+    @include flex-center;
+
+
+    .active {
+      position: relative;
+
+      &:after {
+        position: absolute;
+        content: "";
+        border: 0.75px solid $base-font-color;
+        width: 100%;
+        height: 100%;
+        bottom: -50%;
+        left: -100%;
+        padding: 1rem 0.9rem;
+
+        @media (max-width: 991px) {
+          bottom: -50%;
+          right: 100%;
+
+        }
+      }
+    }
+
+    span {
+      color: $base-font-color;
+      font-size: 1.125rem;
+      margin-right: 2rem;
+
+      @media (max-width: 991px) {
+
+        font-size: 1rem;
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}

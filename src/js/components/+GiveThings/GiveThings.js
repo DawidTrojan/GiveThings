@@ -1,9 +1,9 @@
 import React from "react";
-import Nav from "../../containers/Nav";
 import GiveThingsTitle from "../+GiveThings/GiveThingsHeader/GiveThingsTitle";
 import GiveThingsSteps from "../+GiveThings/GiveThingsHeader/GiveThingsSteps";
 import HomeFooter from "../+Home/+HomeFooter";
 import Form from "../../containers/Form";
+import Nav from "../../containers/GiveThingsNav";
 
 const GiveThings = () => {
   return (

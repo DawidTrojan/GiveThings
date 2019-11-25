@@ -1,0 +1,151 @@
+.thirdStep_form__container {
+  height: 55rem;
+  background: url("../../../assets/images/Background-Form.png");
+  background-position: center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  padding: 3rem 0;
+  display: flex;
+  justify-content: flex-start;
+
+  .thirdStep_form__wrapper {
+    height: 100%;
+    margin-left: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  span {
+    font-size: 24px;
+    color: #3c3c3c;
+    margin-bottom: 5rem;
+  }
+
+  .thirdStep_form {
+    height: 70%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+    .localization_box {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 4rem;
+
+      .localization_title {
+        font-size: 36px;
+        font-weight: 700;
+        margin-bottom: 2rem;
+        color: #000000;
+      }
+
+      select {
+        font-size: 24px;
+        width: 300px;
+        height: 100%;
+        color: #000000;
+        padding: 0.5rem;
+        border: 0.75px solid #3c3c3c;
+        outline: none;
+
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        appearance: none;
+
+        option {
+          background: #eeede9;
+        }
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .thirdStep_form__checkbox {
+    span {
+      font-size: 24px;
+      color: #000000;
+      font-weight: 700;
+    }
+
+    .form_checkbox {
+      margin: 2rem 0;
+      width: 70%;
+      display: flex;
+      flex-wrap: wrap;
+
+      .form_checkbox__box {
+
+        input[type="checkbox"]:not(:checked),
+        input[type="checkbox"]:checked {
+          position: absolute;
+          left: -9999%;
+        }
+
+        input[type="checkbox"]+label {
+          display: inline-block;
+          font-size: 24px;
+          padding: 10px;
+          cursor: pointer;
+          border: 0.75px solid #3c3c3c;
+          color: #000000;
+          background: transparent;
+          margin-right: 10px;
+          margin-bottom: 10px;
+        }
+
+        input[type="checkbox"]:checked+label {
+          border: 0.75px solid #3c3c3c;
+          background: #fad648;
+        }
+      }
+    }
+  }
+
+  .thirdStep_form__buttons {
+    display: flex;
+    align-items: center;
+
+    button {
+      width: 180px;
+      height: 79px;
+      border: 0.75px solid #3c3c3c;
+      background: transparent;
+      outline: none;
+      color: #000000;
+      font-size: 24px;
+
+      &:first-of-type {
+        margin-right: 5rem;
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .form_textInput {
+    display: flex;
+    flex-direction: column;
+    width: 570px;
+    margin-bottom: 6rem;
+
+    .textInput_title {
+      margin-bottom: 2rem;
+      color: #000000;
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    input {
+      height: 40px;
+      background: transparent;
+      outline: none;
+      border: 0.75px solid #3c3c3c;
+    }
+  }
+}
