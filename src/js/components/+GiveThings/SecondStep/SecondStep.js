@@ -19,9 +19,11 @@ const SecondStep = ({
       <div className="secondStep_form__container">
         <div className="secondStep_form__wrapper">
           <span>Krok 2/4</span>
-          <h3>Podaj liczbę 60l worków, w które spakowałeś/aś rzeczy:</h3>
           <div className="secondStep_form">
             <div className="select_box">
+              <label>
+                Podaj liczbę 60l worków, w które spakowałeś/aś rzeczy:
+              </label>
               <span>Liczba 60l worków:</span>
               <select
                 defaultValue={!bags ? "-1" : bags}
@@ -40,12 +42,12 @@ const SecondStep = ({
                 <option value="5">5</option>
               </select>
             </div>
-            <div className="secondStep_form__buttons">
-              {prevButton()}
-              {nextButton()}
-              <p className="form_error">{error}</p>
-            </div>
           </div>
+          <div className="secondStep_form__buttons">
+            {prevButton()}
+            {nextButton()}
+          </div>
+          {error ? <p className="form_error">{error}</p> : null}
         </div>
       </div>
     </div>

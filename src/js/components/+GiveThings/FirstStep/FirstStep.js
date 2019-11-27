@@ -24,7 +24,15 @@ const FirstStep = ({ nextButton, currStep, handleChange, error, type }) => {
                   type === "ubrania które nadają się do ponownego użycia"
                 }
               />
-              <span style={error ? { color: "red" } : null}>
+              <span
+                style={
+                  error
+                    ? {
+                        color: "red"
+                      }
+                    : null
+                }
+              >
                 ubrania, które nadają się do ponownego użycia
               </span>
             </div>
@@ -36,7 +44,15 @@ const FirstStep = ({ nextButton, currStep, handleChange, error, type }) => {
                 onChange={handleChange}
                 checked={type === "ubrania do wyrzucenia"}
               />
-              <span style={error ? { color: "red" } : null}>
+              <span
+                style={
+                  error
+                    ? {
+                        color: "red"
+                      }
+                    : null
+                }
+              >
                 ubrania, do wyrzucenia
               </span>
             </div>
@@ -48,7 +64,17 @@ const FirstStep = ({ nextButton, currStep, handleChange, error, type }) => {
                 onChange={handleChange}
                 checked={type === "zabawki"}
               />
-              <span style={error ? { color: "red" } : null}>zabawki</span>
+              <span
+                style={
+                  error
+                    ? {
+                        color: "red"
+                      }
+                    : null
+                }
+              >
+                zabawki
+              </span>
             </div>
             <div className="firstStep_form__inputBox">
               <input
@@ -58,7 +84,17 @@ const FirstStep = ({ nextButton, currStep, handleChange, error, type }) => {
                 onChange={handleChange}
                 checked={type === "książki"}
               />
-              <span style={error ? { color: "red" } : null}>książki</span>
+              <span
+                style={
+                  error
+                    ? {
+                        color: "red"
+                      }
+                    : null
+                }
+              >
+                książki
+              </span>
             </div>
             <div className="firstStep_form__inputBox">
               <input
@@ -67,13 +103,25 @@ const FirstStep = ({ nextButton, currStep, handleChange, error, type }) => {
                 value="Inne"
                 onChange={handleChange}
                 checked={type === "Inne"}
-              />
-              <span style={error ? { color: "red" } : null}>Inne</span>
+              />{" "}
+              <span
+                style={
+                  error
+                    ? {
+                        color: "red"
+                      }
+                    : null
+                }
+              >
+                Inne
+              </span>
             </div>
+          </div>
+          <div className="firstStep_buttons">
             {nextButton()}
+            {error ? <p className="form_error">{error}</p> : null}
           </div>
         </div>
-        <p className="form_error">{error}</p>
       </div>
     </div>
   );

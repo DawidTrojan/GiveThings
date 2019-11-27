@@ -27,14 +27,22 @@ const FourthStep = ({
       <div className="fourthStep_form__container">
         <div className="fourthStep_form__wrapper">
           <span>Krok 4/4</span>
-          <h3>Podaj adres oraz termin odbioru rzeczy przez kuriera</h3>
           <div className="fourthStep_form">
+            <h3>Podaj adres oraz termin odbioru rzeczy przez kuriera</h3>
             <div className="form_container">
               <div className="form_box">
                 <div className="form_box__item">
-                  <span>Ulica</span>
+                  <div className="item_title">
+                    <span>Ulica</span>
+                  </div>
                   <input
-                    style={error.street ? { borderColor: "red" } : null}
+                    style={
+                      error.street
+                        ? {
+                            borderColor: "red"
+                          }
+                        : null
+                    }
                     type="text"
                     name="address"
                     id="street"
@@ -43,9 +51,17 @@ const FourthStep = ({
                   />
                 </div>
                 <div className="form_box__item">
-                  <span>Miasto</span>
+                  <div className="item_title">
+                    <span>Miasto</span>
+                  </div>
                   <input
-                    style={error.city ? { borderColor: "red" } : null}
+                    style={
+                      error.city
+                        ? {
+                            borderColor: "red"
+                          }
+                        : null
+                    }
                     type="text"
                     name="address"
                     id="city"
@@ -54,9 +70,17 @@ const FourthStep = ({
                   />
                 </div>
                 <div className="form_box__item">
-                  <span>Kod pocztowy</span>
+                  <div className="item_title">
+                    <span>Kod pocztowy</span>
+                  </div>
                   <input
-                    style={error.postCode ? { borderColor: "red" } : null}
+                    style={
+                      error.postCode
+                        ? {
+                            borderColor: "red"
+                          }
+                        : null
+                    }
                     type="text"
                     name="address"
                     id="postCode"
@@ -65,9 +89,17 @@ const FourthStep = ({
                   />
                 </div>
                 <div className="form_box__item">
-                  <span>Numer telefonu</span>
+                  <div className="item_title">
+                    <span>Numer telefonu</span>
+                  </div>
                   <input
-                    style={error.phoneNumber ? { borderColor: "red" } : null}
+                    style={
+                      error.phoneNumber
+                        ? {
+                            borderColor: "red"
+                          }
+                        : null
+                    }
                     type="text"
                     name="address"
                     id="phoneNumber"
@@ -78,10 +110,18 @@ const FourthStep = ({
               </div>
               <div className="form_box">
                 <div className="form_box__item" name="date">
-                  <span>Data</span>
+                  <div className="item_title">
+                    <span>Data</span>
+                  </div>
                   <div
                     className="fourthStep_input"
-                    style={dateError ? { borderColor: "red" } : null}
+                    style={
+                      dateError
+                        ? {
+                            borderColor: "red"
+                          }
+                        : null
+                    }
                   >
                     <DatePicker
                       selected={currentDate}
@@ -91,17 +131,23 @@ const FourthStep = ({
                     />
                   </div>
                 </div>
-                <div className="form_box__item" name="time">
-                  <span>Godzina</span>
+                <div className="form_box__item">
+                  <div className="item_title">
+                    <span>Godzina</span>
+                  </div>
                   <TimeField
                     value={currentTime.toString()}
                     onChange={handleTime}
                     colon=":"
-                    input={<input type="text" className="time_input" />}
+                    input={
+                      <input type="text" className="time_input" name="time" />
+                    }
                   />
                 </div>
                 <div className="form_box__textarea">
-                  <span>Uwagi dla kuriera</span>
+                  <div className="item_title">
+                    <span>Uwagi dla kuriera</span>
+                  </div>
                   <textarea
                     name="address"
                     id="comments"
@@ -111,17 +157,21 @@ const FourthStep = ({
                 </div>
               </div>
             </div>
-            <div className="fourthStep_form__buttons">
-              {prevButton()}
-              {nextButton()}
-            </div>
-            <p className="form_error">{error.street}</p>
-            <p className="form_error">{error.city}</p>
-            <p className="form_error">{error.postCode}</p>
-            <p className="form_error">{error.phoneNumber}</p>
-            <p className="form_error">{dateError}</p>
-            <p className="form_error">{error.time}</p>
           </div>
+          <div className="fourthStep_form__buttons">
+            {prevButton()}
+            {nextButton()}
+          </div>
+          {error.street ? <p className="form_error"> {error.street}</p> : null}
+          {error.city ? <p className="form_error"> {error.city}</p> : null}
+          {error.postCode ? (
+            <p className="form_error"> {error.postCode}</p>
+          ) : null}
+          {error.phoneNumber ? (
+            <p className="form_error"> {error.phoneNumber}</p>
+          ) : null}
+          {dateError ? <p className="form_error"> {dateError}</p> : null}
+          {error.time ? <p className="form_error"> {error.time}</p> : null}
         </div>
       </div>
     </div>

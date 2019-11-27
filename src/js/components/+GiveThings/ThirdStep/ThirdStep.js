@@ -9,7 +9,6 @@ const ThirdStep = ({
   groups,
   organization,
   localization,
-  error,
   localizationError
 }) => {
   if (currStep !== 3) {
@@ -21,7 +20,7 @@ const ThirdStep = ({
       <Bar />
       <div className="thirdStep_form__container">
         <div className="thirdStep_form__wrapper">
-          <span>Krok 3/4</span>
+          <span className="step_title">Krok 3/4</span>
           <div className="thirdStep_form">
             <div className="localization_box">
               <span className="localization_title">Lokalizacja:</span>
@@ -30,7 +29,13 @@ const ThirdStep = ({
                 name="localization"
                 id=""
                 onChange={handleChange}
-                style={localizationError ? { borderColor: "red" } : null}
+                style={
+                  localizationError
+                    ? {
+                        borderColor: "red"
+                      }
+                    : null
+                }
               >
                 <option value="">-- wybierz --</option>
                 <option value="Poznań">Poznań</option>
@@ -105,7 +110,13 @@ const ThirdStep = ({
                 Wpisz nazwę konkretnej organizacji (opcjonalnie)
               </span>
               <input
-                style={localizationError ? { borderColor: "red" } : null}
+                style={
+                  localizationError
+                    ? {
+                        borderColor: "red"
+                      }
+                    : null
+                }
                 type="text"
                 name="organization"
                 onChange={handleChange}
@@ -115,12 +126,14 @@ const ThirdStep = ({
             <div className="thirdStep_form__buttons">
               {prevButton()}
               {!groups.length ? (
-                <p className="form_error">Wybierz komu chcesz pomóc!</p>
+                <span> Wybierz komu chcesz pomóc ! </span>
               ) : (
                 nextButton()
               )}
             </div>
-            <p className="form_error">{localizationError}</p>
+            {localizationError ? (
+              <p className="form_error"> {localizationError}</p>
+            ) : null}
           </div>
         </div>
       </div>
