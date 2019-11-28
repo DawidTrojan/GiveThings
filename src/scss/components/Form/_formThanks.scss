@@ -4,14 +4,13 @@
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  padding: 2rem 0 2rem 0;
+  padding: 2rem 0;
   display: flex;
   justify-content: flex-start;
   align-items: center;
 
   @media (max-width: 991px) {
     background: #eeede9;
-
   }
 
   .formThanks_wrapper {
@@ -29,6 +28,10 @@
     align-items: center;
     justify-content: center;
 
+    @media (max-width: 991px) {
+      min-width: 100%;
+    }
+
     span {
       font-size: 40px;
       color: #3c3c3c;
@@ -36,7 +39,7 @@
       line-height: 1.2;
 
       @media (max-width: 991px) {
-        font-size: 34px;
+        font-size: 29px;
       }
     }
 

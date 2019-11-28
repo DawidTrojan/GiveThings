@@ -94,13 +94,15 @@ const FifthStep = ({ currStep, prevButton, submitButton, form, isValid }) => {
               </div>
             </div>
           </div>
-          <div className="fifthStep_summary__buttons">
-            {prevButton()}
-            {submitButton()}
+          <div className="buttons_box">
+            <div className="fifthStep_summary__buttons">
+              {prevButton()}
+              {submitButton()}
+            </div>
+            {!isValid ? (
+              <p className="form_error">Formularz zawiera błędy !</p>
+            ) : null}
           </div>
-          {!isValid ? (
-            <p className="form_error">Formularz zawiera błędy !</p>
-          ) : null}
         </div>
       </div>
     </div>

@@ -1,6 +1,6 @@
 //bar
 .bar_container {
-  min-height: 179px;
+  height: 200px;
   background: #fad648;
   padding: 3rem 0;
 
@@ -10,7 +10,7 @@
 }
 
 .bar_wrapper {
-  height: 100%;
+  min-height: 100%;
   padding: 0 2rem;
 
   display: flex;
@@ -23,29 +23,41 @@
     font-weight: 700;
     color: #000000;
     margin-bottom: 1rem;
+
+    @media (max-width: 991px) {
+      font-size: 29px;
+    }
   }
 
   span {
     font-size: 20px;
     color: #3c3c3c;
     line-height: 1.2;
+
+    @media (max-width: 991px) {
+      font-size: 18px;
+    }
   }
 }
 
 //form
 .firstStep_form__container {
   height: 60rem;
+  width: 100%;
   background: url("../../../assets/images/Background-Form.png");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   padding: 3rem 0;
+
   display: flex;
   justify-content: flex-start;
   align-items: center;
 
   @media (max-width: 991px) {
     background: #eeede9;
+    padding: 2rem 0;
+    height: 55rem;
   }
 
   .firstStep_form__wrapper {
@@ -58,8 +70,6 @@
     align-items: flex-start;
     justify-content: space-between;
 
-
-
     button {
       width: 180px;
       height: 79px;
@@ -68,16 +78,12 @@
       outline: none;
       color: #000000;
       font-size: 24px;
-
-      @media (max-width: 500px) {
-        max-width: 100px;
-        max-height: 60px;
-        font-size: 18px;
-      }
+      margin-bottom: 1rem;
 
       @media (max-width: 991px) {
-        width: 150px;
-        height: 70px;
+        width: 100px;
+        height: 40px;
+        font-size: 15px;
       }
 
       &:hover {
@@ -92,7 +98,8 @@
     margin-bottom: 7rem;
 
     @media (max-width: 991px) {
-      font-size: 20px;
+      font-size: 15px;
+      margin-bottom: 0;
     }
   }
 
@@ -102,6 +109,10 @@
     justify-content: flex-start;
     height: 100%;
     width: 100%;
+
+    @media (max-width: 991px) {
+      height: 65%;
+    }
 
     span {
       color: #000000;
@@ -117,10 +128,9 @@
       margin-bottom: 3rem;
 
       @media (max-width: 991px) {
-        font-size: 30px;
+        font-size: 29px;
       }
     }
-
 
 
     .firstStep_form__inputBox {
@@ -156,6 +166,11 @@
         width: 40px;
         height: 40px;
         border: 0.75px solid #3c3c3c;
+
+        @media (max-width: 991px) {
+          width: 20px;
+          height: 20px;
+        }
       }
 
       input[type="radio"]:checked:before {
@@ -165,17 +180,14 @@
       span {
         position: absolute;
         left: 8rem;
-
         font-size: 24px;
         color: #000000;
         max-width: 50%;
-
-        @media (max-width: 468px) {
-          font-size: 18px;
-        }
+        margin-bottom: 0;
 
         @media (max-width: 991px) {
-          font-size: 20px;
+          font-size: 18px;
+          left: 5rem;
         }
       }
     }

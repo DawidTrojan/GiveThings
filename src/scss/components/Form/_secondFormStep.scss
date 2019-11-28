@@ -1,5 +1,6 @@
 .secondStep_form__container {
   height: 60rem;
+  width: 100%;
   background: url("../../../assets/images/Background-Form.png");
   background-position: center;
   background-size: cover;
@@ -11,6 +12,8 @@
 
   @media (max-width: 991px) {
     background: #eeede9;
+    padding: 2rem 0;
+    height: 55rem;
   }
 
   .secondStep_form__wrapper {
@@ -29,7 +32,8 @@
     margin-bottom: 7rem;
 
     @media (max-width: 991px) {
-      font-size: 20px;
+      font-size: 15px;
+      margin-bottom: 0;
     }
   }
 
@@ -42,6 +46,9 @@
     justify-content: flex-start;
     flex-direction: column;
 
+    @media (max-width: 991px) {
+      height: 65%;
+    }
 
     .select_box {
       width: 100%;
@@ -57,7 +64,7 @@
 
 
         @media (max-width: 991px) {
-          font-size: 30px;
+          font-size: 29px;
         }
       }
 
@@ -67,7 +74,7 @@
         margin-right: 2rem;
 
         @media (max-width: 991px) {
-          font-size: 20px;
+          font-size: 18px;
         }
       }
 
@@ -90,6 +97,8 @@
 
         @media (max-width: 991px) {
           width: 250px;
+          height: 35px;
+          font-size: 14px;
         }
 
         option {
@@ -100,57 +109,62 @@
           cursor: pointer;
         }
       }
-
     }
   }
 
-  .secondStep_form__buttons {
+  .buttons_box {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
 
-    @media (max-width: 500px) {
-      align-items: flex-start;
-    }
-
-
-    button {
-      width: 180px;
-      height: 79px;
-      border: 0.75px solid #3c3c3c;
-      background: transparent;
-      outline: none;
-      color: #000000;
-      font-size: 24px;
-
-      &:nth-of-type(1) {
-        margin-right: 5rem;
-      }
+    .secondStep_form__buttons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 1rem;
 
       @media (max-width: 500px) {
-        max-width: 100px;
-        max-height: 60px;
-        font-size: 18px;
+        align-items: flex-start;
+      }
+
+      button {
+        width: 180px;
+        height: 79px;
+        border: 0.75px solid #3c3c3c;
+        background: transparent;
+        outline: none;
+        color: #000000;
+        font-size: 24px;
 
         &:nth-of-type(1) {
-          margin-right: 2rem;
+          margin-right: 5rem;
         }
-      }
 
-      @media (max-width: 991px) {
-        width: 150px;
-        height: 70px;
-      }
+        @media (max-width: 500px) {
+          &:nth-of-type(1) {
+            margin-right: 2rem;
+          }
+        }
 
-      &:hover {
-        cursor: pointer;
+        @media (max-width: 991px) {
+          width: 100px;
+          height: 40px;
+          font-size: 15px;
+        }
+
+        &:hover {
+          cursor: pointer;
+        }
       }
     }
   }
 }
 
+
 .form_error {
   font-size: 18px;
   color: red;
-  margin-top: 1.5rem;
+
+  @media (max-width: 991px) {
+    font-size: 12px;
+  }
 }

@@ -258,7 +258,11 @@ const Form = ({ giveThings }) => {
 
   const submitButton = () => {
     if (currStep === 5) {
-      return <button type="submit">Potwierdzam</button>;
+      return (
+        <button type="submit" className="send_form">
+          Potwierdzam
+        </button>
+      );
     }
     return null;
   };

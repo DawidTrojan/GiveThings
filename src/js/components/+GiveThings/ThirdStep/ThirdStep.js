@@ -123,6 +123,8 @@ const ThirdStep = ({
                 value={organization}
               />
             </div>
+          </div>
+          <div className="buttons_box">
             <div className="thirdStep_form__buttons">
               {prevButton()}
               {!groups.length ? (

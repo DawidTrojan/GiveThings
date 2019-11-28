@@ -43,11 +43,13 @@ const SecondStep = ({
               </select>
             </div>
           </div>
-          <div className="secondStep_form__buttons">
-            {prevButton()}
-            {nextButton()}
+          <div className="buttons_box">
+            <div className="secondStep_form__buttons">
+              {prevButton()}
+              {nextButton()}
+            </div>
+            {error ? <p className="form_error">{error}</p> : null}
           </div>
-          {error ? <p className="form_error">{error}</p> : null}
         </div>
       </div>
     </div>

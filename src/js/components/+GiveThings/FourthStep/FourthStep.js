@@ -28,7 +28,7 @@ const FourthStep = ({
         <div className="fourthStep_form__wrapper">
           <span>Krok 4/4</span>
           <div className="fourthStep_form">
-            <h3>Podaj adres oraz termin odbioru rzeczy przez kuriera</h3>
+            <h3>Podaj adres oraz termin odbioru rzeczy</h3>
             <div className="form_container">
               <div className="form_box">
                 <div className="form_box__item">
@@ -158,20 +158,26 @@ const FourthStep = ({
               </div>
             </div>
           </div>
-          <div className="fourthStep_form__buttons">
-            {prevButton()}
-            {nextButton()}
+          <div className="buttons_box">
+            <div className="fourthStep_form__buttons">
+              {prevButton()}
+              {nextButton()}
+            </div>
+            <div className="form_errors">
+              {error.street ? (
+                <p className="form_error"> {error.street}</p>
+              ) : null}
+              {error.city ? <p className="form_error"> {error.city}</p> : null}
+              {error.postCode ? (
+                <p className="form_error"> {error.postCode}</p>
+              ) : null}
+              {error.phoneNumber ? (
+                <p className="form_error"> {error.phoneNumber}</p>
+              ) : null}
+              {dateError ? <p className="form_error"> {dateError}</p> : null}
+              {error.time ? <p className="form_error"> {error.time}</p> : null}
+            </div>
           </div>
-          {error.street ? <p className="form_error"> {error.street}</p> : null}
-          {error.city ? <p className="form_error"> {error.city}</p> : null}
-          {error.postCode ? (
-            <p className="form_error"> {error.postCode}</p>
-          ) : null}
-          {error.phoneNumber ? (
-            <p className="form_error"> {error.phoneNumber}</p>
-          ) : null}
-          {dateError ? <p className="form_error"> {dateError}</p> : null}
-          {error.time ? <p className="form_error"> {error.time}</p> : null}
         </div>
       </div>
     </div>
