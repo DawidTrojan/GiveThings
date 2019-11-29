@@ -2,8 +2,6 @@
 .bar_container {
   height: 200px;
   background: #fad648;
-  padding: 3rem 0;
-
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -11,12 +9,13 @@
 
 .bar_wrapper {
   min-height: 100%;
-  padding: 0 2rem;
+
+  padding: 2rem 2rem;
 
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: flex-start;
+  justify-content: center;
 
   h3 {
     font-size: 36px;
@@ -24,8 +23,12 @@
     color: #000000;
     margin-bottom: 1rem;
 
+    @media (max-width: 445px) {
+      font-size: 24px;
+    }
+
     @media (max-width: 991px) {
-      font-size: 29px;
+      font-size: 24px;
     }
   }
 
@@ -35,7 +38,7 @@
     line-height: 1.2;
 
     @media (max-width: 991px) {
-      font-size: 18px;
+      font-size: 15px;
     }
   }
 }
@@ -131,7 +134,6 @@
         font-size: 29px;
       }
     }
-
 
     .firstStep_form__inputBox {
       min-height: 78px;

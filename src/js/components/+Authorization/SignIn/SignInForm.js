@@ -1,7 +1,8 @@
 import React, { useState } from "react";
+import Loading from "../../../../assets/Loading";
 import { NavLink } from "react-router-dom";
 
-const LoginForm = ({ signIn }) => {
+const LoginForm = ({ signIn, error, isLoading }) => {
   const [sign, setSign] = useState({
     email: "",
     password: ""
@@ -17,6 +18,8 @@ const LoginForm = ({ signIn }) => {
       [e.target.name]: e.target.value
     });
   };
+
+  if (isLoading) return <Loading />;
 
   const validate = () => {
     let isValid = true;
@@ -76,7 +79,17 @@ const LoginForm = ({ signIn }) => {
           onChange={handleOnChange}
         />
         <div className="error_box">
-          <span className="auth_error">{errors.password}</span>
+          {errors.password ? (
+            <span className="auth_error">{errors.password}</span>
+          ) : null}
+          {error && (!errors.password || !errors.email) ? (
+            <span className="auth_error">
+              {error === "auth/wrong-password" ? "Niepoprawne hasło" : null}
+              {error === "auth/user-not-found"
+                ? "Nie znaleziono użytkownika!"
+                : null}
+            </span>
+          ) : null}
         </div>
       </div>
       <div className="auth_form__buttons">

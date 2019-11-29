@@ -4,7 +4,9 @@ import { signIn } from "../../redux/auth/actions";
 
 const mapState = state => {
   return {
-    auth: state.firebaseReducer.auth
+    auth: state.firebaseReducer.auth,
+    error: state.authReducer.authErrorLogin,
+    isLoading: state.authReducer.isLoading
   };
 };
 

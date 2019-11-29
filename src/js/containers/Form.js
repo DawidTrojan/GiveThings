@@ -4,7 +4,8 @@ import Form from "../components/+GiveThings/FormSteps";
 
 const mapState = state => {
   return {
-    things: state.firestoreReducer.messages
+    success: state.thingsReducer.thingsSuccess,
+    isLoading: state.thingsReducer.isLoading
   };
 };
 

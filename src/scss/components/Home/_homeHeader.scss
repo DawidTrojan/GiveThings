@@ -4,10 +4,13 @@
 .home {
   position: relative;
 
-  .scroll_top {
+  i {
     position: fixed;
-    right: 5px;
-    bottom: 5px;
+    cursor: pointer;
+    right: 10px;
+    bottom: 10px;
+    font-size: 3rem;
+    color: black;
   }
 }
 

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Loading from "../../../../assets/Loading";
 import FirstStep from "../FirstStep";
 import SecondStep from "../SecondStep";
 import ThirdStep from "../ThirdStep";
@@ -6,9 +7,8 @@ import FourthStep from "../FourthStep";
 import FifthStep from "../FifthStep";
 import FormThanks from "../FormThanks";
 
-const Form = ({ giveThings }) => {
+const Form = ({ giveThings, success, isLoading }) => {
   const [currStep, setCurrStep] = useState(1);
-  const [isReady, setIsReady] = useState(false);
   const [isValid, setIsValid] = useState(true);
 
   const [form, setForm] = useState({
@@ -221,8 +221,9 @@ const Form = ({ giveThings }) => {
       return errors;
     }
     giveThings(form);
-    setIsReady(true);
   };
+
+  if (isLoading) return <Loading />;
 
   const stepNext = () => {
     let nextStep = currStep;
@@ -230,10 +231,17 @@ const Form = ({ giveThings }) => {
     nextStep = nextStep >= 2 ? nextStep + 1 : nextStep + 1;
 
     setCurrStep(nextStep);
+
+    if (nextStep === 5) {
+      window.scrollTo(0, 880);
+    } else {
+      window.scrollTo(0, 1160);
+    }
   };
 
   const stepPrev = () => {
     let prevStep = currStep;
+    window.scrollTo(0, 1160);
 
     prevStep = prevStep <= 1 ? 1 : prevStep - 1;
 
@@ -269,7 +277,7 @@ const Form = ({ giveThings }) => {
 
   return (
     <>
-      {!isReady ? (
+      {!success ? (
         <form onSubmit={handleOnSubmit}>
           <FirstStep
             currStep={currStep}
@@ -321,7 +329,7 @@ const Form = ({ giveThings }) => {
           />
         </form>
       ) : (
-        <FormThanks></FormThanks>
+        <FormThanks />
       )}
     </>
   );

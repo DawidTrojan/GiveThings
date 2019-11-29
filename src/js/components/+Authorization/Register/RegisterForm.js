@@ -1,7 +1,8 @@
 import React, { useState } from "react";
+import Loading from "../../../../assets/Loading";
 import { NavLink } from "react-router-dom";
 
-const RegisterForm = ({ signUp }) => {
+const RegisterForm = ({ signUp, error, isLoading }) => {
   const [register, setRegister] = useState({
     email: "",
     password: "",
@@ -19,6 +20,8 @@ const RegisterForm = ({ signUp }) => {
       [e.target.name]: e.target.value
     });
   };
+
+  if (isLoading) return <Loading />;
 
   const validate = () => {
     let isValid = true;
@@ -102,7 +105,16 @@ const RegisterForm = ({ signUp }) => {
           name="password2"
         />
         <div className="error_box">
-          <span className="auth_error">{errors.password2}</span>
+          {errors.password2 ? (
+            <span className="auth_error">{errors.password2}</span>
+          ) : null}
+          {error && (!errors.password || !errors.email || !errors.password2) ? (
+            <span className="auth_error">
+              {error === "auth/email-already-in-use"
+                ? "Podane konto już istnieje!"
+                : null}
+            </span>
+          ) : null}
         </div>
       </div>
       <div className="auth_form__buttons">
