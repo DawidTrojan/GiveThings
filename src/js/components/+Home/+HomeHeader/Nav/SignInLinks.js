@@ -21,6 +21,9 @@ const SignInLinks = ({ signOut, profile }) => {
       <Link to="/oddaj-rzeczy" className="giveThings_button">
         Oddaj rzeczy
       </Link>
+      <Link to="/zbiórki" className="giveThings_button">
+        Twoje zbiórki
+      </Link>
       <span className="nav_buttons__link logoutButton" onClick={handleOnClick}>
         Wyloguj
       </span>

@@ -1,11 +1,12 @@
 import React from "react";
 import { Router, Switch, Route } from "react-router-dom";
 import { createBrowserHistory } from "history";
-import Home from "./components/+Home";
+import Home from "./containers/Home";
 import SignIn from "./containers/SignIn";
 import Register from "./containers/Register";
 import SignOut from "./components/+Authorization/SignOut";
 import GiveThings from "./components/+GiveThings";
+import Collections from "./containers/Collections";
 
 const App = () => {
   const browserHistory = createBrowserHistory();
@@ -22,6 +23,7 @@ const App = () => {
         <Route path="/rejestracja" component={Register} />
         <Route path="/wylogowano" component={SignOut} />
         <Route path="/oddaj-rzeczy" component={GiveThings} />
+        <Route path="/zbiórki" component={Collections} />
       </Switch>
     </Router>
   );

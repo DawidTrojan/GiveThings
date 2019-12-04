@@ -8,7 +8,7 @@ const Content = ({ auth }) => (
       <h1>Oddaj niechciane rzeczy w zaufane ręce</h1>
     </div>
     <div className="content_decoration__box">
-      <div className="content_decoration"></div>
+      <div className="content_decoration" />
     </div>
     <div className="content_buttons">
       <Link

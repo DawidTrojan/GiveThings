@@ -8,6 +8,9 @@ const Nav = ({ profile }) => {
       <Link className="giveThings_redirect" to="/">
         <span>Strona Główna</span>
       </Link>
+      <Link className="giveThings_redirect" to="/zbiórki">
+        <span>Twoje zbiórki</span>
+      </Link>
     </div>
   );
 };

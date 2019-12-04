@@ -7,8 +7,17 @@ import HomeSteps from "../../containers/HomeSteps";
 import HomeAboutUs from "./+HomeAboutUs";
 import HomeHelpInfo from "./+HomeHelpInfo";
 import HomeFooter from "./+HomeFooter";
+import Loading from "../../../assets/Loading";
 
-const Home = () => {
+const Home = ({ things, auth }) => {
+  if (!things) return <Loading />;
+
+  const currentElements = !things
+    ? null
+    : things
+        .map(el => (el.authorId === auth.uid ? el : null))
+        .filter(item => item !== null);
+
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -19,7 +28,7 @@ const Home = () => {
   return (
     <div className="home">
       <HomeHeader />
-      <HomeThreeColumns />
+      <HomeThreeColumns currentElements={currentElements} auth={auth} />
       <HomeSteps />
       <HomeAboutUs />
       <HomeHelpInfo />

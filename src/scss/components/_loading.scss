@@ -19,7 +19,10 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(rgba(39, 12, 57, 0.8), rgba(51, 13, 77, 0.8));
+  background: radial-gradient(
+    rgba(240, 241, 241, 0.1),
+    rgba(243, 239, 234, 0.1)
+  );
 }
 
 .loading:not(:required) {

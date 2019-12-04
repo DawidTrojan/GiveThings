@@ -7,9 +7,10 @@ import FourthStep from "../FourthStep";
 import FifthStep from "../FifthStep";
 import FormThanks from "../FormThanks";
 
-const Form = ({ giveThings, success, isLoading }) => {
+const Form = ({ giveThings, success, isLoading, error }) => {
   const [currStep, setCurrStep] = useState(1);
   const [isValid, setIsValid] = useState(true);
+  const [isReady, setIsReady] = useState(false);
 
   const [form, setForm] = useState({
     type: "",
@@ -197,6 +198,9 @@ const Form = ({ giveThings, success, isLoading }) => {
     if (form.date < new Date()) {
       isValid = false;
       errors.date = "Wybierz późniejszą datę!";
+    } else if (form.date.getDay() === 6 || form.date.getDay() === 0) {
+      isValid = false;
+      errors.date = "Wybierz datę od poniedziałku do piątku!";
     } else {
       errors.date = "";
     }
@@ -221,6 +225,9 @@ const Form = ({ giveThings, success, isLoading }) => {
       return errors;
     }
     giveThings(form);
+    if (!error) {
+      setIsReady(true);
+    }
   };
 
   if (isLoading) return <Loading />;
@@ -277,7 +284,7 @@ const Form = ({ giveThings, success, isLoading }) => {
 
   return (
     <>
-      {!success ? (
+      {!isReady ? (
         <form onSubmit={handleOnSubmit}>
           <FirstStep
             currStep={currStep}

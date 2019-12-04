@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import Loading from "../../../../assets/Loading";
 import { NavLink } from "react-router-dom";
 
-const LoginForm = ({ signIn, error, isLoading }) => {
+const LoginForm = ({ signIn, error }) => {
   const [sign, setSign] = useState({
     email: "",
     password: ""
@@ -18,8 +17,6 @@ const LoginForm = ({ signIn, error, isLoading }) => {
       [e.target.name]: e.target.value
     });
   };
-
-  if (isLoading) return <Loading />;
 
   const validate = () => {
     let isValid = true;

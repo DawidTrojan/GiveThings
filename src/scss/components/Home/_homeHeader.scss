@@ -78,6 +78,10 @@ header {
 
         @include flex-center;
 
+        &:nth-of-type(1) {
+          margin-right: 0.8rem;
+        }
+
         &:hover {
           cursor: pointer;
           border: 1.5px solid #c8e9e4;
@@ -114,7 +118,7 @@ header {
           position: relative;
 
           &.logoutButton {
-            padding: 0.5rem 0 0.5rem 1.5rem;
+            padding: 0.5rem 0 0.5rem 0.8rem;
 
             &:hover {
               color: #c8e9e4;
@@ -282,63 +286,32 @@ header {
             cursor: pointer;
             color: lighten($base-font-color, 20%);
           }
-
-          &:after {
-            bottom: -50%;
-            content: "";
-            display: block;
-            height: 3px;
-            left: 50%;
-            position: absolute;
-            background: #c8e9e4;
-            transition: width 0.5s ease 0s, left 0.5s ease 0s;
-            width: 0;
-          }
-
-          &:hover:after {
-            width: 100%;
-            left: 0;
-          }
-        }
-      }
-
-      .user_greeting {
-        display: block;
-        font-size: 0.875rem;
-        color: $base-font-color;
-        margin-bottom: 1rem;
-      }
-
-      .giveThings_button {
-        font-size: 1.125rem;
-        color: $base-font-color;
-        border: none;
-        text-decoration: none;
-        text-align: center;
-        margin: 2rem 0;
-        position: relative;
-        padding: 0;
-
-        &:hover {
-          cursor: pointer;
-          color: lighten($base-font-color, 20%);
         }
 
-        &:after {
-          bottom: -50%;
-          content: "";
+        .user_greeting {
           display: block;
-          height: 3px;
-          left: 50%;
-          position: absolute;
-          background: #c8e9e4;
-          transition: width 0.5s ease 0s, left 0.5s ease 0s;
-          width: 0;
+          font-size: 0.875rem;
+          color: $base-font-color;
+          margin-bottom: 1rem;
         }
 
-        &:hover:after {
-          width: 100%;
-          left: 0;
+        .giveThings_button {
+          font-size: 1.125rem;
+          color: $base-font-color;
+          border: none;
+          text-decoration: none;
+          text-align: center;
+          padding: 0;
+
+          &:nth-of-type(1) {
+            margin-right: 0;
+          }
+
+          &:hover {
+            cursor: pointer;
+            color: lighten($base-font-color, 20%);
+            background: transparent;
+          }
         }
       }
 

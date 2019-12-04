@@ -5,7 +5,8 @@ import Form from "../components/+GiveThings/FormSteps";
 const mapState = state => {
   return {
     success: state.thingsReducer.thingsSuccess,
-    isLoading: state.thingsReducer.isLoading
+    isLoading: state.thingsReducer.isLoading,
+    error: state.thingsReducer.authErrorLogin
   };
 };
 

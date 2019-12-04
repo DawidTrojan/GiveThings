@@ -9,16 +9,19 @@ export const sendThings = items => {
   return (dispatch, getState, { getFirestore, getFirebase }) => {
     const firestore = firebase.firestore();
     const userId = getState().firebaseReducer.auth.uid;
+
     dispatch({ type: START_ADDING_THINGS });
     firestore
       .collection("things")
       .add({
         ...items,
-        authorId: userId
+        authorId: userId,
+        timestamp: firebase.firestore.FieldValue.serverTimestamp()
       })
       .then(() => {
         dispatch({ type: ADDED_THINGS_SUCCESS });
       })
+
       .catch(error => {
         dispatch({ type: ADDED_THINGS_ERROR, ...error });
       });
