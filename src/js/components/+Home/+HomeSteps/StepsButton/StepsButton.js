@@ -6,7 +6,7 @@ const StepsButton = ({ auth }) => (
     <div className="steps_button">
       <Link
         to={auth.isEmpty ? "/logowanie" : "/oddaj-rzeczy"}
-        className="steps_button__link"
+        className="steps_button--link"
       >
         <span>Oddaj rzeczy</span>
       </Link>

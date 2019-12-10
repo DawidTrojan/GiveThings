@@ -18,8 +18,8 @@ const ThirdStep = ({
   return (
     <div>
       <Bar />
-      <div className="thirdStep_form__container">
-        <div className="thirdStep_form__wrapper">
+      <div className="thirdStep_form--container">
+        <div className="thirdStep_form--wrapper">
           <span className="step_title">Krok 3/4</span>
           <div className="thirdStep_form">
             <div className="localization_box">
@@ -32,7 +32,7 @@ const ThirdStep = ({
                 style={
                   localizationError
                     ? {
-                        borderColor: "red"
+                        borderColor: "#FF0000"
                       }
                     : null
                 }
@@ -45,10 +45,10 @@ const ThirdStep = ({
                 <option value="Katowice">Katowice</option>
               </select>
             </div>
-            <div className="thirdStep_form__checkbox">
+            <div className="thirdStep_form--checkbox">
               <span>Komu chcesz pomóc?</span>
               <div className="form_checkbox">
-                <div className="form_checkbox__box">
+                <div className="form_checkbox--box">
                   <input
                     type="checkbox"
                     name="check"
@@ -59,7 +59,7 @@ const ThirdStep = ({
                   />
                   <label htmlFor="check_first">dzieciom</label>
                 </div>
-                <div className="form_checkbox__box">
+                <div className="form_checkbox--box">
                   <input
                     type="checkbox"
                     name="check"
@@ -70,7 +70,7 @@ const ThirdStep = ({
                   />
                   <label htmlFor="check_second">samotnym matkom</label>
                 </div>
-                <div className="form_checkbox__box">
+                <div className="form_checkbox--box">
                   <input
                     type="checkbox"
                     name="check"
@@ -81,7 +81,7 @@ const ThirdStep = ({
                   />
                   <label htmlFor="check_third">bezdomnym</label>
                 </div>
-                <div className="form_checkbox__box">
+                <div className="form_checkbox--box">
                   <input
                     type="checkbox"
                     name="check"
@@ -92,7 +92,7 @@ const ThirdStep = ({
                   />
                   <label htmlFor="check_fourth">niepełnosprawnym</label>
                 </div>
-                <div className="form_checkbox__box">
+                <div className="form_checkbox--box">
                   <input
                     type="checkbox"
                     name="check"
@@ -113,7 +113,7 @@ const ThirdStep = ({
                 style={
                   localizationError
                     ? {
-                        borderColor: "red"
+                        borderColor: "#FF0000"
                       }
                     : null
                 }
@@ -125,10 +125,10 @@ const ThirdStep = ({
             </div>
           </div>
           <div className="buttons_box">
-            <div className="thirdStep_form__buttons">
+            <div className="thirdStep_form--buttons">
               {prevButton()}
               {!groups.length ? (
-                <span> Wybierz komu chcesz pomóc ! </span>
+                <span> Zaznacz komu chcesz pomóc ! </span>
               ) : (
                 nextButton()
               )}

@@ -7,7 +7,7 @@ const Footer = () => {
         <div>
           <span>Copyright by CodersLab</span>
         </div>
-        <div className="footer_icons__box">
+        <div className="footer_icons--box">
           <div className="facebook" />
           <div className="instagram" />
         </div>

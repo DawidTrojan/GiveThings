@@ -1,4 +1,7 @@
-.secondStep_form__container {
+@import '../../settings/colors';
+@import '../../settings/mixins';
+
+.secondStep_form--container {
   height: 60rem;
   width: 100%;
   background: url("../../../assets/images/Background-Form.png");
@@ -6,9 +9,8 @@
   background-size: cover;
   background-repeat: no-repeat;
   padding: 3rem 0;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
+
+  @include flex-start;
 
   @media (max-width: 991px) {
     background: #eeede9;
@@ -16,7 +18,7 @@
     height: 55rem;
   }
 
-  .secondStep_form__wrapper {
+  .secondStep_form--wrapper {
     height: 100%;
     width: 100%;
     padding: 0 2rem;
@@ -27,17 +29,15 @@
   }
 
   span {
-    font-size: 24px;
-    color: #3c3c3c;
+    font-size: 1.5rem;
+    color: $base-font-color;
     margin-bottom: 7rem;
 
     @media (max-width: 991px) {
-      font-size: 15px;
+      font-size: 0.9375rem;
       margin-bottom: 0;
     }
   }
-
-
 
   .secondStep_form {
     height: 100%;
@@ -55,36 +55,35 @@
 
       label {
         display: block;
-        font-size: 36px;
+        font-size: 2.25rem;
         color: #000000;
         max-width: 60%;
 
         line-height: 1.3;
         margin-bottom: 4rem;
 
-
         @media (max-width: 991px) {
-          font-size: 29px;
+          font-size: 1.8125rem;
         }
       }
 
       span {
-        font-size: 24px;
+        font-size: 1.5rem;
         color: #000000;
         margin-right: 2rem;
 
         @media (max-width: 991px) {
-          font-size: 18px;
+          font-size: 1.125rem;
         }
       }
 
       #secondStep_select {
-        font-size: 24px;
+        font-size: 1.5rem;
         width: 280px;
         height: 45px;
         color: #000000;
         padding: 0.5rem;
-        border: 0.75px solid #3c3c3c;
+        border: 0.75px solid $base-font-color;
         outline: none;
 
         -moz-appearance: none;
@@ -98,7 +97,7 @@
         @media (max-width: 991px) {
           width: 250px;
           height: 35px;
-          font-size: 14px;
+          font-size: 0.875rem;
         }
 
         option {
@@ -116,10 +115,9 @@
     display: flex;
     flex-direction: column;
 
-    .secondStep_form__buttons {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    .secondStep_form--buttons {
+      @include flex-center;
+
       margin-bottom: 1rem;
 
       @media (max-width: 500px) {
@@ -129,11 +127,12 @@
       button {
         width: 180px;
         height: 79px;
-        border: 0.75px solid #3c3c3c;
+        border: 0.75px solid $base-font-color;
         background: transparent;
         outline: none;
         color: #000000;
-        font-size: 24px;
+        font-size: 1.5rem;
+        transition: 0.5s;
 
         &:nth-of-type(1) {
           margin-right: 5rem;
@@ -148,23 +147,23 @@
         @media (max-width: 991px) {
           width: 100px;
           height: 40px;
-          font-size: 15px;
+          font-size: 0.9375rem;
         }
 
         &:hover {
           cursor: pointer;
+          background: lighten(#ECEBE7, 5%);
         }
       }
     }
   }
 }
 
-
 .form_error {
-  font-size: 18px;
-  color: red;
+  font-size: 1.125rem;
+  color: $error-color;
 
   @media (max-width: 991px) {
-    font-size: 12px;
+    font-size: 0.75rem;
   }
 }

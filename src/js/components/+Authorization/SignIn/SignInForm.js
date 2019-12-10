@@ -44,13 +44,13 @@ const LoginForm = ({ signIn, error }) => {
 
   const handleOnSubmit = e => {
     e.preventDefault();
-    signIn(sign.email, sign.password);
     if (validate()) {
       setSign({
         ...sign,
         email: "",
         password: ""
       });
+      signIn(sign.email, sign.password);
     } else {
       return errors;
     }
@@ -58,15 +58,15 @@ const LoginForm = ({ signIn, error }) => {
 
   return (
     <form className="auth_form" onSubmit={handleOnSubmit}>
-      <div className="auth_form__loginInputs">
-        <div className="title_box">
+      <div className="auth_form--signinInputs">
+        <div className="inputs_title--box">
           <span>Email</span>
         </div>
         <input value={sign.email} onChange={handleOnChange} name="email" />
         <div className="error_box">
           <span className="auth_error">{errors.email}</span>
         </div>
-        <div className="title_box">
+        <div className="inputs_title--box">
           <span>Hasło</span>
         </div>
         <input
@@ -89,7 +89,7 @@ const LoginForm = ({ signIn, error }) => {
           ) : null}
         </div>
       </div>
-      <div className="auth_form__buttons">
+      <div className="auth_form--buttons">
         <NavLink className="redirect_button" to="/rejestracja">
           Załóż konto
         </NavLink>

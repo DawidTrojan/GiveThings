@@ -36,16 +36,16 @@ const NavLinks = ({ links }) => {
     <>
       <nav
         ref={wrapperRef}
-        className={!isOpenNav ? "nav_links" : "toggle_nav__links"}
+        className={!isOpenNav ? "nav_links" : "toggle_nav--links"}
       >
-        <ul className={!isOpenNav ? "nav_list" : "toggle_nav__list"}>
-          <div className="toggle_auth__links">{links}</div>
+        <ul className={!isOpenNav ? "nav_list" : "toggle_nav--list"}>
+          <div className="toggle_auth--links">{links}</div>
           <li>
             <NavLink onClick={toggleAfterClick} className="nav_navLink" to="/">
               Start
             </NavLink>
           </li>
-          <div className="toggleNav_decoration__box ">
+          <div className="toggleNav_decoration--box ">
             <div className="toggleNav_decoration"></div>
           </div>
           <li>
@@ -58,13 +58,13 @@ const NavLinks = ({ links }) => {
               O co chodzi
             </Link>
           </li>
-          <div className="toggleNav_decoration__box ">
+          <div className="toggleNav_decoration--box ">
             <div className="toggleNav_decoration"></div>
           </div>
           <li>
             <Link
               onClick={toggleAfterClick}
-              to="home_aboutUs__container"
+              to="home_aboutUs--container"
               className="ten"
               duration={500}
               smooth={true}
@@ -72,33 +72,33 @@ const NavLinks = ({ links }) => {
               <span>O nas</span>
             </Link>
           </li>
-          <div className="toggleNav_decoration__box ">
+          <div className="toggleNav_decoration--box ">
             <div className="toggleNav_decoration"></div>
           </div>
           <li>
             <Link
               onClick={toggleAfterClick}
-              to="help_info__container"
+              to="help_info--container"
               duration={500}
               smooth={true}
             >
               Fundacja i organizacje
             </Link>
           </li>
-          <div className="toggleNav_decoration__box ">
+          <div className="toggleNav_decoration--box ">
             <div className="toggleNav_decoration"></div>
           </div>
           <li>
             <Link
               onClick={toggleAfterClick}
-              to="home_footer__container"
+              to="home_footer--container"
               duration={500}
               smooth={true}
             >
               Kontakt
             </Link>
           </li>
-          <div className="toggleNav_decoration__box ">
+          <div className="toggleNav_decoration--box ">
             <div className="toggleNav_decoration"></div>
           </div>
           <i

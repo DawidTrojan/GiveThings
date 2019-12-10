@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import Loading from "../../../../assets/Loading";
 import { NavLink } from "react-router-dom";
 
-const RegisterForm = ({ signUp, error, isLoading }) => {
+const RegisterForm = ({ signUp, error }) => {
   const [register, setRegister] = useState({
     email: "",
     password: "",
@@ -20,8 +19,6 @@ const RegisterForm = ({ signUp, error, isLoading }) => {
       [e.target.name]: e.target.value
     });
   };
-
-  if (isLoading) return <Loading />;
 
   const validate = () => {
     let isValid = true;
@@ -75,15 +72,15 @@ const RegisterForm = ({ signUp, error, isLoading }) => {
 
   return (
     <form className="auth_form" onSubmit={handleOnSubmit}>
-      <div className="auth_form__registerInputs">
-        <div className="title_box">
+      <div className="auth_form--registerInputs">
+        <div className="inputs_title--box">
           <span>Email</span>
         </div>
         <input value={register.email} onChange={handleOnChange} name="email" />
         <div className="error_box">
           <span className="auth_error">{errors.email}</span>
         </div>
-        <div className="title_box">
+        <div className="inputs_title--box">
           <span>Hasło</span>
         </div>
         <input
@@ -95,7 +92,7 @@ const RegisterForm = ({ signUp, error, isLoading }) => {
         <div className="error_box">
           <span className="auth_error">{errors.password}</span>
         </div>
-        <div className="title_box">
+        <div className="inputs_title--box">
           <span>Powtórz hasło</span>
         </div>
         <input
@@ -117,7 +114,7 @@ const RegisterForm = ({ signUp, error, isLoading }) => {
           ) : null}
         </div>
       </div>
-      <div className="auth_form__buttons">
+      <div className="auth_form--buttons">
         <NavLink className="redirect_button" to="/logowanie">
           Zaloguj się
         </NavLink>

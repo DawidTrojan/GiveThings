@@ -70,10 +70,10 @@ const Form = ({ contact }) => {
   };
 
   return (
-    <form onSubmit={handleOnSubmit} className="home_footer__form">
+    <form onSubmit={handleOnSubmit} className="home_footer--form">
       <span className="form_success">{success}</span>
-      <div className="form_input__container">
-        <div className="form_input__box">
+      <div className="form_input--container">
+        <div className="form_input--box">
           <h5>Wpisz swoje imię</h5>
           <input
             type="text"
@@ -84,7 +84,7 @@ const Form = ({ contact }) => {
           />
           <span>{errors.name}</span>
         </div>
-        <div className="form_input__box">
+        <div className="form_input--box">
           <h5>Wpisz swój email</h5>
           <input
             placeholder="abc@xyz.pl"
@@ -95,7 +95,7 @@ const Form = ({ contact }) => {
           <span>{errors.email}</span>
         </div>
       </div>
-      <div className="form_textarea__box">
+      <div className="form_textarea--box">
         <h5>Wpisz swoją wiadomość</h5>
         <textarea
           value={form.message}
@@ -106,7 +106,7 @@ const Form = ({ contact }) => {
         <span>{errors.message}</span>
       </div>
 
-      <div className="form_button__box">
+      <div className="form_button--box">
         <button>Wyślij</button>
       </div>
     </form>

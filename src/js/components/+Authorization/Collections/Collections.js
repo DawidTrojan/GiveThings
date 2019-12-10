@@ -30,7 +30,7 @@ const Collections = ({ things, auth }) => {
           <CollectionsList currentElements={currentElements} />
         </div>
       </div>
-      <Footer></Footer>
+      <Footer />
     </>
   );
 };

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Nav = ({ profile }) => {
   return (
     <div className="giveThings_nav__box">
-      <span>Witaj {profile.email}!</span>
+      <span className="user_greeting">Witaj {profile.email}!</span>
       <Link className="giveThings_redirect" to="/">
         <span>Strona Główna</span>
       </Link>

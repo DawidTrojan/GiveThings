@@ -1,7 +1,7 @@
 @import "../../settings/colors";
 @import "../../settings/mixins";
 
-.home_footer__container {
+.home_footer--container {
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -44,25 +44,25 @@
     }
   }
 
-  .home_footer__box {
+  .home_footer--box {
     margin-top: 8rem;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
 
-    .home_footer__form {
+    .home_footer--form {
       display: flex;
       justify-content: flex-start;
       align-items: center;
       flex-direction: column;
 
-      @media (max-width: 991px) {
-        min-width: 100%;
-      }
-
       @media (max-width: 1185px) {
         width: 80%;
+      }
+
+      @media (max-width: 991px) {
+        min-width: 100%;
       }
 
       .form_success {
@@ -76,7 +76,7 @@
     }
   }
 
-  .home_contact__title {
+  .home_contact--title {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -89,12 +89,12 @@
       color: $base-font-color;
 
       @media (max-width: 991px) {
-        font-size: 2.125rem;
+        font-size: 1.8125rem;
       }
     }
   }
 
-  .home_contact__decoration {
+  .home_contact--decoration {
     height: 33px;
     width: 253px;
     margin-bottom: 3rem;
@@ -107,7 +107,7 @@
 
 //form
 
-.form_input__container {
+.form_input--container {
   min-width: 100%;
   @include flex-space-evenly;
 
@@ -116,7 +116,7 @@
     flex-direction: column;
   }
 
-  .form_input__box {
+  .form_input--box {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -167,7 +167,7 @@
   }
 }
 
-.form_textarea__box {
+.form_textarea--box {
   min-width: 100%;
   display: flex;
   justify-content: center;
@@ -205,7 +205,7 @@
   }
 }
 
-.form_button__box {
+.form_button--box {
   min-width: 100%;
 
   display: flex;
@@ -220,14 +220,14 @@
     border-radius: 2px;
     padding: 0.8rem 1.7rem;
     color: #000000;
-    font-size: 1.125rem;
+    font-size: 1rem;
     outline: none;
     transition: 1s;
 
     &:hover {
       cursor: pointer;
-      box-shadow: inset -3.5em 0 0 0 #c8e9e4, inset 3.5em 0 0 0 #c8e9e4;
       border: 1px solid #c8e9e4;
+      background: darken($background-second-color, 2%);
     }
   }
 }
@@ -259,12 +259,12 @@
     color: $base-font-color;
 
     @media (max-width: 991px) {
-      font-size: 0.875rem;
+      font-size: 0.75rem;
     }
   }
 }
 
-.footer_icons__box {
+.footer_icons--box {
   @include flex-center;
 
   .facebook {

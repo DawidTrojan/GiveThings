@@ -24,14 +24,14 @@ const FourthStep = ({
   return (
     <div>
       <Bar />
-      <div className="fourthStep_form__container">
-        <div className="fourthStep_form__wrapper">
+      <div className="fourthStep_form--container">
+        <div className="fourthStep_form--wrapper">
           <span>Krok 4/4</span>
           <div className="fourthStep_form">
             <h3>Podaj adres oraz termin odbioru rzeczy</h3>
             <div className="form_container">
               <div className="form_box">
-                <div className="form_box__item">
+                <div className="form_box--item">
                   <div className="item_title">
                     <span>Ulica</span>
                   </div>
@@ -39,7 +39,7 @@ const FourthStep = ({
                     style={
                       error.street
                         ? {
-                            borderColor: "red"
+                            borderColor: "#FF0000"
                           }
                         : null
                     }
@@ -50,7 +50,7 @@ const FourthStep = ({
                     value={address.street}
                   />
                 </div>
-                <div className="form_box__item">
+                <div className="form_box--item">
                   <div className="item_title">
                     <span>Miasto</span>
                   </div>
@@ -58,7 +58,7 @@ const FourthStep = ({
                     style={
                       error.city
                         ? {
-                            borderColor: "red"
+                            borderColor: "#FF0000"
                           }
                         : null
                     }
@@ -69,7 +69,7 @@ const FourthStep = ({
                     value={address.city}
                   />
                 </div>
-                <div className="form_box__item">
+                <div className="form_box--item">
                   <div className="item_title">
                     <span>Kod pocztowy</span>
                   </div>
@@ -77,7 +77,7 @@ const FourthStep = ({
                     style={
                       error.postCode
                         ? {
-                            borderColor: "red"
+                            borderColor: "#FF0000"
                           }
                         : null
                     }
@@ -88,7 +88,7 @@ const FourthStep = ({
                     value={address.postCode}
                   />
                 </div>
-                <div className="form_box__item">
+                <div className="form_box--item">
                   <div className="item_title">
                     <span>Numer telefonu</span>
                   </div>
@@ -96,7 +96,7 @@ const FourthStep = ({
                     style={
                       error.phoneNumber
                         ? {
-                            borderColor: "red"
+                            borderColor: "#FF0000"
                           }
                         : null
                     }
@@ -109,7 +109,7 @@ const FourthStep = ({
                 </div>
               </div>
               <div className="form_box">
-                <div className="form_box__item" name="date">
+                <div className="form_box--item" name="date">
                   <div className="item_title">
                     <span>Data</span>
                   </div>
@@ -118,7 +118,7 @@ const FourthStep = ({
                     style={
                       dateError
                         ? {
-                            borderColor: "red"
+                            borderColor: "#FF0000"
                           }
                         : null
                     }
@@ -131,7 +131,7 @@ const FourthStep = ({
                     />
                   </div>
                 </div>
-                <div className="form_box__item">
+                <div className="form_box--item">
                   <div className="item_title">
                     <span>Godzina</span>
                   </div>
@@ -144,7 +144,7 @@ const FourthStep = ({
                     }
                   />
                 </div>
-                <div className="form_box__textarea">
+                <div className="form_box--textarea">
                   <div className="item_title">
                     <span>Uwagi dla kuriera</span>
                   </div>
@@ -159,7 +159,7 @@ const FourthStep = ({
             </div>
           </div>
           <div className="buttons_box">
-            <div className="fourthStep_form__buttons">
+            <div className="fourthStep_form--buttons">
               {prevButton()}
               {nextButton()}
             </div>

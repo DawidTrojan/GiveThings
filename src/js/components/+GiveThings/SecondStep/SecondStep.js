@@ -16,8 +16,8 @@ const SecondStep = ({
   return (
     <div>
       <Bar />
-      <div className="secondStep_form__container">
-        <div className="secondStep_form__wrapper">
+      <div className="secondStep_form--container">
+        <div className="secondStep_form--wrapper">
           <span>Krok 2/4</span>
           <div className="secondStep_form">
             <div className="select_box">
@@ -30,7 +30,7 @@ const SecondStep = ({
                 id="secondStep_select"
                 name="bag"
                 onChange={handleChange}
-                style={error ? { borderColor: "red" } : null}
+                style={error ? { borderColor: "#FF0000" } : null}
               >
                 <option value="-1" disabled>
                   -- wybierz --
@@ -44,7 +44,7 @@ const SecondStep = ({
             </div>
           </div>
           <div className="buttons_box">
-            <div className="secondStep_form__buttons">
+            <div className="secondStep_form--buttons">
               {prevButton()}
               {nextButton()}
             </div>

@@ -13,7 +13,7 @@ const Pagination = ({
   }
 
   return (
-    <div className="pagination_buttons__box">
+    <div className="pagination_buttons--box">
       {elementsNumber.length <= 1
         ? null
         : elementsNumber.map(number =>

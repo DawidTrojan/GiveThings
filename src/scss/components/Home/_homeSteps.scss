@@ -22,7 +22,7 @@
     font-size: 2.375rem;
 
     @media (max-width: 991px) {
-      font-size: 2.125rem;
+      font-size: 1.8125rem;
     }
   }
 
@@ -35,7 +35,7 @@
     background-size: cover;
   }
 
-  .steps_icons__container {
+  .steps_icons--container {
     min-width: 100%;
     background: $background-second-color;
 
@@ -51,7 +51,7 @@
         flex-direction: column;
       }
 
-      .steps_icons__box {
+      .steps_icons--box {
         @include flex-center-column;
         margin-right: 1.5rem;
 
@@ -109,7 +109,7 @@
         }
       }
 
-      .step_icons__icon {
+      .step_icons--icon {
         min-height: 83px;
         min-width: 83px;
         margin-bottom: 1rem;
@@ -149,7 +149,7 @@
 
     @include flex-center;
 
-    .steps_button__link {
+    .steps_button--link {
       text-decoration: none;
       text-align: center;
       padding: 2.5rem 2.5rem;
@@ -176,7 +176,7 @@
         font-size: 2.25rem;
 
         @media (max-width: 1070px) {
-          font-size: 1.875rem;
+          font-size: 1.8125rem;
         }
       }
     }

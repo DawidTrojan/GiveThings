@@ -5,9 +5,9 @@ import Footer from "../../../containers/Footer";
 
 const HomeFooter = () => (
   <>
-    <div className="home_footer__container">
+    <div className="home_footer--container">
       <div className="wrapper">
-        <div className="home_footer__box">
+        <div className="home_footer--box">
           <Title />
           <MessageForm />
         </div>

@@ -6,7 +6,7 @@ const HomeHeader = ({ auth }) => {
   return (
     <header>
       <div className="wrapper">
-        <div className="home_header__container">
+        <div className="home_header--container">
           <Nav />
           <Content auth={auth} />
         </div>

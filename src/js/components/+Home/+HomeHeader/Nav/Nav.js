@@ -5,11 +5,7 @@ import SignInLinks from "../../../../containers/SignInLinks";
 import SignOutLinks from "./SignOutLinks";
 
 const Nav = ({ auth, profile }) => {
-  const links = auth.uid ? (
-    <SignInLinks profile={profile}></SignInLinks>
-  ) : (
-    <SignOutLinks />
-  );
+  const links = auth.uid ? <SignInLinks profile={profile} /> : <SignOutLinks />;
 
   return (
     <div className="nav_container">

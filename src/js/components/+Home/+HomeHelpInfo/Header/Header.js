@@ -25,12 +25,12 @@ const Header = () => {
   };
 
   return (
-    <div className="help_info__container">
+    <div className="help_info--container">
       <div className="wrapper">
-        <div className="help_info__header">
+        <div className="help_info--header">
           <h4>Komu pomagamy?</h4>
-          <div className="help_info__decoration"></div>
-          <div className="help_info__buttons">
+          <div className="help_info--decoration"></div>
+          <div className="help_info--buttons">
             {isActiveFundation ? (
               <span id="fundations" className="active" onClick={handleOnClick}>
                 Fundacjom

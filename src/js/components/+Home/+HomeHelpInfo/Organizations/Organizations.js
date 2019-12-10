@@ -21,20 +21,20 @@ const Fundations = () => {
     setCurrentPage(pageNumber);
   };
   return (
-    <div className="help_info__content">
-      <span className="help_info__title">
+    <div className="help_info--content">
+      <span className="help_info--title">
         Organizacje, Lorem ipsum dolor sit amet, consectetur adipiscing elit,
         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
         enim ad minim veniam, quis nostrud exercitation.
       </span>
-      <div className="help_info__box">
+      <div className="help_info--box">
         {currentElements.map(el => (
-          <div className="help_info__element" key={el.id}>
-            <div className="help_info__elementBox">
+          <div className="help_info--element" key={el.id}>
+            <div className="help_info--elementBox">
               <span className="element_title">{el.title}</span>
               <span className="element_description">{el.description}</span>
             </div>
-            <span className="element_side__text">{el.sideText}</span>
+            <span className="element_side--text">{el.sideText}</span>
           </div>
         ))}
         <Pagination

@@ -1,15 +1,19 @@
 import React from "react";
 
 const HomeThreeColumns = ({ currentElements, auth }) => {
-  const organizations = currentElements
-    .map(el => el.specificLocalization)
-    .filter(item => item !== "");
+  const organizations = !currentElements
+    ? null
+    : currentElements
+        .map(el => el.specificLocalization)
+        .filter(item => item !== "");
 
-  const localizations = currentElements
-    .map(el => el.localization)
-    .filter(item => item !== "");
+  const localizations = !currentElements
+    ? null
+    : currentElements.map(el => el.localization).filter(item => item !== "");
 
-  const bags = currentElements.map(el => Number(el.bags));
+  const bags = !currentElements
+    ? null
+    : currentElements.map(el => Number(el.bags));
 
   const sumOfBags =
     !auth.uid || !currentElements.length
@@ -28,7 +32,7 @@ const HomeThreeColumns = ({ currentElements, auth }) => {
           </span>
         </div>
         <div className="columns_box">
-          <h3>{organizations.length}</h3>
+          <h3>{!organizations ? 0 : organizations.length}</h3>
           <h4>Wspartych organizacji</h4>
           <span>
             Lorem ipsum dolor sit amet, consectetur adipisc Pellentesque vel
@@ -36,7 +40,7 @@ const HomeThreeColumns = ({ currentElements, auth }) => {
           </span>
         </div>
         <div className="columns_box">
-          <h3>{localizations.length}</h3>
+          <h3>{!localizations ? 0 : localizations.length}</h3>
           <h4>Zorganizowanych zbiórek</h4>
           <span>
             Lorem ipsum dolor sit amet, consectetur adipisc Pellentesque vel

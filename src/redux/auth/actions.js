@@ -12,12 +12,14 @@ export const signIn = (email, password) => {
   return (dispatch, getState, { getFirebase }) => {
     const firebase = getFirebase();
     dispatch({ type: START_SIGNING_IN });
+    firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION);
     firebase
       .auth()
       .signInWithEmailAndPassword(email, password)
       .then(() => {
         dispatch({ type: SIGNED_IN });
       })
+
       .catch(error => {
         dispatch({ type: SIGN_IN_ERROR, ...error });
       });
@@ -37,6 +39,7 @@ export const signUp = newUser => {
     const firebase = getFirebase();
     const firestore = firebase.firestore();
     dispatch({ type: START_SIGNING_UP });
+    firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION);
     firebase
       .auth()
       .createUserWithEmailAndPassword(newUser.email, newUser.password)

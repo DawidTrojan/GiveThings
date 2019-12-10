@@ -8,14 +8,14 @@ const FifthStep = ({ currStep, prevButton, submitButton, form, isValid }) => {
 
   return (
     <div>
-      <div className="fifthStep_summary__container">
-        <div className="fifthStep_summary__wrapper">
+      <div className="fifthStep_summary--container">
+        <div className="fifthStep_summary--wrapper">
           <h3>Podsumowanie Twojej darowizny</h3>
-          <div className="fifthStep_info__box">
-            <span className="fifthStep_info__description">Oddajesz:</span>
-            <div className="fifthStep_info__item">
+          <div className="fifthStep_info--box">
+            <span className="fifthStep_info--description">Oddajesz:</span>
+            <div className="fifthStep_info--item">
               <div className="fiftStep_icon" />
-              <div className="fifthStep_info__text">
+              <div className="fifthStep_info--text">
                 {!form.type ? null : (
                   <span>
                     {" "}
@@ -33,9 +33,9 @@ const FifthStep = ({ currStep, prevButton, submitButton, form, isValid }) => {
                 <span> {form.helpGroups.map(el => el).join(", ")}</span>
               </div>
             </div>
-            <div className="fifthStep_info__item">
-              <div className="fiftStep_icon__second" />
-              <div className="fifthStep_info__text">
+            <div className="fifthStep_info--item">
+              <div className="fiftStep_icon--second" />
+              <div className="fifthStep_info--text">
                 <span>
                   dla lokalizacji:{" "}
                   {!form.localization
@@ -47,8 +47,8 @@ const FifthStep = ({ currStep, prevButton, submitButton, form, isValid }) => {
             <div></div>
           </div>
           <div className="fifthStep_summary">
-            <div className="fifth_summary__container">
-              <div className="fifth_summary__box">
+            <div className="fifth_summary--container">
+              <div className="fifth_summary--box">
                 <h4>Adres odbioru:</h4>
                 <div className="summary_item">
                   <span>Ulica</span> <span> {form.address.street}</span>
@@ -65,7 +65,7 @@ const FifthStep = ({ currStep, prevButton, submitButton, form, isValid }) => {
                   <span> {form.address.phoneNumber}</span>
                 </div>
               </div>
-              <div className="fifth_summary__box">
+              <div className="fifth_summary--box">
                 <h4>Termin odbioru:</h4>
                 <div className="summary_item">
                   <span>Data</span>
@@ -95,7 +95,7 @@ const FifthStep = ({ currStep, prevButton, submitButton, form, isValid }) => {
             </div>
           </div>
           <div className="buttons_box">
-            <div className="fifthStep_summary__buttons">
+            <div className="fifthStep_summary--buttons">
               {prevButton()}
               {submitButton()}
             </div>

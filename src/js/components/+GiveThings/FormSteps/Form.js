@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Loading from "../../../../assets/Loading";
 import FirstStep from "../FirstStep";
 import SecondStep from "../SecondStep";
 import ThirdStep from "../ThirdStep";
@@ -7,7 +6,7 @@ import FourthStep from "../FourthStep";
 import FifthStep from "../FifthStep";
 import FormThanks from "../FormThanks";
 
-const Form = ({ giveThings, success, isLoading, error }) => {
+const Form = ({ giveThings, error, isLoading }) => {
   const [currStep, setCurrStep] = useState(1);
   const [isValid, setIsValid] = useState(true);
   const [isReady, setIsReady] = useState(false);
@@ -225,12 +224,11 @@ const Form = ({ giveThings, success, isLoading, error }) => {
       return errors;
     }
     giveThings(form);
+
     if (!error) {
       setIsReady(true);
     }
   };
-
-  if (isLoading) return <Loading />;
 
   const stepNext = () => {
     let nextStep = currStep;
@@ -285,7 +283,10 @@ const Form = ({ giveThings, success, isLoading, error }) => {
   return (
     <>
       {!isReady ? (
-        <form onSubmit={handleOnSubmit}>
+        <form
+          style={isLoading ? { background: "black" } : null}
+          onSubmit={handleOnSubmit}
+        >
           <FirstStep
             currStep={currStep}
             nextButton={nextButton}
@@ -336,7 +337,7 @@ const Form = ({ giveThings, success, isLoading, error }) => {
           />
         </form>
       ) : (
-        <FormThanks />
+        <FormThanks isLoading={isLoading} isReady={isReady} />
       )}
     </>
   );

@@ -3,7 +3,7 @@ import Info from "./Info";
 import Image from "./Image";
 
 const HomeAboutUs = () => (
-  <div className="home_aboutUs__container">
+  <div className="home_aboutUs--container">
     <Info />
     <Image />
   </div>
