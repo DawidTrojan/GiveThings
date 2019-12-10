@@ -1,7 +1,7 @@
 {
-  "name": "give-things",
+  "name": "giveThings",
   "version": "0.1.0",
-  "homepage": "https://dawidtrojan.github.io/give-things",
+  "homepage": "https://dawidtrojan.github.io/giveThings",
   "private": true,
   "dependencies": {
     "axios": "^0.19.0",
