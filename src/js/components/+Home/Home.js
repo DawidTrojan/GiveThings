@@ -7,11 +7,8 @@ import HomeSteps from "../../containers/HomeSteps";
 import HomeAboutUs from "./+HomeAboutUs";
 import HomeHelpInfo from "./+HomeHelpInfo";
 import HomeFooter from "./+HomeFooter";
-import Loading from "../../../assets/Loading";
 
 const Home = ({ things, auth }) => {
-  if (!things) return <Loading />;
-
   const currentElements = !things
     ? null
     : things

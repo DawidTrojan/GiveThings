@@ -5,7 +5,6 @@ import { Provider } from "react-redux";
 import "./scss/main.scss";
 import { createStore, applyMiddleware, compose } from "redux";
 import rootReducer from "./redux/reducers";
-import { logger } from "redux-logger";
 import thunk from "redux-thunk";
 import {
   createFirestoreInstance,
@@ -32,16 +31,13 @@ firebase.firestore();
 
 const rrfConfig = {
   userProfile: "users",
-  useFirestoreForProfile: true // Firestore for Profile instead of Realtime DB
+  useFirestoreForProfile: true
 };
 
 const store = createStore(
   rootReducer,
   compose(
-    applyMiddleware(
-      thunk.withExtraArgument({ getFirebase, getFirestore }),
-      logger
-    ),
+    applyMiddleware(thunk.withExtraArgument({ getFirebase, getFirestore })),
     reduxFirestore(firebaseConfig)
   )
 );

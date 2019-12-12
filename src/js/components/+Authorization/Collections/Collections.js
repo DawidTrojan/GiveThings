@@ -1,4 +1,5 @@
 import React from "react";
+import { Redirect } from "react-router-dom";
 import Loading from "../../../../assets/Loading";
 import CollectionsHeader from "./CollectionsHeader";
 import CollectionsList from "./CollectionsList";
@@ -6,6 +7,7 @@ import Footer from "../../+Home/+HomeFooter";
 import Nav from "./Nav";
 
 const Collections = ({ things, auth }) => {
+  if (!auth.uid) return <Redirect to="/" />;
   if (!things) return <Loading />;
 
   const currentElements = things

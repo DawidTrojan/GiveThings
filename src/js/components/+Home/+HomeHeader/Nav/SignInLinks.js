@@ -5,7 +5,7 @@ const SignInLinks = ({ signOut, profile }) => {
   const [logout, setLogout] = useState(false);
 
   if (logout) {
-    return <Redirect to="/wylogowano"></Redirect>;
+    return <Redirect to="/wylogowano" />;
   }
 
   const handleOnClick = () => {
