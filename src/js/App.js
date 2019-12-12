@@ -1,5 +1,5 @@
 import React from "react";
-import { Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { createBrowserHistory } from "history";
 import Home from "./containers/Home";
 import SignIn from "./containers/SignIn";
@@ -16,7 +16,7 @@ const App = () => {
   });
 
   return (
-    <Router history={browserHistory}>
+    <Router history={browserHistory} basename={process.env.PUBLIC_URL}>
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/logowanie" component={SignIn} />
