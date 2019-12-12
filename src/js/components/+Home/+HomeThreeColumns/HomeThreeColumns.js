@@ -16,7 +16,7 @@ const HomeThreeColumns = ({ currentElements, auth }) => {
     : currentElements.map(el => Number(el.bags));
 
   const sumOfBags =
-    !auth.uid || !currentElements
+    !auth.uid || !currentElements.length
       ? 0
       : bags.reduce((prev, curr) => prev + curr);
 
