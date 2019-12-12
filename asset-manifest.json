@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/give-things/static/css/main.6df9c1b5.chunk.css",
+    "main.js": "/give-things/static/js/main.50ead362.chunk.js",
+    "main.js.map": "/give-things/static/js/main.50ead362.chunk.js.map",
+    "runtime-main.js": "/give-things/static/js/runtime-main.a8fbc424.js",
+    "runtime-main.js.map": "/give-things/static/js/runtime-main.a8fbc424.js.map",
+    "static/css/2.a687c105.chunk.css": "/give-things/static/css/2.a687c105.chunk.css",
+    "static/js/2.e22bb92f.chunk.js": "/give-things/static/js/2.e22bb92f.chunk.js",
+    "static/js/2.e22bb92f.chunk.js.map": "/give-things/static/js/2.e22bb92f.chunk.js.map",
+    "index.html": "/give-things/index.html",
+    "precache-manifest.1cce20a6a91ddfb1f13e2a4ad4a5abda.js": "/give-things/precache-manifest.1cce20a6a91ddfb1f13e2a4ad4a5abda.js",
+    "service-worker.js": "/give-things/service-worker.js",
+    "static/css/2.a687c105.chunk.css.map": "/give-things/static/css/2.a687c105.chunk.css.map",
+    "static/css/main.6df9c1b5.chunk.css.map": "/give-things/static/css/main.6df9c1b5.chunk.css.map",
+    "static/media/main.scss": "/give-things/static/media/open-sans-v17-latin-ext_latin-regular.be21e759.woff2",
+    "static/media/font-awesome.min.css": "/give-things/static/media/fontawesome-webfont.fee66e71.woff"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a8fbc424.js",
+    "static/css/2.a687c105.chunk.css",
+    "static/js/2.e22bb92f.chunk.js",
+    "static/css/main.6df9c1b5.chunk.css",
+    "static/js/main.50ead362.chunk.js"
+  ]
+}
