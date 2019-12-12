@@ -5,6 +5,8 @@ import { Provider } from "react-redux";
 import "./scss/main.scss";
 import { createStore, applyMiddleware, compose } from "redux";
 import rootReducer from "./redux/reducers";
+// import { logger } from "redux-logger";
+import firebaseConfig from "./js/firebase/firebase";
 import thunk from "redux-thunk";
 import {
   createFirestoreInstance,
@@ -13,21 +15,6 @@ import {
 } from "redux-firestore";
 import { ReactReduxFirebaseProvider, getFirebase } from "react-redux-firebase";
 import firebase from "firebase/app";
-import "firebase/firestore";
-import "firebase/auth";
-
-let firebaseConfig = {
-  apiKey: "AIzaSyA2uEHsJLVW_VREHame_keyQu0xiuaiMa8",
-  authDomain: "give-things.firebaseapp.com",
-  databaseURL: "https://give-things.firebaseio.com",
-  projectId: "give-things",
-  storageBucket: "give-things.appspot.com",
-  messagingSenderId: "749997316367",
-  appId: "1:749997316367:web:50b66ecbc90cd73d5d067a"
-};
-
-firebase.initializeApp(firebaseConfig);
-firebase.firestore();
 
 const rrfConfig = {
   userProfile: "users",
@@ -37,7 +24,10 @@ const rrfConfig = {
 const store = createStore(
   rootReducer,
   compose(
-    applyMiddleware(thunk.withExtraArgument({ getFirebase, getFirestore })),
+    applyMiddleware(
+      thunk.withExtraArgument({ getFirebase, getFirestore })
+      // logger
+    ),
     reduxFirestore(firebaseConfig)
   )
 );
@@ -46,7 +36,7 @@ const rrfProps = {
   firebase,
   config: rrfConfig,
   dispatch: store.dispatch,
-  createFirestoreInstance // <- needed if using firestore
+  createFirestoreInstance
 };
 
 ReactDOM.render(
