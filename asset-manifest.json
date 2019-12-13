@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/give-things/static/css/main.25ecbe27.chunk.css",
-    "main.js": "/give-things/static/js/main.5d8d4b27.chunk.js",
-    "main.js.map": "/give-things/static/js/main.5d8d4b27.chunk.js.map",
+    "main.js": "/give-things/static/js/main.cba1b75a.chunk.js",
+    "main.js.map": "/give-things/static/js/main.cba1b75a.chunk.js.map",
     "runtime-main.js": "/give-things/static/js/runtime-main.a8fbc424.js",
     "runtime-main.js.map": "/give-things/static/js/runtime-main.a8fbc424.js.map",
     "static/css/2.a687c105.chunk.css": "/give-things/static/css/2.a687c105.chunk.css",
-    "static/js/2.4933ac4a.chunk.js": "/give-things/static/js/2.4933ac4a.chunk.js",
-    "static/js/2.4933ac4a.chunk.js.map": "/give-things/static/js/2.4933ac4a.chunk.js.map",
+    "static/js/2.c3765ad9.chunk.js": "/give-things/static/js/2.c3765ad9.chunk.js",
+    "static/js/2.c3765ad9.chunk.js.map": "/give-things/static/js/2.c3765ad9.chunk.js.map",
     "index.html": "/give-things/index.html",
-    "precache-manifest.2b12b2447bd1feb31967ac70078778d9.js": "/give-things/precache-manifest.2b12b2447bd1feb31967ac70078778d9.js",
+    "precache-manifest.f7c412c3a93b9c2639f7a2f043614e81.js": "/give-things/precache-manifest.f7c412c3a93b9c2639f7a2f043614e81.js",
     "service-worker.js": "/give-things/service-worker.js",
     "static/css/2.a687c105.chunk.css.map": "/give-things/static/css/2.a687c105.chunk.css.map",
     "static/css/main.25ecbe27.chunk.css.map": "/give-things/static/css/main.25ecbe27.chunk.css.map",
@@ -19,8 +19,8 @@
   "entrypoints": [
     "static/js/runtime-main.a8fbc424.js",
     "static/css/2.a687c105.chunk.css",
-    "static/js/2.4933ac4a.chunk.js",
+    "static/js/2.c3765ad9.chunk.js",
     "static/css/main.25ecbe27.chunk.css",
-    "static/js/main.5d8d4b27.chunk.js"
+    "static/js/main.cba1b75a.chunk.js"
   ]
 }
