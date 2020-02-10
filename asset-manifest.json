@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/give-things/static/css/main.25ecbe27.chunk.css",
-    "main.js": "/give-things/static/js/main.cba1b75a.chunk.js",
-    "main.js.map": "/give-things/static/js/main.cba1b75a.chunk.js.map",
+    "main.js": "/give-things/static/js/main.7efd44c3.chunk.js",
+    "main.js.map": "/give-things/static/js/main.7efd44c3.chunk.js.map",
     "runtime-main.js": "/give-things/static/js/runtime-main.a8fbc424.js",
     "runtime-main.js.map": "/give-things/static/js/runtime-main.a8fbc424.js.map",
     "static/css/2.a687c105.chunk.css": "/give-things/static/css/2.a687c105.chunk.css",
     "static/js/2.c3765ad9.chunk.js": "/give-things/static/js/2.c3765ad9.chunk.js",
     "static/js/2.c3765ad9.chunk.js.map": "/give-things/static/js/2.c3765ad9.chunk.js.map",
     "index.html": "/give-things/index.html",
-    "precache-manifest.f7c412c3a93b9c2639f7a2f043614e81.js": "/give-things/precache-manifest.f7c412c3a93b9c2639f7a2f043614e81.js",
+    "precache-manifest.5e851cb7627c801e7b8f04c6562beed9.js": "/give-things/precache-manifest.5e851cb7627c801e7b8f04c6562beed9.js",
     "service-worker.js": "/give-things/service-worker.js",
     "static/css/2.a687c105.chunk.css.map": "/give-things/static/css/2.a687c105.chunk.css.map",
     "static/css/main.25ecbe27.chunk.css.map": "/give-things/static/css/main.25ecbe27.chunk.css.map",
@@ -21,6 +21,6 @@
     "static/css/2.a687c105.chunk.css",
     "static/js/2.c3765ad9.chunk.js",
     "static/css/main.25ecbe27.chunk.css",
-    "static/js/main.cba1b75a.chunk.js"
+    "static/js/main.7efd44c3.chunk.js"
   ]
 }

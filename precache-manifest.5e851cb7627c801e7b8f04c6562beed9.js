@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "41ce4b617305dd905188d92ee33ffcdd",
+    "revision": "a054f8c67e8dbd61c5c40ea6cf8d6cd4",
     "url": "/give-things/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/give-things/static/css/2.a687c105.chunk.css"
   },
   {
-    "revision": "d1bbfbdf6f5ca9294946",
+    "revision": "e0590059f18a67c69ddb",
     "url": "/give-things/static/css/main.25ecbe27.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/give-things/static/js/2.c3765ad9.chunk.js"
   },
   {
-    "revision": "d1bbfbdf6f5ca9294946",
-    "url": "/give-things/static/js/main.cba1b75a.chunk.js"
+    "revision": "e0590059f18a67c69ddb",
+    "url": "/give-things/static/js/main.7efd44c3.chunk.js"
   },
   {
     "revision": "c3099876d4f06769a82b",
