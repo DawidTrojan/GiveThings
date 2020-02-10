@@ -3,10 +3,10 @@ import React from "react";
 const Bar = () => (
   <div className="bar_container">
     <div className="bar_wrapper">
-      <h3>Ważne!</h3>
+      <h3>Important!</h3>
       <span>
-        Uzupełnij szczegóły dotyczące Twoich rzeczy. Dzięki temu będziemy
-        wiedzieć komu najlepiej je przekazać.
+        Complete the details of your items. Thanks to this we will be know who
+        to pass them on to.
       </span>
     </div>
   </div>

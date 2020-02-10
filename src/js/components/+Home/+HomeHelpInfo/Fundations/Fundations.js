@@ -22,7 +22,7 @@ const Fundations = () => {
   return (
     <div className="help_info--content">
       <span className="help_info--title">
-        Fundacje, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+        Fundations, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
         do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
         ad minim veniam, quis nostrud exercitation.
       </span>

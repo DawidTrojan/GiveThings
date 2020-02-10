@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const NavButton = () => (
   <div className="auth_nav">
     <Link className="auth_button" to="/">
-      <span>Strona Główna</span>
+      <span>Home</span>
     </Link>
   </div>
 );

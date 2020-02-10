@@ -11,60 +11,58 @@ const FirstStep = ({ nextButton, currStep, handleChange, error, type }) => {
       <Bar />
       <div className="firstStep_form--container">
         <div className="firstStep_form--wrapper">
-          <span>Krok 1/4</span>
+          <span>Step 1/4</span>
           <div className="firstStep_form">
-            <label>Zaznacz co chcesz oddać:</label>
+            <label>Select what you want to give:</label>
             <div className="firstStep_form--inputBox">
               <input
                 type="radio"
                 name="radio"
-                value="ubrania które nadają się do ponownego użycia"
+                value="clothes that can be used again"
                 onChange={handleChange}
-                checked={
-                  type === "ubrania które nadają się do ponownego użycia"
-                }
+                checked={type === "clothes that can be used again"}
               />
-              <span>ubrania, które nadają się do ponownego użycia</span>
+              <span>clothes that can be used again</span>
             </div>
             <div className="firstStep_form--inputBox">
               <input
                 type="radio"
                 name="radio"
-                value="ubrania do wyrzucenia"
+                value="clothes to throw away"
                 onChange={handleChange}
-                checked={type === "ubrania do wyrzucenia"}
+                checked={type === "clothes to throw away"}
               />
-              <span>ubrania, do wyrzucenia</span>
+              <span>clothes to throw away</span>
             </div>
             <div className="firstStep_form--inputBox">
               <input
                 type="radio"
                 name="radio"
-                value="zabawki"
+                value="toys"
                 onChange={handleChange}
-                checked={type === "zabawki"}
+                checked={type === "toys"}
               />
-              <span>zabawki</span>
+              <span>toys</span>
             </div>
             <div className="firstStep_form--inputBox">
               <input
                 type="radio"
                 name="radio"
-                value="książki"
+                value="books"
                 onChange={handleChange}
-                checked={type === "książki"}
+                checked={type === "books"}
               />
-              <span>książki</span>
+              <span>books</span>
             </div>
             <div className="firstStep_form--inputBox">
               <input
                 type="radio"
                 name="radio"
-                value="Inne"
+                value="other"
                 onChange={handleChange}
-                checked={type === "Inne"}
+                checked={type === "other"}
               />{" "}
-              <span>Inne</span>
+              <span>other</span>
             </div>
           </div>
           <div className="firstStep_buttons">

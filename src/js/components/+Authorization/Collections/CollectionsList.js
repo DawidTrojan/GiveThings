@@ -29,7 +29,7 @@ const CollectionsList = ({ currentElements }) => {
     if (currentPage !== 1) {
       return (
         <button className="collections_button" onClick={stepPrev}>
-          Wstecz
+          Back
         </button>
       );
     }
@@ -41,7 +41,7 @@ const CollectionsList = ({ currentElements }) => {
     if (currentPage !== lastIndex && currentElements.length > 1) {
       return (
         <button className="collections_button" onClick={stepNext}>
-          Dalej
+          Next
         </button>
       );
     }
@@ -67,69 +67,69 @@ const CollectionsList = ({ currentElements }) => {
                 <div className="collections_box" name={i}>
                   <span className="collections_number">{i + 1}.</span>
                   <div className="collections_textBox">
-                    <span>Data dodania:</span>
+                    <span>Collection date:</span>
                     <span>
                       {moment.unix(el.timestamp.seconds).format("DD/MM/YY")}
                     </span>
                   </div>
                   <div className="collections_textBox">
-                    <span>Co oddałeś/aś:</span>
+                    <span>Things:</span>
                     <span>{el.type}</span>
                   </div>
                   <div className="collections_textBox">
-                    <span>Ile worków:</span>
+                    <span>Bags:</span>
                     <span>{el.bags}</span>
                   </div>
                   {!el.localization ? null : (
                     <div className="collections_textBox">
-                      <span>Lokalizacja:</span>
+                      <span>Location:</span>
                       <span>{el.localization}</span>
                     </div>
                   )}
                   {!el.specificLocalization ? null : (
                     <div className="collections_textBox">
-                      <span>Organizacja:</span>
+                      <span>Organization:</span>
                       <span>{el.specificLocalization}</span>
                     </div>
                   )}
                   <div className="collections_textBox">
-                    <span>Dla kogo:</span>
+                    <span>For whom:</span>
                     <span>{el.helpGroups.map(el => el).join(", ")}</span>
                   </div>
                   <div className="collections_textBox">
-                    <span>Miasto:</span>
+                    <span>City:</span>
                     <span>{el.address.city}</span>
                   </div>
                   <div className="collections_textBox">
-                    <span>Ulica:</span>
+                    <span>Street:</span>
                     <span>{el.address.street}</span>
                   </div>
                   <div className="collections_textBox">
-                    <span>Kod-pocztowy:</span>
+                    <span>Post code:</span>
                     <span>{el.address.postCode}</span>
                   </div>
                   <div className="collections_textBox">
-                    <span>Numer telefonu:</span>
+                    <span>Phone number:</span>
                     <span>{el.address.phoneNumber}</span>
                   </div>
                   <div className="collections_textBox">
-                    <span>Data odbioru:</span>
+                    <span>Pickup date:</span>
                     <span>
                       {moment.unix(el.date.seconds).format("DD/MM/YY")}
                     </span>
                   </div>
                   <div className="collections_textBox">
-                    <span>Czas odbioru:</span>
+                    <span>Pickup time:</span>
                     <span>{el.time}</span>
                   </div>
                   {!el.address.comments ? null : (
                     <div className="collections_textBox">
-                      <span>Uwagi:</span>
+                      <span>Details:</span>
                       <span
                         style={{ cursor: "pointer" }}
                         onClick={handleOnClick}
                       >
-                        {!showComments ? "Pokaż" : el.address.comments}
+                        {!showComments ? "Show" : el.address.comments}
                       </span>
                     </div>
                   )}

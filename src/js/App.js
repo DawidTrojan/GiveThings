@@ -14,11 +14,11 @@ const App = () => {
       <ScrollIntoView>
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route path="/logowanie" component={SignIn} />
-          <Route path="/rejestracja" component={Register} />
-          <Route path="/wylogowano" component={SignOut} />
-          <Route path="/oddaj-rzeczy" component={GiveThings} />
-          <Route path="/zbiórki" component={Collections} />
+          <Route path="/signin" component={SignIn} />
+          <Route path="/register" component={Register} />
+          <Route path="/signout" component={SignOut} />
+          <Route path="/give-things" component={GiveThings} />
+          <Route path="/collections" component={Collections} />
         </Switch>
       </ScrollIntoView>
     </Router>

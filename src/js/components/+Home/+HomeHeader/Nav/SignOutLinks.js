@@ -4,11 +4,11 @@ import { Link } from "react-router-dom";
 const SignOutLinks = () => {
   return (
     <>
-      <Link to="/logowanie" className="nav_buttons--link">
-        Zaloguj
+      <Link to="/signin" className="nav_buttons--link">
+        Sign In
       </Link>
-      <Link to="/rejestracja" className="nav_buttons--link">
-        Załóż konto
+      <Link to="/register" className="nav_buttons--link">
+        Register
       </Link>
     </>
   );

@@ -25,14 +25,14 @@ const RegisterForm = ({ signUp, error }) => {
 
     if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(register.email)) {
       isValid = false;
-      errors.email = "Podany email jest nieprawidłowy!";
+      errors.email = "Invalid email!";
     } else {
       errors.email = "";
     }
 
     if (register.password.length <= 5) {
       isValid = false;
-      errors.password = "Podane hasło jest za krótkie!";
+      errors.password = "Password is too short!";
     } else {
       errors.password = "";
     }
@@ -42,7 +42,7 @@ const RegisterForm = ({ signUp, error }) => {
       register.password2.length <= 5
     ) {
       isValid = false;
-      errors.password2 = "Podane hasła muszą być takie same!";
+      errors.password2 = "The passwords must be the same!";
     } else {
       errors.password2 = "";
     }
@@ -81,7 +81,7 @@ const RegisterForm = ({ signUp, error }) => {
           <span className="auth_error">{errors.email}</span>
         </div>
         <div className="inputs_title--box">
-          <span>Hasło</span>
+          <span>Password</span>
         </div>
         <input
           value={register.password}
@@ -93,7 +93,7 @@ const RegisterForm = ({ signUp, error }) => {
           <span className="auth_error">{errors.password}</span>
         </div>
         <div className="inputs_title--box">
-          <span>Powtórz hasło</span>
+          <span>Re-enter password</span>
         </div>
         <input
           value={register.password2}
@@ -108,17 +108,17 @@ const RegisterForm = ({ signUp, error }) => {
           {error && (!errors.password || !errors.email || !errors.password2) ? (
             <span className="auth_error">
               {error === "auth/email-already-in-use"
-                ? "Podane konto już istnieje!"
+                ? "Account already exists!"
                 : null}
             </span>
           ) : null}
         </div>
       </div>
       <div className="auth_form--buttons">
-        <NavLink className="redirect_button" to="/logowanie">
-          Zaloguj się
+        <NavLink className="redirect_button" to="/signin">
+          Sign in
         </NavLink>
-        <button type="submit">Załóż konto</button>
+        <button type="submit">Register</button>
       </div>
     </form>
   );

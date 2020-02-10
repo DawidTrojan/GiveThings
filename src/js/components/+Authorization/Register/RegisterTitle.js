@@ -2,7 +2,7 @@ import React from "react";
 
 const RegisterTitle = () => (
   <div className="auth_title">
-    <h3>Załóż konto</h3>
+    <h3>Create account</h3>
     <div className="auth_title--decoration"></div>
   </div>
 );

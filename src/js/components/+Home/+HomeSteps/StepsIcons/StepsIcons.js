@@ -5,23 +5,23 @@ const StepsIcons = () => (
     <div className="wrapper">
       <div className="steps_icons--box">
         <div className="step_icons--icon first" />
-        <h5>Wybierz rzeczy</h5>
-        <span>ubrania, zabawki, sprzęt i inne</span>
+        <h5>Choose things</h5>
+        <span>clothes, toys, equipment and more</span>
       </div>
       <div className="steps_icons--box">
         <div className="step_icons--icon second" />
-        <h5>Spakuj je</h5>
-        <span>skorzystaj z worków na śmieci</span>
+        <h5>Pack them up</h5>
+        <span>use trash bags</span>
       </div>
       <div className="steps_icons--box">
         <div className="step_icons--icon third" />
-        <h5>Zdecyduj komu chcesz pomóc</h5>
-        <span>wybierz zaufane miejsce</span>
+        <h5>Decide who you want to help</h5>
+        <span>choose a trusted place</span>
       </div>
       <div className="steps_icons--box">
         <div className="step_icons--icon fourth" />
-        <h5>Zamów kuriera</h5>
-        <span>kurier przyjedzie w dogodnym terminie</span>
+        <h5>Order a courier company</h5>
+        <span>the courier will arrive at a convenient time</span>
       </div>
     </div>
   </div>

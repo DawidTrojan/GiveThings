@@ -3,12 +3,12 @@ import React from "react";
 const CollectionsHeader = ({ currentElements }) => {
   return (
     <div className="collections_header">
-      <h3>Zorganizowane zbiórki: {currentElements.length}</h3>
+      <h3>Organized collections: {currentElements.length}</h3>
       <div className="content_decoration--box">
         <div className="content_decoration" />
       </div>
       {!currentElements.length ? (
-        <span>Nie masz jeszcze zorganizowanych zbiórek!</span>
+        <span>You don't have any organized collections yet!</span>
       ) : null}
     </div>
   );

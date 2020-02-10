@@ -25,7 +25,7 @@ const HomeThreeColumns = ({ currentElements, auth }) => {
       <div className="wrapper">
         <div className="columns_box">
           <h3>{sumOfBags}</h3>
-          <h4>Oddanych worków</h4>
+          <h4>Completed bags</h4>
           <span>
             Lorem ipsum dolor sit amet, consectetur adipisc Pellentesque vel
             enim a elit viverra elementuma. Aliquam erat volutpat.
@@ -33,7 +33,7 @@ const HomeThreeColumns = ({ currentElements, auth }) => {
         </div>
         <div className="columns_box">
           <h3>{!organizations ? 0 : organizations.length}</h3>
-          <h4>Wspartych organizacji</h4>
+          <h4>Supported organizations</h4>
           <span>
             Lorem ipsum dolor sit amet, consectetur adipisc Pellentesque vel
             enim a elit viverra elementuma. Aliquam erat volutpat.
@@ -41,7 +41,7 @@ const HomeThreeColumns = ({ currentElements, auth }) => {
         </div>
         <div className="columns_box">
           <h3>{!localizations ? 0 : localizations.length}</h3>
-          <h4>Zorganizowanych zbiórek</h4>
+          <h4>Organized collections</h4>
           <span>
             Lorem ipsum dolor sit amet, consectetur adipisc Pellentesque vel
             enim a elit viverra elementuma. Aliquam erat volutpat.

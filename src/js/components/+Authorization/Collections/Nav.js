@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 const Nav = ({ email }) => {
   return (
     <div className="collections_nav__box">
-      <span className="user_greeting">Witaj {email}!</span>
+      <span className="user_greeting">Hello {email}!</span>
       <Link className="collections_redirect" to="/">
-        <span>Strona Główna</span>
+        <span>Home</span>
       </Link>
     </div>
   );

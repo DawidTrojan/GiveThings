@@ -3,10 +3,10 @@ import React from "react";
 const Bar = () => (
   <div className="bar_container">
     <div className="bar_wrapper">
-      <h3>Ważne!</h3>
+      <h3>Important!</h3>
       <span>
-        Wszystkie rzeczy do oddania zapakuj w 60l worki. Dokładną instrukcję jak
-        poprawnie spakować rzeczy znajdziesz TUTAJ.
+        Pack all items to be returned in the bags. You can find detailed
+        instructions on how to properly pack things HERE.
       </span>
     </div>
   </div>

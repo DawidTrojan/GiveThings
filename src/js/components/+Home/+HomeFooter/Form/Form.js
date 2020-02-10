@@ -25,21 +25,21 @@ const Form = ({ contact }) => {
 
     if (!form.name || form.name.indexOf(" ") > 0) {
       isValid = false;
-      errors.name = "Podane imię jest nieprawidłowe!";
+      errors.name = "Invalid name!";
     } else {
       errors.name = "";
     }
 
     if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(form.email)) {
       isValid = false;
-      errors.email = "Podany email jest nieprawidłowy!";
+      errors.email = "Invalid email!";
     } else {
       errors.email = "";
     }
 
     if (form.message.length < 120) {
       isValid = false;
-      errors.message = "Wiadomość musi mieć conajmniej 120 znaków!";
+      errors.message = "The message must be at least 120 characters!";
     } else {
       errors.message = "";
     }
@@ -62,7 +62,7 @@ const Form = ({ contact }) => {
         message: ""
       });
       contact(form);
-      setSuccess("Wiadomość została wysłana! Wkrótce się skontaktujemy.");
+      setSuccess("Message was sent! We will contact you soon.");
     } else {
       setSuccess("");
       return errors;
@@ -74,10 +74,10 @@ const Form = ({ contact }) => {
       <span className="form_success">{success}</span>
       <div className="form_input--container">
         <div className="form_input--box">
-          <h5>Wpisz swoje imię</h5>
+          <h5>Enter your name</h5>
           <input
             type="text"
-            placeholder="Krzysztof"
+            placeholder="Brian"
             value={form.name}
             name="name"
             onChange={handleOnChange}
@@ -85,9 +85,9 @@ const Form = ({ contact }) => {
           <span>{errors.name}</span>
         </div>
         <div className="form_input--box">
-          <h5>Wpisz swój email</h5>
+          <h5>Enter your email</h5>
           <input
-            placeholder="abc@xyz.pl"
+            placeholder="abc@xyz.com"
             value={form.email}
             name="email"
             onChange={handleOnChange}
@@ -96,7 +96,7 @@ const Form = ({ contact }) => {
         </div>
       </div>
       <div className="form_textarea--box">
-        <h5>Wpisz swoją wiadomość</h5>
+        <h5>Enter your message</h5>
         <textarea
           value={form.message}
           onChange={handleOnChange}
@@ -107,7 +107,7 @@ const Form = ({ contact }) => {
       </div>
 
       <div className="form_button--box">
-        <button>Wyślij</button>
+        <button>Send</button>
       </div>
     </form>
   );

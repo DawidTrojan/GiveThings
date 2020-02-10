@@ -26,14 +26,14 @@ const FourthStep = ({
       <Bar />
       <div className="fourthStep_form--container">
         <div className="fourthStep_form--wrapper">
-          <span>Krok 4/4</span>
+          <span>Step 4/4</span>
           <div className="fourthStep_form">
-            <h3>Podaj adres oraz termin odbioru rzeczy</h3>
+            <h3>Enter the address and date of receipt</h3>
             <div className="form_container">
               <div className="form_box">
                 <div className="form_box--item">
                   <div className="item_title">
-                    <span>Ulica</span>
+                    <span>Street</span>
                   </div>
                   <input
                     style={
@@ -52,7 +52,7 @@ const FourthStep = ({
                 </div>
                 <div className="form_box--item">
                   <div className="item_title">
-                    <span>Miasto</span>
+                    <span>City</span>
                   </div>
                   <input
                     style={
@@ -71,7 +71,7 @@ const FourthStep = ({
                 </div>
                 <div className="form_box--item">
                   <div className="item_title">
-                    <span>Kod pocztowy</span>
+                    <span>Post code</span>
                   </div>
                   <input
                     style={
@@ -90,7 +90,7 @@ const FourthStep = ({
                 </div>
                 <div className="form_box--item">
                   <div className="item_title">
-                    <span>Numer telefonu</span>
+                    <span>Phone number</span>
                   </div>
                   <input
                     style={
@@ -111,7 +111,7 @@ const FourthStep = ({
               <div className="form_box">
                 <div className="form_box--item" name="date">
                   <div className="item_title">
-                    <span>Data</span>
+                    <span>Date</span>
                   </div>
                   <div
                     className="fourthStep_input"
@@ -133,7 +133,7 @@ const FourthStep = ({
                 </div>
                 <div className="form_box--item">
                   <div className="item_title">
-                    <span>Godzina</span>
+                    <span>Time</span>
                   </div>
                   <TimeField
                     value={currentTime.toString()}
@@ -146,7 +146,7 @@ const FourthStep = ({
                 </div>
                 <div className="form_box--textarea">
                   <div className="item_title">
-                    <span>Uwagi dla kuriera</span>
+                    <span>Details</span>
                   </div>
                   <textarea
                     name="address"

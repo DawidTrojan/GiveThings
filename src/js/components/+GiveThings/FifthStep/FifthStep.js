@@ -10,9 +10,9 @@ const FifthStep = ({ currStep, prevButton, submitButton, form, isValid }) => {
     <div>
       <div className="fifthStep_summary--container">
         <div className="fifthStep_summary--wrapper">
-          <h3>Podsumowanie Twojej darowizny</h3>
+          <h3>Summary of your donation</h3>
           <div className="fifthStep_info--box">
-            <span className="fifthStep_info--description">Oddajesz:</span>
+            <span className="fifthStep_info--description">You give:</span>
             <div className="fifthStep_info--item">
               <div className="fiftStep_icon" />
               <div className="fifthStep_info--text">
@@ -37,7 +37,7 @@ const FifthStep = ({ currStep, prevButton, submitButton, form, isValid }) => {
               <div className="fiftStep_icon--second" />
               <div className="fifthStep_info--text">
                 <span>
-                  dla lokalizacji:{" "}
+                  for location:{" "}
                   {!form.localization
                     ? form.specificLocalization
                     : form.localization}
@@ -49,35 +49,35 @@ const FifthStep = ({ currStep, prevButton, submitButton, form, isValid }) => {
           <div className="fifthStep_summary">
             <div className="fifth_summary--container">
               <div className="fifth_summary--box">
-                <h4>Adres odbioru:</h4>
+                <h4>Pickup address:</h4>
                 <div className="summary_item">
-                  <span>Ulica</span> <span> {form.address.street}</span>
+                  <span>Street</span> <span> {form.address.street}</span>
                 </div>
                 <div className="summary_item">
-                  <span>Miasto</span> <span> {form.address.city}</span>
+                  <span>City</span> <span> {form.address.city}</span>
                 </div>
                 <div className="summary_item">
-                  <span>Kod pocztowy</span>
+                  <span>Post code</span>
                   <span> {form.address.postCode}</span>
                 </div>
                 <div className="summary_item">
-                  <span>Numer telefonu</span>
+                  <span>Phone number</span>
                   <span> {form.address.phoneNumber}</span>
                 </div>
               </div>
               <div className="fifth_summary--box">
-                <h4>Termin odbioru:</h4>
+                <h4>Date of receipt:</h4>
                 <div className="summary_item">
-                  <span>Data</span>
+                  <span>Date</span>
                   <span>
                     <Moment format="DD/MM/YYYY">{form.date}</Moment>
                   </span>
                 </div>
                 <div className="summary_item">
-                  <span>Godzina</span> <span> {form.time}</span>
+                  <span>Time</span> <span> {form.time}</span>
                 </div>
                 <div className="summary_item">
-                  <span>Uwagi dla kuriera</span>
+                  <span>Details</span>
                   <span
                     style={
                       form.address.comments.length > 15
@@ -100,7 +100,7 @@ const FifthStep = ({ currStep, prevButton, submitButton, form, isValid }) => {
               {submitButton()}
             </div>
             {!isValid ? (
-              <p className="form_error">Formularz zawiera błędy !</p>
+              <p className="form_error">The form contains errors !</p>
             ) : null}
           </div>
         </div>

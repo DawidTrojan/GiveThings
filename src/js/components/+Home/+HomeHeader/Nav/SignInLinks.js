@@ -5,7 +5,7 @@ const SignInLinks = ({ signOut, profile }) => {
   const [logout, setLogout] = useState(false);
 
   if (logout) {
-    return <Redirect to="/wylogowano" />;
+    return <Redirect to="/signout" />;
   }
 
   const handleOnClick = () => {
@@ -16,16 +16,16 @@ const SignInLinks = ({ signOut, profile }) => {
   return (
     <>
       <div className="user_greeting">
-        <span>Cześć {profile.email}!</span>
+        <span>Hello {profile.email}!</span>
       </div>
-      <Link to="/oddaj-rzeczy" className="giveThings_button">
-        Oddaj rzeczy
+      <Link to="/give-things" className="giveThings_button">
+        Give things back
       </Link>
-      <Link to="/zbiórki" className="giveThings_button">
-        Twoje zbiórki
+      <Link to="/collections" className="giveThings_button">
+        Your collections
       </Link>
       <span className="nav_buttons--link logoutButton" onClick={handleOnClick}>
-        Wyloguj
+        Sign out
       </span>
     </>
   );

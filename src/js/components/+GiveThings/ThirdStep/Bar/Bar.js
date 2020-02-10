@@ -3,11 +3,11 @@ import React from "react";
 const Bar = () => (
   <div className="bar_container">
     <div className="bar_wrapper">
-      <h3>Ważne!</h3>
+      <h3>Important!</h3>
       <span>
-        Jeśli wiesz komu chcesz pomóc, możesz wpisać nazwę tej organizacji.
-        Możesz też filtrować organizacje po ich lokalizacji bądź celu ich
-        pomocy.
+        If you know who you want to help, you can enter the name of this
+        organization. You can also filter organizations by their location or the
+        purpose of their help.
       </span>
     </div>
   </div>

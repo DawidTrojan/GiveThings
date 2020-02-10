@@ -55,7 +55,7 @@ const NavLinks = ({ links }) => {
               duration={500}
               smooth={true}
             >
-              O co chodzi
+              What we do
             </Link>
           </li>
           <div className="toggleNav_decoration--box ">
@@ -69,7 +69,7 @@ const NavLinks = ({ links }) => {
               duration={500}
               smooth={true}
             >
-              <span>O nas</span>
+              <span>About us</span>
             </Link>
           </li>
           <div className="toggleNav_decoration--box ">
@@ -82,7 +82,7 @@ const NavLinks = ({ links }) => {
               duration={500}
               smooth={true}
             >
-              Fundacja i organizacje
+              Foundations and organizations
             </Link>
           </li>
           <div className="toggleNav_decoration--box ">
@@ -95,7 +95,7 @@ const NavLinks = ({ links }) => {
               duration={500}
               smooth={true}
             >
-              Kontakt
+              Contact
             </Link>
           </li>
           <div className="toggleNav_decoration--box ">

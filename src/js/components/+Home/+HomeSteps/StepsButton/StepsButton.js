@@ -5,10 +5,10 @@ const StepsButton = ({ auth }) => (
   <div className="wrapper">
     <div className="steps_button">
       <Link
-        to={auth.isEmpty ? "/logowanie" : "/oddaj-rzeczy"}
+        to={auth.isEmpty ? "/signin" : "/give-things"}
         className="steps_button--link"
       >
-        <span>Oddaj rzeczy</span>
+        <span>Give Things</span>
       </Link>
     </div>
   </div>

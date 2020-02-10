@@ -20,10 +20,10 @@ const ThirdStep = ({
       <Bar />
       <div className="thirdStep_form--container">
         <div className="thirdStep_form--wrapper">
-          <span className="step_title">Krok 3/4</span>
+          <span className="step_title">Step 3/4</span>
           <div className="thirdStep_form">
             <div className="localization_box">
-              <span className="localization_title">Lokalizacja:</span>
+              <span className="localization_title">Localization:</span>
               <select
                 defaultValue={!localization ? "1" : localization}
                 name="localization"
@@ -37,77 +37,77 @@ const ThirdStep = ({
                     : null
                 }
               >
-                <option value="">-- wybierz --</option>
-                <option value="Poznań">Poznań</option>
-                <option value="Warszawa">Warszawa</option>
-                <option value="Kraków">Kraków</option>
-                <option value="Wrocław">Wrocław</option>
-                <option value="Katowice">Katowice</option>
+                <option value="">-- select --</option>
+                <option value="Berlin">Berlin</option>
+                <option value="Hamburg">Hamburg</option>
+                <option value="Leipzig">Leipzig</option>
+                <option value="Frankfurt">Frankfurt</option>
+                <option value="Hannover">Hannover</option>
               </select>
             </div>
             <div className="thirdStep_form--checkbox">
-              <span>Komu chcesz pomóc?</span>
+              <span>Who do you want to help?</span>
               <div className="form_checkbox">
                 <div className="form_checkbox--box">
                   <input
                     type="checkbox"
                     name="check"
                     id="check_first"
-                    value="dzieciom"
+                    value="children"
                     onChange={handleChange}
-                    checked={groups.includes("dzieciom")}
+                    checked={groups.includes("children")}
                   />
-                  <label htmlFor="check_first">dzieciom</label>
+                  <label htmlFor="check_first">children</label>
                 </div>
                 <div className="form_checkbox--box">
                   <input
                     type="checkbox"
                     name="check"
                     id="check_second"
-                    value="samotnym matkom"
+                    value="single mothers"
                     onChange={handleChange}
-                    checked={groups.includes("samotnym matkom")}
+                    checked={groups.includes("single mothers")}
                   />
-                  <label htmlFor="check_second">samotnym matkom</label>
+                  <label htmlFor="check_second">single mothers</label>
                 </div>
                 <div className="form_checkbox--box">
                   <input
                     type="checkbox"
                     name="check"
                     id="check_third"
-                    value="bezdomnym"
+                    value="homeless"
                     onChange={handleChange}
-                    checked={groups.includes("bezdomnym")}
+                    checked={groups.includes("homeless")}
                   />
-                  <label htmlFor="check_third">bezdomnym</label>
+                  <label htmlFor="check_third">homeless</label>
                 </div>
                 <div className="form_checkbox--box">
                   <input
                     type="checkbox"
                     name="check"
                     id="check_fourth"
-                    value="niepełnosprawnym"
+                    value="people with disabilities"
                     onChange={handleChange}
-                    checked={groups.includes("niepełnosprawnym")}
+                    checked={groups.includes("people with disabilities")}
                   />
-                  <label htmlFor="check_fourth">niepełnosprawnym</label>
+                  <label htmlFor="check_fourth">people with disabilities</label>
                 </div>
                 <div className="form_checkbox--box">
                   <input
                     type="checkbox"
                     name="check"
                     id="check_fifth"
-                    value="osobom starszym"
+                    value="old people"
                     onChange={handleChange}
-                    checked={groups.includes("osobom starszym")}
+                    checked={groups.includes("old people")}
                   />
-                  <label htmlFor="check_fifth">osobom starszym</label>
+                  <label htmlFor="check_fifth">old people</label>
                 </div>
               </div>
             </div>
             <div className="form_textInput">
               <span className="textInput_title">
-                Wpisz nazwę konkretnej organizacji (opcjonalnie)
+                Enter the name of a specific organization (optional)
               </span>
               <input
                 style={
@@ -128,7 +128,7 @@ const ThirdStep = ({
             <div className="thirdStep_form--buttons">
               {prevButton()}
               {!groups.length ? (
-                <span> Zaznacz komu chcesz pomóc ! </span>
+                <span> Mark who you want to help! </span>
               ) : (
                 nextButton()
               )}

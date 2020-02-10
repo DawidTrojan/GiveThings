@@ -28,16 +28,16 @@ const Header = () => {
     <div className="help_info--container">
       <div className="wrapper">
         <div className="help_info--header">
-          <h4>Komu pomagamy?</h4>
+          <h4>Who do we help??</h4>
           <div className="help_info--decoration"></div>
           <div className="help_info--buttons">
             {isActiveFundation ? (
               <span id="fundations" className="active" onClick={handleOnClick}>
-                Fundacjom
+                Fundations
               </span>
             ) : (
               <span id="fundations" onClick={handleOnClick}>
-                Fundacjom
+                Fundations
               </span>
             )}
             {isActiveOrganization ? (
@@ -46,20 +46,20 @@ const Header = () => {
                 className="active"
                 onClick={handleOnClick}
               >
-                Organizajom pozarządowym
+                Organizations
               </span>
             ) : (
               <span id="organizations" onClick={handleOnClick}>
-                Organizajom pozarządowym
+                Organizations
               </span>
             )}
             {isActiveLocal ? (
               <span id="local" className="active" onClick={handleOnClick}>
-                Lokalnym zbiórkom
+                Local collections
               </span>
             ) : (
               <span id="local" onClick={handleOnClick}>
-                Lokalnym zbiórkom
+                Local collections
               </span>
             )}
           </div>

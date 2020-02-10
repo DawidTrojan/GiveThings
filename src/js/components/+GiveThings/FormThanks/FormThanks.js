@@ -10,8 +10,8 @@ const FormThanks = ({ isReady, isLoading }) => {
         <div className="formThanks_wrapper">
           <div className="formThanks_box">
             <span>
-              Dziękujemy za przesłanie formularza. Na maila prześlemy wszelkie
-              informacje o odbiorze.
+              Thank you for submitting the form. We will send any pickup
+              information by email.
             </span>
             <div className="decoration"></div>
           </div>

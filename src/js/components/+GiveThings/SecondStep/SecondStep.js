@@ -18,13 +18,13 @@ const SecondStep = ({
       <Bar />
       <div className="secondStep_form--container">
         <div className="secondStep_form--wrapper">
-          <span>Krok 2/4</span>
+          <span>Step 2/4</span>
           <div className="secondStep_form">
             <div className="select_box">
               <label>
-                Podaj liczbę 60l worków, w które spakowałeś/aś rzeczy:
+                Enter the number of bags you have packed your items into:
               </label>
-              <span>Liczba 60l worków:</span>
+              <span>Number of bags:</span>
               <select
                 defaultValue={!bags ? "-1" : bags}
                 id="secondStep_select"
@@ -33,7 +33,7 @@ const SecondStep = ({
                 style={error ? { borderColor: "#FF0000" } : null}
               >
                 <option value="-1" disabled>
-                  -- wybierz --
+                  -- select --
                 </option>
                 <option value="1">1</option>
                 <option value="2">2</option>

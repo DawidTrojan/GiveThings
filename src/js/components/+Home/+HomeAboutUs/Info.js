@@ -4,7 +4,7 @@ const Info = () => (
   <div className="aboutUs_info--container">
     <div className="wrapper">
       <div className="aboutUs_info--box">
-        <h4>O nas</h4>
+        <h4>About us</h4>
         <div className="aboutUs_info--decoration" />
         <span>
           Nori grape silver beet broccoli kombu beet greens fava bean potato

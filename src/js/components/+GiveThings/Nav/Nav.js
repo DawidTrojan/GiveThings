@@ -4,12 +4,12 @@ import { Link } from "react-router-dom";
 const Nav = ({ profile }) => {
   return (
     <div className="giveThings_nav__box">
-      <span className="user_greeting">Witaj {profile.email}!</span>
+      <span className="user_greeting">Hello {profile.email}!</span>
       <Link className="giveThings_redirect" to="/">
-        <span>Strona Główna</span>
+        <span>Home</span>
       </Link>
-      <Link className="giveThings_redirect" to="/zbiórki">
-        <span>Twoje zbiórki</span>
+      <Link className="giveThings_redirect" to="/collections">
+        <span>My collections</span>
       </Link>
     </div>
   );

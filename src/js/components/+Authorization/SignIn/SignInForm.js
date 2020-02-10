@@ -23,14 +23,14 @@ const LoginForm = ({ signIn, error }) => {
 
     if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(sign.email)) {
       isValid = false;
-      errors.email = "Podany email jest nieprawidłowy!";
+      errors.email = "Invalid email";
     } else {
       errors.email = "";
     }
 
     if (sign.password.length <= 5) {
       isValid = false;
-      errors.password = "Podane hasło jest za krótkie!";
+      errors.password = "Password is too short!";
     } else {
       errors.password = "";
     }
@@ -67,7 +67,7 @@ const LoginForm = ({ signIn, error }) => {
           <span className="auth_error">{errors.email}</span>
         </div>
         <div className="inputs_title--box">
-          <span>Hasło</span>
+          <span>Password</span>
         </div>
         <input
           type="password"
@@ -81,19 +81,17 @@ const LoginForm = ({ signIn, error }) => {
           ) : null}
           {error && (!errors.password || !errors.email) ? (
             <span className="auth_error">
-              {error === "auth/wrong-password" ? "Niepoprawne hasło" : null}
-              {error === "auth/user-not-found"
-                ? "Nie znaleziono użytkownika!"
-                : null}
+              {error === "auth/wrong-password" ? "Invalid password" : null}
+              {error === "auth/user-not-found" ? "User not found!" : null}
             </span>
           ) : null}
         </div>
       </div>
       <div className="auth_form--buttons">
-        <NavLink className="redirect_button" to="/rejestracja">
-          Załóż konto
+        <NavLink className="redirect_button" to="/register">
+          Register
         </NavLink>
-        <button type="submit">Zaloguj</button>
+        <button type="submit">Sign In</button>
       </div>
     </form>
   );

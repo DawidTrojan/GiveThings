@@ -136,28 +136,28 @@ const Form = ({ giveThings, error, isLoading }) => {
 
     if (!form.type) {
       isValid = false;
-      errors.type = "Musisz zaznaczyć jedno pole!";
+      errors.type = "You must check one box!";
     } else {
       errors.type = "";
     }
 
     if (!form.bags) {
       isValid = false;
-      errors.bags = "Musisz wybrać liczbę worków!";
+      errors.bags = "You must select a number of bags!";
     } else {
       errors.bags = "";
     }
 
     if (!form.helpGroups.length) {
       isValid = false;
-      errors.helpGroups = "Musisz wybrać komu chcesz pomóc!";
+      errors.helpGroups = "You must choose who you want to help!";
     } else {
       errors.helpGroups = "";
     }
 
     if (!form.localization && !form.specificLocalization) {
       isValid = false;
-      errors.localization = "Musisz wybrać miasto!";
+      errors.localization = "You must choose a city!";
     } else {
       errors.localization = "";
     }
@@ -165,21 +165,21 @@ const Form = ({ giveThings, error, isLoading }) => {
     if (form.address.street.length < 2) {
       isValid = false;
       errors.address.street =
-        "Nazwa ulicy powinna mieć przynajmniej dwa znaki!";
+        "The street name should have at least two characters!";
     } else {
       errors.address.street = "";
     }
 
     if (form.address.city.length < 2) {
       isValid = false;
-      errors.address.city = "Nazwa miasta powinna mieć przynajmniej dwa znaki!";
+      errors.address.city = "City name should have at least two characters!";
     } else {
       errors.address.city = "";
     }
 
-    if (!/^([0-9]{2})(-[0-9]{3})?$/.test(form.address.postCode)) {
+    if (form.address.postCode.length !== 5) {
       isValid = false;
-      errors.address.postCode = "Błędny kod pocztowy!";
+      errors.address.postCode = "Post code should have 5 characters!";
     } else {
       errors.address.postCode = "";
     }
@@ -189,24 +189,24 @@ const Form = ({ giveThings, error, isLoading }) => {
       !Number(form.address.phoneNumber)
     ) {
       isValid = false;
-      errors.address.phoneNumber = "Numer powinien mieć 9 cyfr!";
+      errors.address.phoneNumber = "The number should have 9 digits!";
     } else {
       errors.address.phoneNumber = "";
     }
 
     if (form.date < new Date()) {
       isValid = false;
-      errors.date = "Wybierz późniejszą datę!";
+      errors.date = "Choose a later date!";
     } else if (form.date.getDay() === 6 || form.date.getDay() === 0) {
       isValid = false;
-      errors.date = "Wybierz datę od poniedziałku do piątku!";
+      errors.date = "Choose a date from Monday to Friday!";
     } else {
       errors.date = "";
     }
 
     if (!form.time || form.time.charAt(0) < 1 || form.time.charAt(1) > 7) {
       isValid = false;
-      errors.address.time = "Wybierz godzinę pomiędzy 10 a 17";
+      errors.address.time = "Choose an hour between 10 and 17";
     } else {
       errors.address.time = "";
     }
@@ -255,7 +255,7 @@ const Form = ({ giveThings, error, isLoading }) => {
 
   const prevButton = () => {
     if (currStep !== 1) {
-      return <button onClick={stepPrev}>Wstecz</button>;
+      return <button onClick={stepPrev}>Back</button>;
     }
 
     return null;
@@ -263,7 +263,7 @@ const Form = ({ giveThings, error, isLoading }) => {
 
   const nextButton = () => {
     if (currStep < 5) {
-      return <button onClick={stepNext}>Dalej</button>;
+      return <button onClick={stepNext}>Next</button>;
     }
 
     return null;
@@ -273,7 +273,7 @@ const Form = ({ giveThings, error, isLoading }) => {
     if (currStep === 5) {
       return (
         <button type="submit" className="send_form">
-          Potwierdzam
+          Submit
         </button>
       );
     }

@@ -2,7 +2,7 @@ import React from "react";
 
 const Title = () => (
   <div className="home_contact--title">
-    <h4>Skontaktuj się z nami</h4>
+    <h4>Contact us!</h4>
     <div className="home_contact--decoration"></div>
   </div>
 );
